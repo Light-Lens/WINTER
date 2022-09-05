@@ -1,5 +1,4 @@
 # WINTER
-from pipes import Template
 import speech_recognition as sr
 import win32process
 import webbrowser
@@ -274,7 +273,7 @@ class Functions:
         return f"{numpy.random.choice(TimeDialogue)} {CTime}".strip()
 
     # Create a new project
-    def NewProj(Query):
+    def CreateProject(Query):
         # regex = re.findall(r'[create|make|start]* a (.*) (indexed|index it|marked|mark it|named|name it)[ as ]*(.*)', Query)
         Template = [["As you wish", "Here you go", "Sure", 7], ["Sir", 7]]
         regex = re.findall(r'([create|make|start]* a (.*) (indexed|index it|marked|mark it|named|name it)[ as ]*(.*))|[create|make|start]* a (.*)', Query)
@@ -557,6 +556,11 @@ while True:
     Command = Core.TakeCommand().lower().strip()
     HighestProbList = {}
 
+    # regex = re.findall(r'winter (.*)|(.*) winter', Command)
+    # if regex:
+    #     regex = [j for i in regex for j in list(filter(None, i))]
+    #     Command = str(" ".join(i for i in regex)).strip()
+
     if Command != "":
         HighestProbList["exit"]         = alphabet.ClassifyIntent(Command, ["ok bye", "see you", "see ya"])
         HighestProbList["project"]      = alphabet.ClassifyIntent(Command, ["start a new project indexed", "create a project named", "make a new project and name it"])
@@ -592,7 +596,7 @@ while True:
             elif BestMatch == "weather": Core.Speak(Functions.WeatherReport())
             elif BestMatch == "temperature": Core.Speak(Functions.WeatherTemp())
             elif BestMatch == "joke": Core.Speak(Functions.CrackJokes())
-            elif BestMatch == "project": Core.Speak(Functions.NewProj(Command))
+            elif BestMatch == "project": Core.Speak(Functions.CreateProject(Command))
             elif BestMatch == "close app": Core.Speak(Functions.KillTask(Command))
             elif BestMatch == "search": Core.Speak(Functions.SearchOnline(Command))
             elif BestMatch == "summarize": Core.Speak(Functions.Summarize(Command))
