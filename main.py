@@ -583,8 +583,12 @@ while True:
     # Take input from the user and do some natural language processing on it.
     # Command = Core.TakeCommand().lower().strip()
     Command = input("> ").lower().strip()
-    response = Command
     OriginalSentence = Command
+
+    # regex = re.findall(r'winter (.*)|(.*) winter', Command)
+    # if regex:
+    #     regex = [j for i in regex for j in list(filter(None, i))]
+    #     Command = str(" ".join(i for i in regex)).strip()
 
     # Identify the best response
     if Command:
@@ -602,8 +606,7 @@ while True:
         prob = probs[0][predicted.item()]
         if prob.item() > 0.75:
             for intent in intents['intents']:
-                if tag == intent["tag"]:
-                    response = random.choice(intent['responses'])
+                if tag == intent["tag"]: response = intent['responses']
 
         else: response = OriginalSentence
     
@@ -616,77 +619,21 @@ while True:
         Core.Speak(numpy.random.choice(Template))
         sys.exit()
 
-    elif response == "Facts": Functions.Facts()
-    elif response == "GetTime": Functions.GetTime()
-    elif response == "GreetUs": Functions.GreetUs()
-    elif response == "WeatherReport": Functions.WeatherReport()
-    elif response == "TempReport": Functions.WeatherTemp()
-    elif response == "CrackJokes": Functions.CrackJokes()
-    elif response == "CreateProject": Functions.CreateProject(OriginalSentence)
-    elif response == "KillTask": Functions.KillTask(OriginalSentence)
-    elif response == "SearchOnline": Functions.SearchOnline(OriginalSentence)
-    elif response == "Summarize": Functions.Summarize(OriginalSentence)
-    elif response == "Translate": Functions.Translate(OriginalSentence)
-    elif response == "SwitchWindows": Functions.SwitchWindows(OriginalSentence)
-    elif response == "OpenSitesOrApps": Functions.OpenSitesOrApps(OriginalSentence)
-    elif response == "PlayOnYT": Functions.PlayOnYT(OriginalSentence)
-    elif response == "PlayOfflineMedia": Functions.PlayOfflineMedia(OriginalSentence)
-    else: Core.Speak(response)
-
-# while True:
-#     # Take input from the user and do some natural language processing on it.
-#     # Command = input("> ").lower().strip()
-#     Command = Core.TakeCommand().lower().strip()
-#     HighestProbList = {}
-
-#     # regex = re.findall(r'winter (.*)|(.*) winter', Command)
-#     # if regex:
-#     #     regex = [j for i in regex for j in list(filter(None, i))]
-#     #     Command = str(" ".join(i for i in regex)).strip()
-
-#     if Command != "":
-#         HighestProbList["exit"]         = alphabet.ClassifyIntent(Command, ["ok bye", "see you", "see ya"])
-#         HighestProbList["project"]      = alphabet.ClassifyIntent(Command, ["start a new project indexed", "create a project named", "make a new project and name it"])
-#         HighestProbList["start"]        = alphabet.ClassifyIntent(Command, ["open", "start"])
-#         HighestProbList["time"]         = alphabet.ClassifyIntent(Command, ["what's the current time", "tell me time", "what time is it", "what's the time", "is it morning", "isn't it evening", "is it 6 o clock", "is it 7 am", "isn't it 8 pm"])
-#         HighestProbList["switch"]       = alphabet.ClassifyIntent(Command, ["switch app", "change window", "switch window", "change app", "switch to", "change to"])
-#         HighestProbList["fact"]         = alphabet.ClassifyIntent(Command, ["tell me a fact", "spit some facts", "tell some facts", "tell any fact you know"])
-#         HighestProbList["translate"]    = alphabet.ClassifyIntent(Command, ["translate", "translate to english", "translate this to english"])
-#         HighestProbList["joke"]         = alphabet.ClassifyIntent(Command, ["tell me a joke", "crack a joke", "tell joke", "crack up some joke", "tell some jokes"])
-#         HighestProbList["play pc"]      = alphabet.ClassifyIntent(Command, ["play from pc", "play from desktop", "play from local", "play local", "show a", "open any", "open me some", "hit some", "play me some", "play any"])
-#         HighestProbList["play youtube"] = alphabet.ClassifyIntent(Command, ["play on yt", "play on youtube", "search on yt", "search on youtube", "play from youtube"])
-#         HighestProbList["search"]       = alphabet.ClassifyIntent(Command, ["search on google", "search on wikipedia", "do a google search", "do a search", "search for", "search"])
-#         HighestProbList["summarize"]    = alphabet.ClassifyIntent(Command, ["summary", "summary of", "summary on", "summarize it", "give me a summary of", "tell me a summary of", "can you summarize"])
-#         HighestProbList["weather"]      = alphabet.ClassifyIntent(Command, ["tell weather", "tell me about the weather today", "today's weather", "is it sunny today", "is it rainy today", "is it cloudy today"])
-#         HighestProbList["temperature"]  = alphabet.ClassifyIntent(Command, ["tell me the temperature", "tell me about today's temperature", "today's temperature", "what temperature is it today", "is it 30 degree celsius", "what's today's temperature"])
-#         HighestProbList["close app"]    = alphabet.ClassifyIntent(Command, ["exit this app", "kill the window", "close current app", "quit the app", "shutdown this process"])
-#         HighestProbList["greet"]        = alphabet.ClassifyIntent(Command, ["good morning", "good afternoon", "good evening", "good night", "morning", "afternoon", "evening"])
-
-#         BestMatch = max(HighestProbList, key=HighestProbList.get)
-#         Confidence = HighestProbList[max(HighestProbList, key=HighestProbList.get)]
-
-#         if Confidence > 0.5:
-#             if BestMatch == "exit":
-#                 Template = ["Ok sir", "Bye sir"]
-#                 Template.extend([""]*5)
-
-#                 Core.Speak(numpy.random.choice(Template))
-#                 sys.exit()
-
-#             elif BestMatch == "fact": Core.Speak(Functions.Facts())
-#             elif BestMatch == "time": Core.Speak(Functions.GetTime())
-#             elif BestMatch == "greet": Core.Speak(Functions.GreetUs())
-#             elif BestMatch == "weather": Core.Speak(Functions.WeatherReport())
-#             elif BestMatch == "temperature": Core.Speak(Functions.WeatherTemp())
-#             elif BestMatch == "joke": Core.Speak(Functions.CrackJokes())
-#             elif BestMatch == "project": Core.Speak(Functions.CreateProject(Command))
-#             elif BestMatch == "close app": Core.Speak(Functions.KillTask(Command))
-#             elif BestMatch == "search": Core.Speak(Functions.SearchOnline(Command))
-#             elif BestMatch == "summarize": Core.Speak(Functions.Summarize(Command))
-#             elif BestMatch == "translate": Core.Speak(Functions.Translate(Command))
-#             elif BestMatch == "switch": Core.Speak(Functions.SwitchWindows(Command))
-#             elif BestMatch == "start": Core.Speak(Functions.OpenSitesOrApps(Command))
-#             elif BestMatch == "play youtube": Core.Speak(Functions.PlayOnYT(Command))
-#             elif BestMatch == "play pc": Core.Speak(Functions.PlayOfflineMedia(Command))
-
-#         else: Core.Speak(Functions.SearchOnline(Command))
+    elif response[0] == "Facts": Functions.Facts()
+    elif response[0] == "GetTime": Functions.GetTime()
+    elif response[0] == "GreetUs": Functions.GreetUs()
+    elif response[0] == "WeatherReport": Functions.WeatherReport()
+    elif response[0] == "TempReport": Functions.WeatherTemp()
+    elif response[0] == "CrackJokes": Functions.CrackJokes()
+    elif response[0] == "CreateProject": Functions.CreateProject(OriginalSentence)
+    elif response[0] == "KillTask": Functions.KillTask(OriginalSentence)
+    elif response[0] == "SearchOnline": Functions.SearchOnline(OriginalSentence)
+    elif response[0] == "Summarize": Functions.Summarize(OriginalSentence)
+    elif response[0] == "Translate": Functions.Translate(OriginalSentence)
+    elif response[0] == "SwitchWindows": Functions.SwitchWindows(OriginalSentence)
+    elif response[0] == "OpenSitesOrApps": Functions.OpenSitesOrApps(OriginalSentence)
+    elif response[0] == "PlayOnYT": Functions.PlayOnYT(OriginalSentence)
+    elif response[0] == "PlayOfflineMedia": Functions.PlayOfflineMedia(OriginalSentence)
+    else:
+        if isinstance(response, list): Core.Speak(alphabet.ArrangeWords(response))
+        else: Core.Speak(response)
