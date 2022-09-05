@@ -1,0 +1,11 @@
+{
+    "intent": [
+        {
+            "tag": "say hello",
+            "patterns": ["hello", "hi", "hey", "what's up"],
+            "responses": [
+                ["Hello", "Hi"], ["sir", 2]
+            ]
+        }
+    ]
+}

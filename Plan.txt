@@ -1,0 +1,42 @@
+Natural Language Processing:
+    - The system can be phylosophical and sarcastic at times.
+
+    1. Natural Language Understanding:
+        - Understand the correct meaning of a given sentence.
+        - Special understanding required for 'and' or 'or' cases.
+        - Translate from the given language to english.
+        - Do intent classification.
+        - Do pattern recognition via cosine similarity.
+
+    2. Natural Language Skills:
+        - Have a short term memory of almost past 2-3 commands and their responses.
+        - Long term memory of past commands and their responses to prepare or update current response.
+        - Generate a kind of universal keyword/tag which can define almost every response for the given sentence.
+        - Use Named Entity Recognition, Sentient analysis and Information Extraction.
+        - Use regex for Information Extraction, and NLTK for NER and Sentient analysis.
+        - Understand which pronouns is referring to which noun.
+
+    3. Natural Language Generation:
+        - Use the keyword/tag to generate an appropriate text response.
+        - The system will not repeat or very less often repeat a response which will make the system more real.
+        - Try to generate over 30 responses for the given keyword.
+        - Choose the most appropriate response from the list according to the given keyword.
+
+Functions:
+    - Automate almost every manual task.
+    - Provide assistance for some automatic tasks.
+
+    - Protocols such as:
+        - Opening/Closing apps
+        - Switching through windows/tabs
+        - Shutting down or restaring the system
+        - Scanning for virus/reparing the system image
+        - Playing music or video from PC/YouTube
+        - Searching for any topic on the internet, the query maybe searched specifically on Google or Wikipedia
+        - Opening websites by searching on Google and opening the first link in result
+        - Lock PC Protocol
+        - Access GitHub and other platforms and give info about their updates
+        - Create, Modify or Delete files/projects
+        - Give weather report and temperature
+        - Translate to any langauge from any langauge
+        - Tell jokes, facts and stories
