@@ -611,10 +611,10 @@ while True:
         else: response = OriginalSentence
     
     # Respond with the appropriate response.
-    if response == "": pass
-    elif response == "Exit":
+    if response[0] == "": pass
+    elif response[0] == "Exit":
         Template = ["Ok sir", "Bye sir"]
-        Template.extend([""]*5)
+        Template.extend([""]*4)
 
         Core.Speak(numpy.random.choice(Template))
         sys.exit()
@@ -636,4 +636,4 @@ while True:
     elif response[0] == "PlayOfflineMedia": Functions.PlayOfflineMedia(OriginalSentence)
     else:
         if isinstance(response, list): Core.Speak(alphabet.ArrangeWords(response))
-        else: Core.Speak(response)
+        else: Functions.SearchOnline(OriginalSentence)
