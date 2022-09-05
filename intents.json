@@ -1,6 +1,11 @@
 {
     "intents": [
         {
+            "tag": "don't understand",
+            "patterns": [""],
+            "responses": ["SearchOnline"]
+        },
+        {
             "tag": "say hello",
             "patterns": ["Hi there", "How are you", "Is anyone there?", "Hey", "Hola", "Hello", "Good day", "Namaste", "yo"],
             "responses": [["Hello", "Hi", "How are you", "How are you doing"], ["Sir", 8]]

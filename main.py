@@ -1,5 +1,4 @@
 # WINTER
-from urllib import response
 import speech_recognition as sr
 import win32process
 import webbrowser
@@ -582,9 +581,10 @@ Core.Speak(Functions.GreetUs())
 
 while True:
     # Take input from the user and do some natural language processing on it.
+    # Command = Core.TakeCommand().lower().strip()
     Command = input("> ").lower().strip()
     response = Command
-    # Command = Core.TakeCommand().lower().strip()
+    OriginalSentence = Command
 
     # Identify the best response
     if Command:
@@ -605,7 +605,7 @@ while True:
                 if tag == intent["tag"]:
                     response = random.choice(intent['responses'])
 
-        else: response = Command
+        else: response = OriginalSentence
     
     # Respond with the appropriate response.
     if response == "": pass
@@ -622,16 +622,16 @@ while True:
     elif response == "WeatherReport": Functions.WeatherReport()
     elif response == "TempReport": Functions.WeatherTemp()
     elif response == "CrackJokes": Functions.CrackJokes()
-    elif response == "CreateProject": Functions.CreateProject(Command)
-    elif response == "KillTask": Functions.KillTask(Command)
-    elif response == "SearchOnline": Functions.SearchOnline(Command)
-    elif response == "Summarize": Functions.Summarize(Command)
-    elif response == "Translate": Functions.Translate(Command)
-    elif response == "SwitchWindows": Functions.SwitchWindows(Command)
-    elif response == "OpenSitesOrApps": Functions.OpenSitesOrApps(Command)
-    elif response == "PlayOnYT": Functions.PlayOnYT(Command)
-    elif response == "PlayOfflineMedia": Functions.PlayOfflineMedia(Command)
-    else: Functions.SearchOnline(Command)
+    elif response == "CreateProject": Functions.CreateProject(OriginalSentence)
+    elif response == "KillTask": Functions.KillTask(OriginalSentence)
+    elif response == "SearchOnline": Functions.SearchOnline(OriginalSentence)
+    elif response == "Summarize": Functions.Summarize(OriginalSentence)
+    elif response == "Translate": Functions.Translate(OriginalSentence)
+    elif response == "SwitchWindows": Functions.SwitchWindows(OriginalSentence)
+    elif response == "OpenSitesOrApps": Functions.OpenSitesOrApps(OriginalSentence)
+    elif response == "PlayOnYT": Functions.PlayOnYT(OriginalSentence)
+    elif response == "PlayOfflineMedia": Functions.PlayOfflineMedia(OriginalSentence)
+    else: Core.Speak(response)
 
 # while True:
 #     # Take input from the user and do some natural language processing on it.
