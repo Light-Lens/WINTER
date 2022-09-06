@@ -233,6 +233,8 @@ class Functions:
         res = requests.get(URL)
 
         Template = [f"The weather today in {City} is {res.text}.",
+                    f"It will be a {res.text} day outside.",
+                    f"It will be a {res.text} day in {City}.",
                     f"Today's weather in {City} is {res.text}.",
                     f"The weather outside is {res.text}.",
                     f"The weather in {City} is {res.text}.",
