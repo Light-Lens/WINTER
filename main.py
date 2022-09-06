@@ -120,7 +120,8 @@ class alphabet():
 
         # Reconstruct the string to form a logical sentence.
         FinalSentence = " ".join(GreetingSentence)
-        return FinalSentence
+        rm_extra_spaces = " ".join(FinalSentence.split())
+        return rm_extra_spaces
 
     # Calculate the cosine similarity
     def CalcCosine(sentence, pattern):
@@ -294,8 +295,12 @@ class Functions:
 
         Hrs = int(datetime.datetime.now().hour)
         Mins = int(datetime.datetime.now().minute)
-        Seconds = int(datetime.datetime.now().second)
-        CTime = f"{Hrs}:{Mins}"
+        CTime = f"{Hrs}:{Mins} AM"
+        if Hrs >= 13:
+            Hrs -= 12
+            CTime = f"{Hrs}:{Mins} PM"
+
+        if Mins == 0: CTime = f"{Hrs} O'Clock"
 
         TimeDialogue = [alphabet.ArrangeWords(Template)]
         TimeDialogue.extend([""*8])
@@ -304,7 +309,7 @@ class Functions:
     # Create a new project
     def CreateProject(Query):
         # regex = re.findall(r'[create|make|start]* a (.*) (indexed|index it|marked|mark it|named|name it)[ as ]*(.*)', Query)
-        Template = [["As you wish", "Here you go", "Sure", 7], ["Sir", 7]]
+        Template = [["As you wish", "Here you go", "Sure", "Right away", 7], ["Sir", 7]]
         regex = re.findall(r'([create|make|start]* a (.*) (indexed|index it|marked|mark it|named|name it)[ as ]*(.*))|[create|make|start]* a (.*)', Query)
         if regex:
             regex = [j for i in regex for j in list(filter(None, i))]
@@ -423,7 +428,7 @@ class Functions:
             Media = os.path.join(Directory, Files[random.randint(0, len(Files)-1)])
             os.startfile(Media)
 
-        Template = [["Sure", "Here you go", "As you wish", 12], ["sir", 5]]
+        Template = [["Sure", "Right away", "Here you go", "As you wish", 12], ["sir", 5]]
         media = {}
 
         media["pic"] = alphabet.ClassifyIntent(Query, ["show a picture", "show a pic", "open any pic", "open me some picture", "show a photo", "open any image", "open me some image", "can you please show a photo"])
@@ -458,7 +463,7 @@ class Functions:
         regex = re.findall(r'.* this app| .* current app|exit (\w+)|kill (\w+)|close (\w+)|quit (\w+)|shutdown (\w+)', Query)
         if regex: Apps = [j for i in regex for j in list(filter(None, i))]
 
-        Core.Speak(alphabet.ArrangeWords([["Sure", "As you wish", "Ok", "Here you go"], ["sir", 2]]))
+        Core.Speak(alphabet.ArrangeWords([["Sure", "Right away", "As you wish", "Ok", "Here you go"], ["sir", 2]]))
         if Apps:
             for i in Apps:
                 for p in psutil.process_iter():
@@ -485,7 +490,7 @@ class Functions:
 
     # Switch window
     def SwitchWindows(Query):
-        Template = [["Sure", "As you wish", "Ok", "Here you go", "Switched", 8], ["sir", 12]]
+        Template = [["Sure", "Right away", "As you wish", "Ok", "Here you go", "Switched", 8], ["sir", 12]]
 
         tasks = list(filter(None, pyautogui.getAllTitles()))
         tasks.remove("Microsoft Text Input Application")
@@ -611,14 +616,13 @@ while True:
                 if tag == intent["tag"]: response = intent['responses']
 
         else: response = OriginalSentence
+    else: continue
     
     # Respond with the appropriate response.
-    if response[0] == "": pass
-    elif response[0] == "Exit":
-        Template = ["Ok sir", "Bye sir"]
-        Template.extend([""]*4)
+    if response[0] == "Exit":
+        Template = [["Bye", "Sure", "As you wish", 4], ["Sir", 4]]
 
-        Core.Speak(numpy.random.choice(Template))
+        Core.Speak(alphabet.ArrangeWords(Template))
         sys.exit()
 
     elif response[0] == "Facts": Functions.Facts()
