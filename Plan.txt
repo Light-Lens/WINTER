@@ -1,3 +1,9 @@
+TODO:
+    - [*] Code all functions for the AI.
+    - [*] First create cosine similarity and nlp functions by hand.
+    - [*] Replace the cosine similarity function with PyTorch Deep learning model.
+    - [] Refactor WINTER
+
 Natural Language Processing:
     - The system can be phylosophical and sarcastic at times.
 
