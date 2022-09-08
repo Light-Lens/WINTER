@@ -1,3 +1,4 @@
+import argparse
 import numpy as np
 import random
 import json
@@ -9,8 +10,13 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
-with open('intents.json', 'r') as f:
-    intents = json.load(f)
+# Initialize Command-line arguments.
+Parser = argparse.ArgumentParser(description="Train Neural network models")
+Parser.add_argument("-o", help="Place the output into <folder>.", required=True)
+Parser.add_argument("-i", help="Load the json <file>.", required=True)
+args = Parser.parse_args()
+
+with open(args.i, 'r') as f: intents = json.load(f)
 
 all_words = []
 tags = []
@@ -54,7 +60,7 @@ X_train = np.array(X_train)
 y_train = np.array(y_train)
 
 # Hyper-parameters 
-num_epochs = 1000
+num_epochs = 1500
 batch_size = 8
 learning_rate = 0.001
 input_size = len(X_train[0])
@@ -123,7 +129,7 @@ data = {
 "tags": tags
 }
 
-FILE = "data.pth"
+FILE = args.o
 torch.save(data, FILE)
 
 print(f'Training complete. File saved to {FILE}')
