@@ -52,28 +52,26 @@ class w2:
         # S1, S2: Sentence
         S1 = ArrangeWords(T1)
         S2 = ArrangeWords(T2)
-        # Final_sent = " ".join([S1, S2]) if S1.endswith("but") else " ".join([S1, S2]) if random.randint(0, 8) > 4 else S1
 
-        if S1.endswith("but"): Final_sent = " ".join([S1, S2])
-        else:
-            randnum = random.randint(0, 8)
-            Final_sent = " ".join([S1, S2]) if randnum > 4 else S1
+        # Final touches to the generated sentence
+        Final_sent = " ".join([S1, S2]) if S1.endswith("but") else " ".join([S1, S2]) if random.randint(0, 8) > 4 else S1
+        Final_sent = " ".join([Final_sent, "sir."]) if "sir" not in Final_sent and random.randint(0, 8) > 4 else Final_sent
 
-        Final_sent = " ".join([Final_sent, "sir."]).capitalize() if "sir" not in Final_sent and random.randint(0, 8) > 4 else Final_sent.capitalize()
-        return Final_sent
+        return Final_sent.capitalize()
 
 # Setup terminal
-print(f"{Fore.BLUE}{Style.BRIGHT}WINTER")
+WINTER = w2("WINTER", "Male")
+print(f"{Fore.BLUE}{Style.BRIGHT}{WINTER.name}")
+
 ChatClassifier = Classify("pth\\chat.pth", "intents\\Chats.json")
 ChatClassifier.initalize()
 
 FuncClassifier = Classify("pth\\func.pth", "intents\\Func.json")
 FuncClassifier.initalize()
-WINTER = w2("WINTER", "Male")
 
 while True:
     # Take input from the user and do some natural language processing on it.
-    # Command = Core.TakeCommand().lower().strip()
+    # Command = TakeCommand().lower().strip()
     Command = input("> ").lower().strip()
     out = {}
 

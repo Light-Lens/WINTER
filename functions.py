@@ -9,6 +9,63 @@ from nltk.corpus import stopwords
 # init modules
 translator = Translator()
 
+# TODO: (\d.*\d) is the regex expression to fetch math expression from a string
+
+# Do math
+# https://medium.com/codex/another-python-question-that-took-me-days-to-solve-as-a-beginner-37b5e144ecc
+def CalcMath(Query):
+    expression = Query.replace(" ", "")
+    regex = re.findall(r'(\d.*\d)', Query)
+    if not regex: return None
+
+    expression = regex[0]
+
+    def splitby(string, separators):
+        lis = []
+        current = ""
+        for ch in string:
+            if ch in separators:
+                lis.append(current)
+                lis.append(ch)
+                current = ""
+            else: current += ch
+
+        lis.append(current)
+        return lis
+
+    lis = splitby(expression, "+-")
+    def evaluate_mul_div(string):
+        lis = splitby(string, "x/")
+        if len(lis) == 1: return lis[0]
+
+        output = float(lis[0])
+        lis = lis[1:]
+
+        while len(lis) > 0:
+            operator = lis[0]
+            number = float(lis[1])
+            lis = lis[2:]
+
+            if operator == "x": output *= number
+            elif operator == "/": output /= number
+
+        return output
+
+    
+    for i in range(len(lis)): lis[i] = evaluate_mul_div(lis[i])
+    output = float(lis[0])
+    lis = lis[1:]
+
+    while len(lis) > 0:
+        operator = lis[0]
+        number = float(lis[1])
+        lis = lis[2:]
+
+        if operator == "+": output += number
+        elif operator == "-": output -= number
+
+    return output
+
 # Greet the user according to the current time.
 def GreetUs():
     time_of_the_day = ""
