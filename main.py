@@ -54,6 +54,7 @@ while True:
     # Take input from the user and do some natural language processing on it.
     # Command = Core.TakeCommand().lower().strip()
     Command = input("> ").lower().strip()
+    out = {}
 
     Func = FuncClassifier.get_response(Command)
     Chat = ChatClassifier.get_response(Command)
@@ -88,5 +89,6 @@ while True:
     elif final_response == "OpenSitesOrApps": out = OpenSitesOrApps(Command)
     elif final_response == "PlayOnYT": out = PlayOnYT(Command)
     elif final_response == "PlayOfflineMedia": out = PlayOfflineMedia(Command)
+    else: out = final_response
 
     print(out)
