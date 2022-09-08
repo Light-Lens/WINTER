@@ -172,15 +172,15 @@ def PlayOfflineMedia(Query):
     media_with_highest_confidence = max(media, key=media.get)
 
     if media_with_highest_confidence == "song":
-        Dir = "D\\Srijan\\Music"
+        Dir = "D:\\Srijan\\Music"
         Name = StartPlaying(Dir)
 
     elif media_with_highest_confidence == "video":
-        Dir = "D\\Srijan\\Videos"
+        Dir = "D:\\Srijan\\Videos"
         Name = StartPlaying(Dir)
 
     elif media_with_highest_confidence == "pic":
-        Dir = "D\\Srijan\\Pictures"
+        Dir = "D:\\Srijan\\Pictures"
         Name = StartPlaying(Dir)
 
     else: return False

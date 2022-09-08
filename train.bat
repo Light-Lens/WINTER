@@ -1,5 +1,7 @@
 @echo off
 
+title Train
+
 python train.py -i intents\Chats.json -o pth\chat.pth
 
 echo:

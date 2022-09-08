@@ -1,7 +1,7 @@
 import argparse
 import numpy as np
+import json, os
 import random
-import json
 
 import torch
 import torch.nn as nn
@@ -16,6 +16,7 @@ Parser.add_argument("-o", help="Place the output into <folder>.", required=True)
 Parser.add_argument("-i", help="Load the json <file>.", required=True)
 args = Parser.parse_args()
 
+if not os.path.exists("pth"): os.mkdir("pth")
 with open(args.i, 'r') as f: intents = json.load(f)
 
 all_words = []
@@ -102,18 +103,18 @@ for epoch in range(num_epochs):
     for (words, labels) in train_loader:
         words = words.to(device)
         labels = labels.to(dtype=torch.long).to(device)
-        
+
         # Forward pass
         outputs = model(words)
         # if y would be one-hot, we must apply
         # labels = torch.max(labels, 1)[1]
         loss = criterion(outputs, labels)
-        
+
         # Backward and optimize
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        
+
     if (epoch+1) % 100 == 0:
         print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 

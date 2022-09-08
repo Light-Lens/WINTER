@@ -54,12 +54,39 @@ while True:
     # Take input from the user and do some natural language processing on it.
     # Command = Core.TakeCommand().lower().strip()
     Command = input("> ").lower().strip()
-    if Command == "exit": sys.exit()
 
     Func = FuncClassifier.get_response(Command)
-    print(list(Func["responses"]))
-    print(Func["confidence"])
-
     Chat = ChatClassifier.get_response(Command)
-    print(ArrangeWords(list(Chat["responses"])))
-    print(Chat["confidence"])
+
+    FuncResponse = str(Func["responses"][0])
+    FuncConfidence = Func["confidence"]
+
+    ChatResponse = ArrangeWords(list(Chat["responses"]))
+    ChatConfidence = Chat["confidence"]
+
+    responses_to_choose = {FuncResponse: FuncConfidence, ChatResponse: ChatConfidence}
+    final_response = max(responses_to_choose, key=responses_to_choose.get)
+
+    if final_response == "Exit":
+        Template = [["Bye", "Sure", "As you wish", 4], ["Sir", 4]]
+
+        Speak(ArrangeWords(Template))
+        sys.exit()
+
+    elif final_response == "Facts": out = Facts()
+    elif final_response == "GetTime": out = GetTime()
+    elif final_response == "GreetUs": out = GreetUs()
+    elif final_response == "WeatherReport": out = WeatherReport()
+    elif final_response == "TempReport": out = WeatherTemp()
+    elif final_response == "CrackJokes": out = CrackJokes()
+    elif final_response == "CreateProject": out = CreateProject(Command)
+    elif final_response == "KillTask": out = KillTask(Command)
+    elif final_response == "SearchOnline": out = SearchOnline(Command)
+    elif final_response == "Summarize": out = Summarize(Command)
+    elif final_response == "Translate": out = Translate(Command)
+    elif final_response == "SwitchWindows": out = SwitchWindows(Command)
+    elif final_response == "OpenSitesOrApps": out = OpenSitesOrApps(Command)
+    elif final_response == "PlayOnYT": out = PlayOnYT(Command)
+    elif final_response == "PlayOfflineMedia": out = PlayOfflineMedia(Command)
+
+    print(out)

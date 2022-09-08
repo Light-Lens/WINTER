@@ -7,7 +7,7 @@ TODO:
         2. [*] Refactor train.py and model.py
         3. [] Refactor main.py:
             a. [*] Rewrite functions and implement them in a class.
-            b. [] Improve classification methods.
+            b. [*] Improve classification methods.
             c. [] Make the dialogues sound smarter and more dynamic.
             d. [] Implement an auto-learning system to understand the current situation and learn overtime.
 
