@@ -47,19 +47,20 @@ class w2:
     def error(self, what_failed_todo=[]):
         # T1, T2: Template
         T1 = [["I'm", "I am", 3], ["Sorry"], ["sir", 5], ["but", 8]]
-        T2 = [["I", 3], ["failed to", "wasn't able to", "couldn't"], what_failed_todo]
+        T2 = [["I", 1], ["failed to", "wasn't able to", "couldn't"], what_failed_todo]
 
         # S1, S2: Sentence
         S1 = ArrangeWords(T1)
         S2 = ArrangeWords(T2)
-        Final_sent = " ".join([S1, S2]) if S1.endswith("but") else " ".join([S1, S2]) if random.randint(0, 8) > 4 else S1
+        # Final_sent = " ".join([S1, S2]) if S1.endswith("but") else " ".join([S1, S2]) if random.randint(0, 8) > 4 else S1
 
-        # if S1.endswith("but"): Final_sent = " ".join([S1, S2])
-        # else:
-        #     randnum = random.randint(0, 8)
-        #     Final_sent = " ".join([S1, S2]) if randnum > 4 else S1
+        if S1.endswith("but"): Final_sent = " ".join([S1, S2])
+        else:
+            randnum = random.randint(0, 8)
+            Final_sent = " ".join([S1, S2]) if randnum > 4 else S1
 
-        return Final_sent.capitalize()
+        Final_sent = " ".join([Final_sent, "sir."]).capitalize() if "sir" not in Final_sent and random.randint(0, 8) > 4 else Final_sent.capitalize()
+        return Final_sent
 
 # Setup terminal
 print(f"{Fore.BLUE}{Style.BRIGHT}WINTER")
