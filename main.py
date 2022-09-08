@@ -1,5 +1,5 @@
 # WINTER
-import speech_recognition as sr, pyttsx3, sys
+import speech_recognition as sr, pyttsx3, random, sys
 from colorama import Fore, Style, init
 from alphabet import ArrangeWords
 from classify import Classify
@@ -39,8 +39,27 @@ def TakeCommand():
 
 # w2 is a class stands for write2 is a dialogue management system which will learn overtime.
 class w2:
-    def __init__(self, sentence):
-        self.sentence = sentence
+    # This init function will keep some bot details for future use.
+    def __init__(self, name, gender):
+        self.name = name
+        self.gender = gender
+
+    def error(self, what_failed_todo=[]):
+        # T1, T2: Template
+        T1 = [["I'm", "I am", 3], ["Sorry"], ["sir", 5], ["but", 8]]
+        T2 = [["I", 3], ["failed to", "wasn't able to", "couldn't"], what_failed_todo]
+
+        # S1, S2: Sentence
+        S1 = ArrangeWords(T1)
+        S2 = ArrangeWords(T2)
+        Final_sent = " ".join([S1, S2]) if S1.endswith("but") else " ".join([S1, S2]) if random.randint(0, 8) > 4 else S1
+
+        # if S1.endswith("but"): Final_sent = " ".join([S1, S2])
+        # else:
+        #     randnum = random.randint(0, 8)
+        #     Final_sent = " ".join([S1, S2]) if randnum > 4 else S1
+
+        return Final_sent.capitalize()
 
 # Setup terminal
 print(f"{Fore.BLUE}{Style.BRIGHT}WINTER")
@@ -49,6 +68,7 @@ ChatClassifier.initalize()
 
 FuncClassifier = Classify("pth\\func.pth", "intents\\Func.json")
 FuncClassifier.initalize()
+WINTER = w2("WINTER", "Male")
 
 while True:
     # Take input from the user and do some natural language processing on it.
@@ -91,4 +111,4 @@ while True:
     elif final_response == "PlayOfflineMedia": out = PlayOfflineMedia(Command)
     else: out = final_response
 
-    print(out)
+    print(WINTER.error(["follow your query"]))
