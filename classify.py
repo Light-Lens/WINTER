@@ -48,4 +48,4 @@ class Classify:
         if prob.item() > 0.75:
             for intent in self.intents['intents']:
                 if tag == intent["tag"]: return {"responses": intent['responses'], "confidence": prob.item()}
-        else: return ""
+        else: return {"responses": "Exit", "confidence": prob.item()}
