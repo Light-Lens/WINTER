@@ -2,7 +2,16 @@ TODO:
     - [*] Code all functions for the AI.
     - [*] First create cosine similarity and nlp functions by hand.
     - [*] Replace the cosine similarity function with PyTorch Deep learning model.
-    - [] Refactor WINTER
+    - [] Refactor WINTER:
+        1. [*] First divide intents.json into 2 parts, chats.json and functions.json and train models on them.
+        2. [*] Refactor train.py and model.py
+        3. [] Refactor main.py:
+            a. [*] Rewrite functions and implement them in a class.
+            b. [] Improve classification methods.
+            c. [] Make the dialogues sound smarter and more dynamic.
+            d. [] Implement an auto-learning system to understand the current situation and learn overtime.
+
+        4. [*] Improve intent classification
 
 Natural Language Processing:
     - The system can be phylosophical and sarcastic at times.
@@ -33,16 +42,17 @@ Functions:
     - Provide assistance for some automatic tasks.
 
     - Protocols such as:
-        - Opening/Closing apps
-        - Switching through windows/tabs
-        - Shutting down or restaring the system
-        - Scanning for virus/reparing the system image
-        - Playing music or video from PC/YouTube
-        - Searching for any topic on the internet, the query maybe searched specifically on Google or Wikipedia
-        - Opening websites by searching on Google and opening the first link in result
-        - Lock PC Protocol
-        - Access GitHub and other platforms and give info about their updates
-        - Create, Modify or Delete files/projects
-        - Give weather report and temperature
-        - Translate to any langauge from any langauge
-        - Tell jokes, facts and stories
+        - [*] Opening/Closing apps
+        - [*] Switching through windows/tabs
+        - [] Shutting down or restaring the system
+        - [] Scanning for virus/reparing the system image
+        - [*] Playing music or video from PC/YouTube
+        - [*] Searching for any topic on the internet, the query maybe searched specifically on Google or Wikipedia
+        - [*] Opening websites by searching on Google and opening the first link in result
+        - [] Lock PC Protocol
+        - [] Access GitHub and other platforms and give info about their updates
+        - [*] Create, Modify or Delete files/projects
+        - [*] Give weather report and temperature
+        - [*] Translate to any langauge from any langauge
+        - [*] Tell jokes, facts and stories
+        - [] Create a focus mode
