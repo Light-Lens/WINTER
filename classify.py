@@ -32,8 +32,8 @@ class Classify:
         self.model.load_state_dict(model_state)
         self.model.eval()
 
-    def get_response(self, sentence):
-        sentence = tokenize(sentence)
+    def get_response(self, input_sent):
+        sentence = tokenize(input_sent)
         X = bag_of_words(sentence, self.all_words)
         X = X.reshape(1, X.shape[0])
         X = torch.from_numpy(X).to(self.device)
@@ -45,7 +45,11 @@ class Classify:
 
         probs = torch.softmax(output, dim=1)
         prob = probs[0][predicted.item()]
-        if prob.item() > 0.75:
+
+        confidence = prob.item()
+        if confidence > 0.75:
             for intent in self.intents['intents']:
-                if tag == intent["tag"]: return {"responses": intent['responses'], "confidence": prob.item()}
-        else: return {"responses": "Exit", "confidence": prob.item()}
+                response = intent['responses']
+                if tag == intent["tag"]: return response
+
+        else: return input_sent

@@ -7,6 +7,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
 
 stemmer = PorterStemmer()
+Lemmatizer = WordNetLemmatizer()
 
 # nltk.download('punkt')
 def tokenize(sentence):
@@ -96,10 +97,23 @@ def tf_idf(sentence):
 
     return list(get_top_n(tf_idf_score).keys())
 
+# lemmatize sentences
 def lemmatize(sentence):
     stop_words = set(stopwords.words("english"))
     tokens = tokenize(sentence.lower())
-    Lemmatizer = WordNetLemmatizer()
 
     TokenizeWordsWithoutStopwords = [word for word in tokens if word not in stop_words]
     return [Lemmatizer.lemmatize(word) for word in TokenizeWordsWithoutStopwords]
+
+# lemmatize word
+def lemmatize_word(word):
+    return Lemmatizer.lemmatize(word.lower())
+
+def extract_ne(quote):
+    words = tokenize(quote)
+    tags = nltk.pos_tag(words)
+    tree = nltk.ne_chunk(tags, binary=True)
+    return set(
+        " ".join(i[0] for i in t)
+        for t in tree
+        if hasattr(t, "label") and t.label() == "NE")

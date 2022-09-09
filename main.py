@@ -43,6 +43,20 @@ class w2:
     def __init__(self, name, gender):
         self.name = name
         self.gender = gender
+        self.sentence = ""
+
+    def generate(self, sentence):
+        self.sentence = sentence
+
+    def assure(self):
+        # T1: Template
+        T1 = [["Yup", "Very well", "Right on", "Alright", "For sure", "By all means", "Always", "You're on", "Yes",
+                "Yep", "Yeah", "Of course", "Affirmative", "Sure", "Ok", "Okay", "As you wish", "Here you go",
+                "No problem", "Right away", "Sure, no problem", "Ok, no problem", "Okay, no problem"], ["sir", 8]]
+
+        # S1: Sentence
+        S1 = ArrangeWords(T1)
+        return S1.capitalize() + "."
 
     def error(self, what_failed_todo=[]):
         # T1, T2: Template
@@ -54,60 +68,36 @@ class w2:
         S2 = ArrangeWords(T2)
 
         # Final touches to the generated sentence
-        Final_sent = " ".join([S1, S2]) if S1.endswith("but") else " ".join([S1, S2]) if random.randint(0, 8) > 4 else S1
-        Final_sent = " ".join([Final_sent, "sir."]) if "sir" not in Final_sent and random.randint(0, 8) > 4 else Final_sent
+        Final_sent = " ".join([S1, S2]) if S1.lower().endswith("but") else " ".join([S1, S2]) if random.randrange(9) > 4 else S1
+        Final_sent = " ".join([Final_sent, "sir."]) if "sir" not in Final_sent.lower() and random.randrange(9) > 4 else Final_sent
 
-        return Final_sent.capitalize()
+        return Final_sent.capitalize() + "."
 
 # Setup terminal
 WINTER = w2("WINTER", "Male")
 print(f"{Fore.BLUE}{Style.BRIGHT}{WINTER.name}")
 
-ChatClassifier = Classify("pth\\chat.pth", "intents\\Chats.json")
-ChatClassifier.initalize()
+Classifier = Classify("data.pth", "intents.json")
+Classifier.initalize()
 
-FuncClassifier = Classify("pth\\func.pth", "intents\\Func.json")
-FuncClassifier.initalize()
+TestCommands = ["wake up", "hello", "how are you", "hello how are you", "what are you doing", "you here",
+                "you there", "bye", "exit", "facts", "time", "morning", "i want to listen a joke",
+                "weather", "solve the problem 2 + 5", "play mere hi liye", "play mere hi liye on youtube",
+                "play a song", "show me a picture", "give me a summary on steve jobs", "translate tum kaise ho",
+                "search what is deep learning", "start a new project indexed as mark 5", "switch", "open google"]
 
-while True:
+for Command in TestCommands:
+# while True:
     # Take input from the user and do some natural language processing on it.
     # Command = TakeCommand().lower().strip()
-    Command = input("> ").lower().strip()
-    out = {}
+    # Command = input("> ").lower().strip()
 
-    Func = FuncClassifier.get_response(Command)
-    Chat = ChatClassifier.get_response(Command)
+    print(">", Command)
+    Prediction = Classifier.get_response(Command)
+    Prediction = ArrangeWords(Classifier.get_response(Command)) if not isinstance(Prediction, str) else Prediction
 
-    FuncResponse = str(Func["responses"][0])
-    FuncConfidence = Func["confidence"]
+    # responses_to_choose = {FuncResponse: FuncConfidence, ChatResponse: ChatConfidence}
+    # final_response = max(responses_to_choose, key=responses_to_choose.get)
 
-    ChatResponse = ArrangeWords(list(Chat["responses"]))
-    ChatConfidence = Chat["confidence"]
-
-    responses_to_choose = {FuncResponse: FuncConfidence, ChatResponse: ChatConfidence}
-    final_response = max(responses_to_choose, key=responses_to_choose.get)
-
-    if final_response == "Exit":
-        Template = [["Bye", "Sure", "As you wish", 4], ["Sir", 4]]
-
-        Speak(ArrangeWords(Template))
-        sys.exit()
-
-    elif final_response == "Facts": out = Facts()
-    elif final_response == "GetTime": out = GetTime()
-    elif final_response == "GreetUs": out = GreetUs()
-    elif final_response == "WeatherReport": out = WeatherReport()
-    elif final_response == "TempReport": out = WeatherTemp()
-    elif final_response == "CrackJokes": out = CrackJokes()
-    elif final_response == "CreateProject": out = CreateProject(Command)
-    elif final_response == "KillTask": out = KillTask(Command)
-    elif final_response == "SearchOnline": out = SearchOnline(Command)
-    elif final_response == "Summarize": out = Summarize(Command)
-    elif final_response == "Translate": out = Translate(Command)
-    elif final_response == "SwitchWindows": out = SwitchWindows(Command)
-    elif final_response == "OpenSitesOrApps": out = OpenSitesOrApps(Command)
-    elif final_response == "PlayOnYT": out = PlayOnYT(Command)
-    elif final_response == "PlayOfflineMedia": out = PlayOfflineMedia(Command)
-    else: out = final_response
-
-    print(WINTER.error(["follow your query"]))
+    print(Prediction)
+    print()

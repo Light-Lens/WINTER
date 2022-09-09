@@ -9,17 +9,13 @@ from nltk.corpus import stopwords
 # init modules
 translator = Translator()
 
-# TODO: (\d.*\d) is the regex expression to fetch math expression from a string
-
 # Do math
 # https://medium.com/codex/another-python-question-that-took-me-days-to-solve-as-a-beginner-37b5e144ecc
 def CalcMath(Query):
-    expression = Query.replace(" ", "")
     regex = re.findall(r'(\d.*\d)', Query)
     if not regex: return None
 
-    expression = regex[0]
-
+    expression = regex[0].replace(" ", "")
     def splitby(string, separators):
         lis = []
         current = ""
@@ -51,20 +47,21 @@ def CalcMath(Query):
 
         return output
 
-    
-    for i in range(len(lis)): lis[i] = evaluate_mul_div(lis[i])
-    output = float(lis[0])
-    lis = lis[1:]
+    try:
+        for i in range(len(lis)): lis[i] = evaluate_mul_div(lis[i])
+        output = float(lis[0])
+        lis = lis[1:]
 
-    while len(lis) > 0:
-        operator = lis[0]
-        number = float(lis[1])
-        lis = lis[2:]
+        while len(lis) > 0:
+            operator = lis[0]
+            number = float(lis[1])
+            lis = lis[2:]
 
-        if operator == "+": output += number
-        elif operator == "-": output -= number
+            if operator == "+": output += number
+            elif operator == "-": output -= number
 
-    return output
+    except ZeroDivisionError: output = "divide by 0"
+    return {"expression": " ".join(regex[0].split()), "answer": output}
 
 # Greet the user according to the current time.
 def GreetUs():
@@ -86,7 +83,7 @@ def WeatherReport(City="Bhagalpur"):
     URL = f"https://wttr.in/{City}?format=%C"
     res = requests.get(URL)
 
-    return {"City": City, "Weather": res.text}
+    return res.text
 
 # Get today's temperature.
 def WeatherTemp(City="Bhagalpur"):
@@ -98,7 +95,7 @@ def WeatherTemp(City="Bhagalpur"):
     res = requests.get(URL)
     Temp = res.text[1:] if res.text[0] == "+" else res.text
 
-    return {"City": City, "Temperature": Temp}
+    return Temp
 
 # Translate to any language
 def Translate(Query):
@@ -109,7 +106,7 @@ def Translate(Query):
         Query = str(" ".join(i for i in regex)).strip()
 
     out = translator.translate(Query, dest="en")
-    return {"Sentence": Query, "Translation": out.text, "Source": out.src}
+    return out.text
 
 # Search and play media on YouTube.
 def PlayOnYT(Query):
@@ -119,15 +116,14 @@ def PlayOnYT(Query):
         Query = str(" ".join(i for i in regex)).strip()
 
     video_link = pywhatkit.playonyt(Query)
-    return {"Search query": Query, "Link": video_link}
+    return video_link
 
 # Get the current time
 def GetTime():
     Hrs = int(datetime.datetime.now().hour)
     Mins = int(datetime.datetime.now().minute)
-    Secs = int(datetime.datetime.now().second)
     CTime = f"{Hrs-12}:{Mins} PM" if Hrs >= 13 else f"{Hrs}:{Mins} AM"
-    return {"Time": CTime, "Hour": Hrs, "Minutes": Mins, "Seconds": Secs}
+    return CTime
 
 # Create a new project
 def CreateProject(Query):
@@ -141,7 +137,7 @@ def CreateProject(Query):
         location = f"D:\\Dev Projects\\{proj_name}"
 
         os.mkdir(location)
-        return {"Project name": proj_name, "Project dir": location}
+        return location
     return False
 
 # Tell some joke
@@ -194,7 +190,7 @@ def Summarize(Query):
         summary_sentences = heapq.nlargest(7, sentence_scores, key=sentence_scores.get)
         summary = ' '.join(summary_sentences)
 
-        return {"Query": Query, "Summary": summary}
+        return summary
     except Exception as e: return False
 
 # Search on Google or Wikipedia.
@@ -206,12 +202,11 @@ def SearchOnline(Query):
 
     # First try searching on Wikipedia.
     try:
-        site_link = pywhatkit.search(Query)
-        Results = wikipedia.summary(Query, sentences=2)
+        pywhatkit.search(Query)
+        return wikipedia.summary(Query, sentences=2)
 
     # If error caught then search on Google.
-    except Exception as e: Results = ""
-    return {"Query": Query, "Site link": site_link, "Info": Results}
+    except Exception as e: return ""
 
 # Play offline media
 def PlayOfflineMedia(Query):
@@ -222,26 +217,20 @@ def PlayOfflineMedia(Query):
         os.startfile(Media)
         return Media
 
-    media = {}
-    media["pic"] = ClassifyIntent(Query, ["show a picture", "show a pic", "open any pic", "open me some picture", "show a photo", "open any image", "open me some image", "can you please show a photo"])
-    media["song"] = ClassifyIntent(Query, ["play a song", "hit me with some music", "hit any music" "hit some music", "play me some music", "can you please play a song"])
-    media["video"] = ClassifyIntent(Query, ["play a video", "play any video", "play me some video", "can you please play a video"])
-    media_with_highest_confidence = max(media, key=media.get)
-
-    if media_with_highest_confidence == "song":
+    if any(i in Query for i in ["song", "music"]):
         Dir = "D:\\Srijan\\Music"
         Name = StartPlaying(Dir)
 
-    elif media_with_highest_confidence == "video":
+    elif any(i in Query for i in ["video", "movie"]):
         Dir = "D:\\Srijan\\Videos"
         Name = StartPlaying(Dir)
 
-    elif media_with_highest_confidence == "pic":
+    elif any(i in Query for i in ["pic", "picture", "image", "photo"]):
         Dir = "D:\\Srijan\\Pictures"
         Name = StartPlaying(Dir)
 
     else: return False
-    return {"Name": Name, "Location": Dir}
+    return Name
 
 # Close an app.
 def KillTask(Query):
@@ -264,7 +253,7 @@ def KillTask(Query):
 
         os.system(f"taskkill /f /im {process_name}")
 
-    return {"Closed app": process_name}
+    return process_name
 
 # Switch window
 def SwitchWindows(Query):
