@@ -1,4 +1,4 @@
 __pycache__/
-internet intents/
-pth/
+data/
+*.pth
 old.py
