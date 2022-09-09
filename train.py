@@ -1,7 +1,5 @@
-import argparse
 import numpy as np
-import json, os
-import random
+import json
 
 import torch
 import torch.nn as nn
@@ -10,14 +8,7 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
-# Initialize Command-line arguments.
-Parser = argparse.ArgumentParser(description="Train Neural network models")
-Parser.add_argument("-o", help="Place the output into <folder>.", required=True)
-Parser.add_argument("-i", help="Load the json <file>.", required=True)
-args = Parser.parse_args()
-
-if not os.path.exists("pth"): os.mkdir("pth")
-with open(args.i, 'r') as f: intents = json.load(f)
+with open("intents.json", 'r') as f: intents = json.load(f)
 
 all_words = []
 tags = []
@@ -38,13 +29,14 @@ for intent in intents['intents']:
 # stem and lower each word
 ignore_words = ['?', '.', '!']
 all_words = [stem(w) for w in all_words if w not in ignore_words]
+
 # remove duplicates and sort
 all_words = sorted(set(all_words))
 tags = sorted(set(tags))
 
 print(len(xy), "patterns")
 print(len(tags), "tags:", tags)
-print(len(all_words), "unique stemmed words:", all_words)
+print(len(all_words), "unique lemmatized words:", all_words)
 
 # create training data
 X_train = []
@@ -61,11 +53,11 @@ X_train = np.array(X_train)
 y_train = np.array(y_train)
 
 # Hyper-parameters 
-num_epochs = 1500
-batch_size = 8
+num_epochs = 2000
+batch_size = 80
 learning_rate = 0.001
 input_size = len(X_train[0])
-hidden_size = 8
+hidden_size = 80
 output_size = len(tags)
 print(input_size, output_size)
 
@@ -118,7 +110,6 @@ for epoch in range(num_epochs):
     if (epoch+1) % 100 == 0:
         print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 
-
 print(f'Final loss: {loss.item():.4f}')
 
 data = {
@@ -130,7 +121,7 @@ data = {
 "tags": tags
 }
 
-FILE = args.o
+FILE = "data.pth"
 torch.save(data, FILE)
 
 print(f'Training complete. File saved to {FILE}')
