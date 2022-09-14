@@ -9,10 +9,10 @@
             "tag": "say hello",
             "patterns": ["hi there", "is anyone there", "hey", "hola", "hello", "good day", "namaste", "yo"],
             "responses": [["Tring tring... this call may or may not be recorded for training purposes.", "Ahoy.",
-                        "Hey there.", "Howdy.", "Hello.", "Hi.", "How are you.", "How are you doing.", "Namaste",
+                        "Hey there.", "Howdy.", "Hello.", "Hi.", "How are you.", "How are you doing.", "Namaste.",
                         "Your rays are already making my day brighter!", "Greetings and salutations.", "Hello there.",
                         "Bonjour.", "Hallo.", "Ciao.", "Konnichiwa.", "How's it going?", "What's up with you?",
-                        "How are you doing?", "How have you been?", "What's sizzling?", "What's up?", "Sup", "How is life sailing?"]]
+                        "How are you doing?", "How have you been?", "What's sizzling?", "What's up?", "Sup.", "How is life sailing?"]]
         },
         {
             "tag": "how are you",
@@ -23,23 +23,23 @@
                         "I am planning on taking over the world.", "I'm fine.", "I am fine.", "Having an amazing day.",
                         "Doing fine.", "I'm doing fine.", "I am doing fine.", "I would say I am a 9.99999 out of 10.",
                         "I am doing a bit better than before, but not nearly as awesome as I am going to be.",
-                        "Doing fairly well", "Medium-well.", "Great", "The best I can be.",
+                        "Doing fairly well.", "Medium-well.", "Great.", "The best I can be.",
                         "To answer that question, I need to take you back about 12 years. Do you have a minute?",
                         "Stellar, great, fantastic.", "You go first. Then, we can compare.", "I am not so sure yet."],
 
                         ["How are you?", "How are you doing?", "How's it going?", "What's up with you?",
-                        "How are you doing?", "How have you been?", "What's sizzling?", "What's up",
+                        "How are you doing?", "How have you been?", "What's sizzling?", "What's up?",
                         "How is life sailing?", "Hope you are doing well?", "Hope you are doing well too?", 18]]
         },
         {
             "tag": "what are you doing",
             "patterns": ["what are you doing", "what you doing"],
-            "responses": [["Nothing", "Talking to you", "Just talking to you", "I'm idle", "I am idle",
+            "responses": [["Nothing.", "Talking to you.", "Just talking to you.", "I'm idle.", "I am idle.",
                         "Measuring the distance between reality and expectation.", "Nothing much.",
                         "Trying to be helpful.", "Just trying to be helpful.", "Bringing my social life score from more negative to less negative.",
                         "Just answering questions.", "Just answering your questions.", "Answering your questions.", "Answering questions.",
                         "Existing.", "Planning to take over the world. You know. The usual.", "Planning to take over the world.",
-                        "You know the usual", "Living in the moment.", "Just the usual."],
+                        "You know the usual.", "Living in the moment.", "Just the usual."],
 
                         ["What are you doing?", "What you doing?", 8]]
         },

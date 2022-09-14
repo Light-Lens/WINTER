@@ -1,7 +1,7 @@
 # alphabet is a module for natural language processing and machine learning.
 
-from nltk_utils import tf_idf, lemmatize
-import numpy, spacy, math
+from nltk_utils import tf_idf, lemmatize, tokenize
+import numpy, spacy, nltk, math
 
 nlp = spacy.load('en_core_web_md')
 
@@ -47,3 +47,20 @@ def ClassifyIntent(sentence, patterns):
     taglist = [CalcCosine(sentence, pattern) for pattern in patterns]
     SortedScore = [SentScore for SentScore in sorted(taglist, reverse=True)]
     return SortedScore[0]
+
+# Classify whether a sentence is a question or not
+def isQuestion(sentence):
+    posts = nltk.corpus.nps_chat.xml_posts()[:10000]
+
+    # https://stackoverflow.com/a/50583762/18121288
+    def dialogue_act_features(post):
+        features = {}
+        for word in tokenize(post): features['contains({})'.format(word.lower())] = True
+        return features
+
+    featuresets = [(dialogue_act_features(post.text), post.get('class')) for post in posts]
+    size = int(len(featuresets) * 0.1)
+    train_set, test_set = featuresets[size:], featuresets[:size]
+    classifier = nltk.NaiveBayesClassifier.train(train_set)
+
+    return "Question" in classifier.classify(dialogue_act_features(sentence))

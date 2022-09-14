@@ -9,7 +9,7 @@ from nltk.corpus import stopwords
 # init modules
 translator = Translator()
 
-# Do math
+# Do math #! It can do "2 - 1" but fails to do "-1 + 2", solve it
 # https://medium.com/codex/another-python-question-that-took-me-days-to-solve-as-a-beginner-37b5e144ecc
 def CalcMath(Query):
     regex = re.findall(r'(\d.*\d)', Query)

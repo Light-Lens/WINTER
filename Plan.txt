@@ -56,3 +56,4 @@ Functions:
         - [*] Translate to any langauge from any langauge
         - [*] Tell jokes, facts and stories
         - [] Create a focus mode
+        - [] Update all dependencies and virtual environment
