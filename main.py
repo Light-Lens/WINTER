@@ -23,7 +23,7 @@ recognizer.pause_threshold = 1
 # nltk.download('nps_chat')
 # nltk.download('stopwords')
 
-# Speak out loud the text.
+# Speak out loud the text
 def Speak(audio):
     if audio:
         print(audio)
@@ -32,17 +32,17 @@ def Speak(audio):
 
 # Listen to the microphone and return a speech to text
 def TakeCommand():
+    Output = ""
     print("> ", end="")
-    with sr.Microphone() as source: audio = recognizer.listen(source, phrase_time_limit=4)
-    try:
-        Query = recognizer.recognize_google(audio, language = 'en-in')
-        print(Query)
+    while not Output:
+        with sr.Microphone() as source: audio = recognizer.listen(source, phrase_time_limit=4)
+        try:
+            Query = recognizer.recognize_google(audio, language = 'en-in')
+            Output = Query.lower().strip()
+            print(Output)
 
-    except Exception as e:
-        print()
-        return ""
-
-    return Query
+        except Exception as e: Output = ""
+    return Output
 
 # w2 is a class stands for write2 is a dialogue management system which will learn overtime.
 class w2:
@@ -109,13 +109,14 @@ TestCommands = ["wake up", "hello", "how are you", "hello how are you", "what ar
                 "play a song", "show me a picture", "give me a summary on steve jobs", "translate tum kaise ho",
                 "search what is deep learning", "start a new project indexed as mark 5", "switch", "open google"]
 
-for Command in TestCommands:
-# while True:
+# for Command in TestCommands:
+#     print(">", Command)
+while True:
     # Take input from the user and do some natural language processing on it.
-    # Command = TakeCommand().lower().strip()
+    Command = TakeCommand()
     # Command = input("> ").lower().strip()
 
-    print(">", Command)
+    # if Command:
     Prediction = Classifier.get_response(Command)
     Prediction = ArrangeWords(Classifier.get_response(Command)) if not isinstance(Prediction, str) else Prediction
     Prediction = WINTER.add_sir(Prediction)
