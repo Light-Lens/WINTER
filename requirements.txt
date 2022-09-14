@@ -34,6 +34,7 @@ pathy==0.6.2
 Pillow==9.2.0
 preshed==3.0.7
 psutil==5.9.2
+PyAudio==0.2.12
 PyAutoGUI==0.9.53
 pydantic==1.9.2
 PyGetWindow==0.0.9
