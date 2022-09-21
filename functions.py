@@ -1,13 +1,32 @@
-import win32process, webbrowser, wikipedia, randfacts, pywhatkit, pyautogui, requests, datetime, pyjokes
+import win32process, webbrowser, wikipedia, randfacts, pywhatkit, pyautogui, requests, datetime, pyjokes, ctypes
 import psutil, heapq, numpy, re, os
 
 from nltk_utils import tokenize, sent_tokenize
-from googletrans import Translator
 from alphabet import ClassifyIntent
+from googletrans import Translator
 from nltk.corpus import stopwords
 
 # init modules
 translator = Translator()
+
+# This function has the same result as pressing Ctrl+Alt+Del and clicking Lock Workstation.
+# https://stackoverflow.com/a/20733443/18121288
+def LockPC():
+    ctypes.windll.user32.LockWorkStation()
+
+# shutdown /s -> shuts down the computer [but it takes time],
+# also shows message windows is going to be shutdown within a minute,
+# to avoid this we use /t parameter time = 0 seconds /t0, command = shutdown /s /t0, execute to the shell.
+# https://stackoverflow.com/a/67342911/18121288
+def Shutdown():
+    os.system("shutdown /s /t0")
+
+# shutdown /r -> restarts the computer [but it takes time],
+# also shows message windows is going to be shutdown within a minute,
+# to avoid this we use /t parameter time = 0 seconds /t0, command = shutdown /r /t0, execute to the shell.
+# https://stackoverflow.com/a/67342911/18121288
+def Restart():
+    os.system("shutdown /r /t0")
 
 # Do math #! It can do "2 - 1" but fails to do "-1 + 2", solve it
 # https://medium.com/codex/another-python-question-that-took-me-days-to-solve-as-a-beginner-37b5e144ecc

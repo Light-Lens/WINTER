@@ -1,5 +1,5 @@
 # WINTER
-import speech_recognition as sr, pyttsx3, random, sys
+import speech_recognition as sr, pyttsx3, random, nltk, sys
 from colorama import Fore, Style, init
 from alphabet import ArrangeWords
 from classify import Classify
@@ -17,7 +17,7 @@ engine.setProperty('voice', voices[1].id) # Ivona's Brian voice
 recognizer = sr.Recognizer()
 recognizer.pause_threshold = 1
 
-# Download nltk library
+# # Download nltk library
 # nltk.download('punkt')
 # nltk.download('wordnet')
 # nltk.download('nps_chat')
@@ -41,6 +41,7 @@ def TakeCommand():
             Output = Query.lower().strip()
             print(Output)
 
+        except sr.RequestError as e: Output = input().lower().strip()
         except Exception as e: Output = ""
     return Output
 
@@ -50,13 +51,6 @@ class w2:
     def __init__(self, name, gender):
         self.name = name
         self.gender = gender
-        self.vocabulary = list(set([]))
-
-    def generate(self, sentence):
-        self.vocabulary
-
-    def follow_up_questions(self, topic):
-        self.vocabulary
 
     def add_sir(self, sentence):
         Final_sent = sentence.replace(", ", " sir, ") if random.randrange(9) > 4 else sentence
@@ -73,9 +67,13 @@ class w2:
 
     def assure(self):
         # T1: Template
+        # T1 = [["Yup", "Very well", "Right on", "Alright", "For sure", "By all means", "Always", "You're on", "Yes",
+        #         "Yep", "Yeah", "Of course", "Affirmative", "Sure", "Ok", "Okay", "As you wish", "Here you go",
+        #         "No problem", "Right away", "Sure, no problem", "Ok, no problem", "Okay, no problem"], ["sir", 8]]
+
         T1 = [["Yup", "Very well", "Right on", "Alright", "For sure", "By all means", "Always", "You're on", "Yes",
                 "Yep", "Yeah", "Of course", "Affirmative", "Sure", "Ok", "Okay", "As you wish", "Here you go",
-                "No problem", "Right away", "Sure, no problem", "Ok, no problem", "Okay, no problem"], ["sir", 8]]
+                "No problem", "Right away", "Sure, no problem", "Ok, no problem", "Okay, no problem"]]
 
         # S1: Sentence
         S1 = ArrangeWords(T1)
@@ -92,7 +90,7 @@ class w2:
 
         # Final touches to the generated sentence
         Final_sent = " ".join([S1, S2]) if S1.lower().endswith("but") else " ".join([S1, S2]) if random.randrange(9) > 4 else S1
-        Final_sent = " ".join([Final_sent, "sir."]) if "sir" not in Final_sent.lower() and random.randrange(9) > 4 else Final_sent
+        # Final_sent = " ".join([Final_sent, "sir."]) if "sir" not in Final_sent.lower() and random.randrange(9) > 4 else Final_sent
 
         return Final_sent.capitalize() + "."
 
@@ -102,26 +100,30 @@ print(f"{Fore.BLUE}{Style.BRIGHT}{WINTER.name}")
 
 Classifier = Classify("data.pth", "intents.json")
 Classifier.initalize()
-
-TestCommands = ["wake up", "hello", "how are you", "hello how are you", "what are you doing", "you here",
-                "you there", "how are we doing", "bye", "exit", "facts", "time", "morning", "i want to listen a joke",
-                "weather", "solve the problem 2 + 5", "play mere hi liye", "play mere hi liye on youtube",
-                "play a song", "show me a picture", "give me a summary on steve jobs", "translate tum kaise ho",
-                "search what is deep learning", "start a new project indexed as mark 5", "switch", "open google"]
-
-# for Command in TestCommands:
-#     print(">", Command)
 while True:
     # Take input from the user and do some natural language processing on it.
-    Command = TakeCommand()
-    # Command = input("> ").lower().strip()
+    Command = input("> ").lower().strip()
+    # Command = TakeCommand()
 
-    # if Command:
     Prediction = Classifier.get_response(Command)
     Prediction = ArrangeWords(Classifier.get_response(Command)) if not isinstance(Prediction, str) else Prediction
-    Prediction = WINTER.add_sir(Prediction)
+    if Prediction == "Exit": sys.exit()
+    elif Prediction == "OpenSitesOrApps": pass
+    elif Prediction == "KillTask": pass
+    elif Prediction == "SwitchWindows": pass
+    elif Prediction == "ShutdownPC": pass
+    elif Prediction == "RestartPC": pass
+    elif Prediction == "PlayOnYT": pass
+    elif Prediction == "PlayOfflineMedia": pass
+    elif Prediction == "SearchOnline": pass
+    elif Prediction == "LockPC": pass
+    elif Prediction == "CreateProject": pass
+    elif Prediction == "WeatherReport": pass
+    elif Prediction == "TempReport": pass
+    elif Prediction == "Translate": pass
+    elif Prediction == "CrackJokes": pass
+    elif Prediction == "Facts": pass
+    elif Prediction == "CalcMath": pass
+    elif Prediction == "GetTime": pass
 
     print(Prediction, end="\n"*2)
-    WINTER.vocabulary.append(Prediction)
-
-print(f"{WINTER.vocabulary}")

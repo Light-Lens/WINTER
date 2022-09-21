@@ -1,7 +1,8 @@
 # alphabet is a module for natural language processing and machine learning.
+import numpy, spacy, nltk, math, re
 
 from nltk_utils import tf_idf, lemmatize, tokenize
-import numpy, spacy, nltk, math
+from collections import Counter
 
 nlp = spacy.load('en_core_web_md')
 
@@ -24,30 +25,6 @@ def ArrangeWords(Words):
     rm_extra_spaces = " ".join(FinalSentence.split())
     return rm_extra_spaces
 
-# Calculate the cosine similarity
-def CalcCosine(sentence, pattern):
-    # https://newscatcherapi.com/blog/ultimate-guide-to-text-similarity-with-python
-    def CosSimilarity(x, y):
-        def squared_sum(x):
-            return round(math.sqrt(sum([a * a for a in x])), 3)
-
-        numerator = sum(a * b for a, b in zip(x, y))
-        denominator = squared_sum(x) * squared_sum(y)
-        return round(numerator / float(denominator), 3)
-
-    sentences = [sentence, pattern]
-    sentences = [sent.lower() for sent in sentences]
-    sentences = [" ".join(tf_idf(i)) for i in sentences]
-    sentences = [" ".join(lemmatize(i)) for i in sentences]
-    embeddings = [nlp(sentence).vector for sentence in sentences]
-    return CosSimilarity(embeddings[0], embeddings[1])
-
-# Classify intentions
-def ClassifyIntent(sentence, patterns):
-    taglist = [CalcCosine(sentence, pattern) for pattern in patterns]
-    SortedScore = [SentScore for SentScore in sorted(taglist, reverse=True)]
-    return SortedScore[0]
-
 # Classify whether a sentence is a question or not
 def isQuestion(sentence):
     posts = nltk.corpus.nps_chat.xml_posts()[:10000]
@@ -64,3 +41,51 @@ def isQuestion(sentence):
     classifier = nltk.NaiveBayesClassifier.train(train_set)
 
     return "Question" in classifier.classify(dialogue_act_features(sentence))
+
+# # Calculate the cosine similarity (other way of calculating cosine similarity)
+# def CalcCosine(sentence, pattern):
+#     def text_to_vector(text):
+#         WORD = re.compile(r"\w+")
+#         words = WORD.findall(text)
+#         return Counter(words)
+
+#     sentence = " ".join(lemmatize(sentence))
+#     pattern = " ".join(lemmatize(pattern))
+
+#     sentence = " ".join(tf_idf(sentence))
+#     pattern = " ".join(tf_idf(pattern))
+
+#     vec1 = text_to_vector(sentence)
+#     vec2 = text_to_vector(pattern)
+
+#     intersection = set(vec1.keys()) & set(vec2.keys())
+#     numerator = sum([vec1[x] * vec2[x] for x in intersection])
+
+#     sum1 = sum([vec1[x] ** 2 for x in list(vec1.keys())])
+#     sum2 = sum([vec2[x] ** 2 for x in list(vec2.keys())])
+#     denominator = math.sqrt(sum1) * math.sqrt(sum2)
+
+#     if not denominator: return 0.0
+#     else: return float(numerator) / denominator
+
+# Calculate the cosine similarity
+def CalcCosine(sentence, pattern):
+    # https://newscatcherapi.com/blog/ultimate-guide-to-text-similarity-with-python
+    def squared_sum(x): return round(math.sqrt(sum([a * a for a in x])), 3)
+
+    sentence = " ".join(lemmatize(sentence))
+    pattern = " ".join(lemmatize(pattern))
+
+    sentence = " ".join(tf_idf(sentence))
+    pattern = " ".join(tf_idf(pattern))
+
+    vec1 = nlp(sentence).vector
+    vec2 = nlp(pattern).vector
+
+    numerator = sum(a * b for a, b in zip(vec1, vec2))
+    denominator = squared_sum(vec1) * squared_sum(vec2)
+    return 0.0 if not float(denominator) else round(numerator / float(denominator), 3)
+
+# Classify intentions
+def ClassifyIntent(sentence, patterns):
+    return max([CalcCosine(sentence.lower(), pattern.lower()) for pattern in patterns])
