@@ -1,11 +1,6 @@
 {
     "intents": [
         {
-            "tag": "can't understand",
-            "patterns": [],
-            "responses": "Can't understand"
-        },
-        {
             "tag": "say hello",
             "patterns": ["hi there", "is anyone there", "hey", "hola", "hello", "good day", "namaste", "yo"],
             "responses": [["Tring tring... this call may or may not be recorded for training purposes.", "Ahoy.",
@@ -106,7 +101,7 @@
                         "open me some", "hit some", "play me some", "play any", "song", "music", "video", "movie",
                         "picture", "pic", "image"],
 
-                        "responses": "PlayOfflineMedia"
+            "responses": "PlayOfflineMedia"
         },
         {
             "tag": "play youtube",
@@ -149,6 +144,21 @@
             "tag": "greet",
             "patterns": ["good morning", "good afternoon", "good evening", "good night", "morning", "afternoon", "evening"],
             "responses": "GreetUs"
+        },
+        {
+            "tag": "restart pc",
+            "patterns": ["restart pc", "restart my pc", "restart this computer", "reboot my workstation", "reboot system"],
+            "responses": "RestartPC"
+        },
+        {
+            "tag": "shutdown pc",
+            "patterns": ["shutdown pc", "shutdown my pc", "shutdown this computer", "shutdwon my workstation", "shutdown system"],
+            "responses": "ShutdownPC"
+        },
+        {
+            "tag": "lock pc",
+            "patterns": ["lock pc", "lock my pc", "lock this computer", "lock my workstation", "lock system"],
+            "responses": "LockPC"
         }
     ]
 }
