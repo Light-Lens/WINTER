@@ -40,20 +40,62 @@ Natural Language Processing:
 Functions:
     - Automate almost every manual task.
     - Provide assistance for some automatic tasks.
-
     - Protocols such as:
-        - [*] Opening/Closing apps
-        - [*] Switching through windows/tabs
-        - [] Shutting down or restaring the system
-        - [] Scanning for virus/reparing the system image
-        - [*] Playing music or video from PC/YouTube
-        - [*] Searching for any topic on the internet, the query maybe searched specifically on Google or Wikipedia
-        - [*] Opening websites by searching on Google and opening the first link in result
-        - [] Lock PC Protocol
-        - [] Access GitHub and other platforms and give info about their updates
-        - [*] Create, Modify or Delete files/projects
-        - [*] Give weather report and temperature
-        - [*] Translate to any langauge from any langauge
-        - [*] Tell jokes, facts and stories
-        - [] Create a focus mode
-        - [] Update all dependencies and virtual environment
+        1. [*] OpenSitesOrApps:
+                Opening apps
+
+        2. [*] KillTask:
+                Closing apps
+
+        3. [*] SwitchWindows:
+                Switching through windows/tabs
+
+        4. [*] ShutdownPC:
+                Shutting down system
+
+        5. [*] RestartPC:
+                Restaring the system
+
+        6. [*] PlayOnYT:
+                Playing music or video from PC
+
+        7. [*] PlayOfflineMedia:
+                Playing music or video from YouTube
+
+        8. [*] SearchOnline:
+                Searching for any topic on the internet, the query maybe searched specifically on Google or Wikipedia
+
+        9. [*] SearchOnline:
+                Opening websites by searching on Google and opening the first link in result
+
+        10. [*] LockPC:
+                Lock PC Protocol
+
+        11. [*] CreateProject:
+                Create, Modify or Delete files/projects
+
+        12. [*] WeatherReport:
+                Give weather report
+
+        13. [*] TempReport:
+                Give temperature report
+
+        14. [*] Translate:
+                Translate to any langauge from any langauge
+
+        15. [*] CrackJokes:
+                Tell jokes
+
+        16. [*] Facts:
+                    Tell facts and stories
+
+        17. [*] CalcMath:
+                    Evaluate math expression from strings
+
+        18. [*] GetTime:
+                    Get current time and date
+
+        19. [] Access GitHub and other platforms and give info about their updates
+        20. [] Scanning for virus/reparing the system image
+        21. [] Create a focus mode
+        22. [] Update all dependencies and virtual environment
