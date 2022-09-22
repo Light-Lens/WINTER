@@ -32,20 +32,30 @@ Classifier = Classify("data\\scripts\\data.pth", "data\\scripts\\intents.json")
 Classifier.initalize()
 while True:
     # Take input from the user and do some natural language processing on it.
-    try: Command = input("> ").lower().strip()
-    except KeyboardInterrupt: sys.exit()
-    # Command = TakeCommand()
+    # Command = input("> ").lower().strip()
+    Command = TakeCommand()
 
     Features = ["OpenSitesOrApps", "KillTask", "SwitchWindows", "ShutdownPC", "RestartPC", "PlayOnYT",
                 "PlayOfflineMedia", "SearchOnline", "SearchOnline", "LockPC", "CreateProject", "WeatherReport",
                 "TempReport", "Translate", "CrackJokes", "Facts", "CalcMath", "GetTime"]
 
     Prediction = Classifier.get_response(Command)
-    # Prediction = ArrangeWords(Prediction) if not isinstance(Prediction, str) else Prediction
-
-    if not isinstance(Prediction, str):
-        Speak(w2.add_sir(ArrangeWords(Prediction)))
-
-    else:
-        try: eval(f"cmd.{Prediction}(Command)")
-        except Exception: eval(f"cmd.{Prediction}()")
+    Prediction = ArrangeWords(Prediction) if not isinstance(Prediction, str) else Prediction
+    if Prediction == "OpenSitesOrApps": cmd.OpenSitesOrApps(Command)
+    elif Prediction == "KillTask": cmd.KillTask(Command)
+    elif Prediction == "SwitchWindows": cmd.SwitchWindows(Command)
+    elif Prediction == "ShutdownPC": cmd.ShutdownPC()
+    elif Prediction == "RestartPC": cmd.RestartPC()
+    elif Prediction == "PlayOnYT": cmd.PlayOnYT(Command)
+    elif Prediction == "PlayOfflineMedia": cmd.PlayOfflineMedia(Command)
+    elif Prediction == "SearchOnline": cmd.SearchOnline(Command)
+    elif Prediction == "LockPC": cmd.LockPC()
+    elif Prediction == "CreateProject": cmd.CreateProject(Command)
+    elif Prediction == "WeatherReport": cmd.WeatherReport()
+    elif Prediction == "TempReport": cmd.TempReport()
+    elif Prediction == "Translate": cmd.Translate(Command)
+    elif Prediction == "CrackJokes": cmd.CrackJokes()
+    elif Prediction == "Facts": cmd.Facts()
+    elif Prediction == "CalcMath": cmd.CalcMath(Command)
+    elif Prediction == "GetTime": cmd.GetTime()
+    else: Speak(Prediction)

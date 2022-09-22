@@ -27,8 +27,7 @@ class cmd:
             out = w2.add_sir(ArrangeWords(T1) + "?")
             Speak(out)
 
-            # Name = TakeCommand()
-            Projname = input("> ").lower().strip()
+            Projname = TakeCommand()
             Command = f"start a new project marked as {Projname}"
 
         T2 = [["Initializing project,", "Initialized project,", "Creating project,", "Started project,", "Starting project,"],
