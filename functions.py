@@ -18,14 +18,14 @@ def LockPC():
 # also shows message windows is going to be shutdown within a minute,
 # to avoid this we use /t parameter time = 0 seconds /t0, command = shutdown /s /t0, execute to the shell.
 # https://stackoverflow.com/a/67342911/18121288
-def Shutdown():
+def ShutdownPC():
     os.system("shutdown /s /t0")
 
 # shutdown /r -> restarts the computer [but it takes time],
 # also shows message windows is going to be shutdown within a minute,
 # to avoid this we use /t parameter time = 0 seconds /t0, command = shutdown /r /t0, execute to the shell.
 # https://stackoverflow.com/a/67342911/18121288
-def Restart():
+def RestartPC():
     os.system("shutdown /r /t0")
 
 # Do math #! It can do "2 - 1" but fails to do "-1 + 2", solve it
@@ -80,7 +80,7 @@ def CalcMath(Query):
             elif operator == "-": output -= number
 
     except ZeroDivisionError: output = "divide by 0"
-    return {"expression": " ".join(regex[0].split()), "answer": output}
+    return output, " ".join(regex[0].split())
 
 # Greet the user according to the current time.
 def GreetUs():
@@ -102,7 +102,7 @@ def WeatherReport(City="Bhagalpur"):
     URL = f"https://wttr.in/{City}?format=%C"
     res = requests.get(URL)
 
-    return res.text
+    return res.text, City
 
 # Get today's temperature.
 def WeatherTemp(City="Bhagalpur"):
@@ -114,7 +114,7 @@ def WeatherTemp(City="Bhagalpur"):
     res = requests.get(URL)
     Temp = res.text[1:] if res.text[0] == "+" else res.text
 
-    return Temp
+    return Temp, City
 
 # Translate to any language
 def Translate(Query):
@@ -271,7 +271,6 @@ def KillTask(Query):
         process_name = process.name()
 
         os.system(f"taskkill /f /im {process_name}")
-
     return process_name
 
 # Switch window
