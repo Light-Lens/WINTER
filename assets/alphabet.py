@@ -1,8 +1,6 @@
 # alphabet is a module for natural language processing and machine learning.
-import numpy, spacy, nltk, math, re
-
 from nltk_utils import tf_idf, lemmatize, tokenize
-from collections import Counter
+import numpy, spacy, nltk, math
 
 nlp = spacy.load('en_core_web_md')
 
@@ -41,32 +39,6 @@ def isQuestion(sentence):
     classifier = nltk.NaiveBayesClassifier.train(train_set)
 
     return "Question" in classifier.classify(dialogue_act_features(sentence))
-
-# # Calculate the cosine similarity (other way of calculating cosine similarity)
-# def CalcCosine(sentence, pattern):
-#     def text_to_vector(text):
-#         WORD = re.compile(r"\w+")
-#         words = WORD.findall(text)
-#         return Counter(words)
-
-#     sentence = " ".join(lemmatize(sentence))
-#     pattern = " ".join(lemmatize(pattern))
-
-#     sentence = " ".join(tf_idf(sentence))
-#     pattern = " ".join(tf_idf(pattern))
-
-#     vec1 = text_to_vector(sentence)
-#     vec2 = text_to_vector(pattern)
-
-#     intersection = set(vec1.keys()) & set(vec2.keys())
-#     numerator = sum([vec1[x] * vec2[x] for x in intersection])
-
-#     sum1 = sum([vec1[x] ** 2 for x in list(vec1.keys())])
-#     sum2 = sum([vec2[x] ** 2 for x in list(vec2.keys())])
-#     denominator = math.sqrt(sum1) * math.sqrt(sum2)
-
-#     if not denominator: return 0.0
-#     else: return float(numerator) / denominator
 
 # Calculate the cosine similarity
 def CalcCosine(sentence, pattern):

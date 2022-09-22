@@ -146,17 +146,16 @@ def GetTime():
 
 # Create a new project
 def CreateProject(Query):
-    regex = re.findall(r'([create|make|start]* a (.*) (indexed|index it|marked|mark it|named|name it)[ as ]*(.*))|[create|make|start]* a (.*)', Query)
+    regex = re.findall(r'[create|make|start]* a (.*) [indexed|index|marked|mark|named|name]* [it as|as]* (.*)', Query)
     if regex:
         regex = [j for i in regex for j in list(filter(None, i))]
-        if not any(i in regex for i in ["indexed", "index it", "marked", "mark it", "named", "name it"]):
-            return "No project name"
+        if len(regex) != 2: return "No project name"
 
-        proj_name = str(regex[2]).capitalize()
-        location = f"D:\\Dev Projects\\{proj_name}"
+        proj_name = str(regex[1]).capitalize()
+        Location = f"D:\\Dev Projects\\{proj_name}"
 
-        os.mkdir(location)
-        return location
+        if not os.path.exists(Location): os.mkdir(Location)
+        return Location
     return False
 
 # Tell some joke

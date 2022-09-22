@@ -8,7 +8,7 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
-with open("intents.json", 'r') as f: intents = json.load(f)
+with open("data\\scripts\\intents.json", 'r') as f: intents = json.load(f)
 
 all_words = []
 tags = []
@@ -53,11 +53,11 @@ X_train = np.array(X_train)
 y_train = np.array(y_train)
 
 # Hyper-parameters 
-num_epochs = 2000
-batch_size = 80
+num_epochs = 4000
+batch_size = 120
 learning_rate = 0.001
 input_size = len(X_train[0])
-hidden_size = 80
+hidden_size = 120
 output_size = len(tags)
 print(input_size, output_size)
 
@@ -108,9 +108,9 @@ for epoch in range(num_epochs):
         optimizer.step()
 
     if (epoch+1) % 100 == 0:
-        print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.7f}')
+        print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.11f}')
 
-print(f'Final loss: {loss.item():.4f}')
+print(f'Final loss: {loss.item():.11f}')
 
 data = {
 "model_state": model.state_dict(),
@@ -121,7 +121,7 @@ data = {
 "tags": tags
 }
 
-FILE = "data.pth"
+FILE = "data\\scripts\\data.pth"
 torch.save(data, FILE)
 
 print(f'Training complete. File saved to {FILE}')

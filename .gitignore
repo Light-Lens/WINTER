@@ -1,5 +1,5 @@
 __pycache__/
-data/lib/
 WINTER/
-*.pth
+data/
 old.py
+*.pth
