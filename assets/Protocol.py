@@ -1,5 +1,5 @@
-from assets.functions import *
-from assets.Core import *
+from assets.components import *
+from assets.core import *
 
 class Protocol:
     def CalcMath(Command):

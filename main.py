@@ -3,8 +3,8 @@
 from colorama import Fore, Style, init
 from assets.alphabet import ArrangeWords
 from assets.classify import Classify
-from assets.Protocol import Protocol
-from assets.Core import *
+from assets.protocol import Protocol
+from assets.core import *
 import nltk
 
 # TTS engine
