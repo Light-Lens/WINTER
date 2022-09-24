@@ -4,7 +4,7 @@ WINTER (Witty Intelligence with Natural Emotions and Rationality) is an artifici
 ## Getting Started
 Visual Studio Code is recommended, WINTER is officially untested on other development environments whilst we focus on a Windows build.
 
-Start by cloning the repository with `git clone https://github.com/Light-Lens/WINTER.git`.
+Start by cloning the repository with `git clone https://github.com/Light-Lens/WINTER.git`
 
 ## The Plan
 The plan for WINTER is to create a Powerful, General Purpose, AI system which can assist you with a variety of tasks, 24 hours a day, 7 days a week.
