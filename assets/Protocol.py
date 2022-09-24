@@ -1,7 +1,7 @@
-from functions import *
-from Core import *
+from assets.functions import *
+from assets.Core import *
 
-class cmd:
+class Protocol:
     def CalcMath(Command):
         Speak(w2.add_sir(w2.assure()))
         ans, question = CalcMath(Command)
@@ -46,7 +46,7 @@ class cmd:
 
     def GetTime():
         Speak(w2.add_sir(w2.assure()))
-        Time = GetTime()
+        Time, _ = GetTime()
 
         # T1, T2: Template
         T1 = [["It's", "It is"], [Time], [f"in the {GreetUs()}", f"in {GreetUs()}", 9]]
@@ -60,6 +60,7 @@ class cmd:
     def GreetUs():
         Speak(w2.add_sir(w2.assure()))
         TimeOfTheDay = GreetUs()
+        _, Hour = GetTime()
 
         # T1, T2: Template
         T1 = [["Good"], [f"{TimeOfTheDay}.", f"{TimeOfTheDay},"]]
@@ -81,15 +82,16 @@ class cmd:
             out = w2.add_sir(out)
             Speak(out.capitalize())
 
-            WeatherDialogues = [1, 2, 3]
-            WeatherDialogues.extend([0]*8)
-            MorningReport = numpy.random.choice(WeatherDialogues)
+            if Hour[0] >= 4 and Hour[0] <= 7:
+                WeatherDialogues = [1, 2, 3]
+                WeatherDialogues.extend([0]*8)
+                MorningReport = numpy.random.choice(WeatherDialogues)
 
-            if MorningReport == 1: cmd.WeatherReport()
-            elif MorningReport == 2: cmd.TempReport()
-            elif MorningReport == 3:
-                cmd.TempReport()
-                cmd.WeatherReport()
+                if MorningReport == 1: Protocol.WeatherReport()
+                elif MorningReport == 2: Protocol.TempReport()
+                elif MorningReport == 3:
+                    Protocol.TempReport()
+                    Protocol.WeatherReport()
 
         elif TimeOfTheDay == "Afternoon":
             out = " ".join([S1, S3])

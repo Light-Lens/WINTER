@@ -1,6 +1,6 @@
 # Core
 import speech_recognition as sr, pyttsx3, random, sys
-from alphabet import ArrangeWords
+from assets.alphabet import ArrangeWords
 
 # TTS engine
 engine = pyttsx3.init('sapi5')

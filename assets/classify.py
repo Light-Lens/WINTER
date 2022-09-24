@@ -1,5 +1,5 @@
-from nltk_utils import bag_of_words, tokenize
-from model import NeuralNet
+from assets.nltk_utils import bag_of_words, tokenize
+from assets.model import NeuralNet
 import json, torch
 
 class Classify:
@@ -47,7 +47,7 @@ class Classify:
         prob = probs[0][predicted.item()]
 
         confidence = prob.item()
-        if confidence > 0.75:
+        if confidence > 0.90:
             for intent in self.intents['intents']:
                 response = intent['responses']
                 if tag == intent["tag"]: return response

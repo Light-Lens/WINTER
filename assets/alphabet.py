@@ -1,5 +1,5 @@
 # alphabet is a module for natural language processing and machine learning.
-from nltk_utils import tf_idf, lemmatize, tokenize
+from assets.nltk_utils import tf_idf, lemmatize, tokenize
 import numpy, spacy, nltk, math
 
 nlp = spacy.load('en_core_web_md')

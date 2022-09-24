@@ -1,8 +1,9 @@
+#!/usr/bin/env python
 # WINTER
 from colorama import Fore, Style, init
 from assets.alphabet import ArrangeWords
 from assets.classify import Classify
-from assets.CMD import cmd
+from assets.Protocol import Protocol
 from assets.Core import *
 import nltk
 
@@ -28,34 +29,31 @@ init(autoreset = True)
 WINTER = w2("WINTER", "Male")
 print(f"{Fore.BLUE}{Style.BRIGHT}{WINTER.name}")
 
-Classifier = Classify("data\\scripts\\data.pth", "data\\scripts\\intents.json")
+Classifier = Classify("data\\models\\data.pth", "data\\models\\intents.json")
 Classifier.initalize()
 while True:
     # Take input from the user and do some natural language processing on it.
-    # Command = input("> ").lower().strip()
-    Command = TakeCommand()
-
-    Features = ["OpenSitesOrApps", "KillTask", "SwitchWindows", "ShutdownPC", "RestartPC", "PlayOnYT",
-                "PlayOfflineMedia", "SearchOnline", "SearchOnline", "LockPC", "CreateProject", "WeatherReport",
-                "TempReport", "Translate", "CrackJokes", "Facts", "CalcMath", "GetTime"]
+    Command = input("> ").lower().strip()
+    # Command = TakeCommand()
 
     Prediction = Classifier.get_response(Command)
     Prediction = ArrangeWords(Prediction) if not isinstance(Prediction, str) else Prediction
-    if Prediction == "OpenSitesOrApps": cmd.OpenSitesOrApps(Command)
-    elif Prediction == "KillTask": cmd.KillTask(Command)
-    elif Prediction == "SwitchWindows": cmd.SwitchWindows(Command)
-    elif Prediction == "ShutdownPC": cmd.ShutdownPC()
-    elif Prediction == "RestartPC": cmd.RestartPC()
-    elif Prediction == "PlayOnYT": cmd.PlayOnYT(Command)
-    elif Prediction == "PlayOfflineMedia": cmd.PlayOfflineMedia(Command)
-    elif Prediction == "SearchOnline": cmd.SearchOnline(Command)
-    elif Prediction == "LockPC": cmd.LockPC()
-    elif Prediction == "CreateProject": cmd.CreateProject(Command)
-    elif Prediction == "WeatherReport": cmd.WeatherReport()
-    elif Prediction == "TempReport": cmd.TempReport()
-    elif Prediction == "Translate": cmd.Translate(Command)
-    elif Prediction == "CrackJokes": cmd.CrackJokes()
-    elif Prediction == "Facts": cmd.Facts()
-    elif Prediction == "CalcMath": cmd.CalcMath(Command)
-    elif Prediction == "GetTime": cmd.GetTime()
+    if Prediction == "Exit": Protocol.Exit()
+    elif Prediction == "OpenSitesOrApps": Protocol.OpenSitesOrApps(Command)
+    elif Prediction == "KillTask": Protocol.KillTask(Command)
+    elif Prediction == "SwitchWindows": Protocol.SwitchWindows(Command)
+    elif Prediction == "ShutdownPC": Protocol.ShutdownPC()
+    elif Prediction == "RestartPC": Protocol.RestartPC()
+    elif Prediction == "PlayOnYT": Protocol.PlayOnYT(Command)
+    elif Prediction == "PlayOfflineMedia": Protocol.PlayOfflineMedia(Command)
+    elif Prediction == "SearchOnline": Protocol.SearchOnline(Command)
+    elif Prediction == "LockPC": Protocol.LockPC()
+    elif Prediction == "CreateProject": Protocol.CreateProject(Command)
+    elif Prediction == "WeatherReport": Protocol.WeatherReport()
+    elif Prediction == "TempReport": Protocol.TempReport()
+    elif Prediction == "Translate": Protocol.Translate(Command)
+    elif Prediction == "CrackJokes": Protocol.CrackJokes()
+    elif Prediction == "Facts": Protocol.Facts()
+    elif Prediction == "CalcMath": Protocol.CalcMath(Command)
+    elif Prediction == "GetTime": Protocol.GetTime()
     else: Speak(Prediction)

@@ -1,8 +1,8 @@
 import win32process, webbrowser, wikipedia, randfacts, pywhatkit, pyautogui, requests, datetime, pyjokes, ctypes
 import psutil, heapq, numpy, re, os
 
-from nltk_utils import tokenize, sent_tokenize
-from alphabet import ClassifyIntent
+from assets.nltk_utils import tokenize, sent_tokenize
+from assets.alphabet import ClassifyIntent
 from googletrans import Translator
 from nltk.corpus import stopwords
 
@@ -142,7 +142,7 @@ def GetTime():
     Hrs = int(datetime.datetime.now().hour)
     Mins = int(datetime.datetime.now().minute)
     CTime = f"{Hrs-12}:{Mins} PM" if Hrs >= 13 else f"{Hrs}:{Mins} AM"
-    return CTime
+    return CTime, [Hrs, Mins]
 
 # Create a new project
 def CreateProject(Query):
