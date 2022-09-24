@@ -73,7 +73,7 @@ Run
 train.bat
 ```
 
-This will dump `data.pth` file in `.\data\models` directory. And then run
+This will dump `data.pth` file in [`.\data\models`](data/models) directory. And then run
 ```console
 python main.py
 ```
