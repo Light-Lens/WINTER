@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # WINTER
 from colorama import Fore, Style, init
 from assets.alphabet import ArrangeWords

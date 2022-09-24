@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import torch, json
 import numpy as np
 import torch.nn as nn
