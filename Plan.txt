@@ -95,7 +95,10 @@ Functions:
         18. [*] GetTime:
                     Get current time and date
 
-        19. [] Access GitHub and other platforms and give info about their updates
+        19. [*] Summarize:
+                    Summarize any website
+
         20. [] Scanning for virus/reparing the system image
         21. [] Create a focus mode
         22. [] Update all dependencies and virtual environment
+        23. [] Access GitHub and other platforms and give info about their updates

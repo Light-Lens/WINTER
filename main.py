@@ -55,6 +55,7 @@ while True:
     elif Prediction == "Facts": Protocol.Facts()
     elif Prediction == "CalcMath": Protocol.CalcMath(Command)
     elif Prediction == "GetTime": Protocol.GetTime()
+    elif Prediction == "Summarize": Protocol.Summarize()
     else:
         if not Prediction: Prediction = Command
         Speak(Prediction)

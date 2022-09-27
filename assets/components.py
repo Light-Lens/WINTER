@@ -79,7 +79,7 @@ def CalcMath(Query):
             if operator == "+": output += number
             elif operator == "-": output -= number
 
-    except ZeroDivisionError: output = "divide by 0"
+    except ZeroDivisionError: output = "undefined"
     return output, " ".join(regex[0].split())
 
 # Greet the user according to the current time.
@@ -255,11 +255,10 @@ def KillTask(Query):
     regex = re.findall(r'.* this app| .* current app|exit (\w+)|kill (\w+)|close (\w+)|quit (\w+)|shutdown (\w+)', Query)
     Apps = [j for i in regex for j in list(filter(None, i))] if regex else []
 
-    if Apps:
-        for i in Apps:
-            for process in psutil.process_iter():
-                process_name = process.name()
-                if i in process_name.lower(): os.system(f"taskkill /f /im {process_name}")
+    for i in Apps:
+        for process in psutil.process_iter():
+            process_name = process.name()
+            if i in process_name.lower(): os.system(f"taskkill /f /im {process_name}")
 
     else:
         # https://stackoverflow.com/a/70574370/18121288
@@ -282,13 +281,14 @@ def SwitchWindows(Query):
     Apps = [j for i in regex for j in list(filter(None, i))] if regex else []
 
     if "window" in Apps or "app" in Apps:
-        CurrentTask = pyautogui.getActiveWindowTitle()
-        if CurrentTask.lower() in [i.lower() for i in tasks]:
-            title = tasks[tasks.index(CurrentTask) + 1]
+        pyautogui.keyDown('alt')
+        pyautogui.keyDown('tab')
+        pyautogui.keyUp('alt')
 
-            pyautogui.keyDown('alt')
-            pyautogui.keyDown('tab')
-            pyautogui.keyUp('alt')
+    elif "tab" in Apps:
+        pyautogui.keyDown('ctrl')
+        pyautogui.keyDown('tab')
+        pyautogui.keyUp('ctrl')
 
     else:
         app_score = [[ClassifyIntent(Apps[0], [i]), i] for i in tasks]
@@ -353,3 +353,4 @@ def OpenSitesOrApps(Query):
     OpenExtentionFunc("snip and sketch", "ms-ScreenSketch:", "system")
     OpenExtentionFunc("minecraft", "minecraft:", "system")
     OpenExtentionFunc("candy crush", "candycrushsodasaga:", "system")
+    OpenExtentionFunc("obs", "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe", "system")

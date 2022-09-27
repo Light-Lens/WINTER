@@ -61,9 +61,13 @@ class w2:
     @staticmethod
     def assure():
         # T1: Template
-        T1 = [["Yup", "Very well", "Right on", "Alright", "For sure", "By all means", "Always", "You're on", "Yes",
-                "Yep", "Yeah", "Of course", "Affirmative", "Sure", "Ok", "Okay", "As you wish", "Here you go",
-                "No problem", "Right away", "Sure, no problem", "Ok, no problem", "Okay, no problem"]]
+        # T1 = [["Yup", "Very well", "Right on", "Alright", "For sure", "By all means", "Always", "You're on", "Yes",
+        #         "Yep", "Yeah", "Of course", "Affirmative", "Sure", "Ok", "Okay", "As you wish", "Here you go",
+        #         "No problem", "Right away", "Sure, no problem", "Ok, no problem", "Okay, no problem"]]
+
+        T1 = [["Yup", "Right on", "Alright", "For sure", "Yes", "Yep", "Yeah", "Of course", "Sure", "Ok", "Okay",
+                "As you wish", "Here you go", "No problem", "Right away", "Sure, no problem", "Ok, no problem",
+                "Okay, no problem"]]
 
         # S1: Sentence
         S1 = ArrangeWords(T1)

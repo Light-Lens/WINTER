@@ -98,15 +98,12 @@ def tf_idf(sentence):
     return list(get_top_n(tf_idf_score).keys())
 
 # lemmatize sentences
-def lemmatize(sentence):
-    stop_words = set(stopwords.words("english"))
-    tokens = tokenize(sentence.lower())
+def lemmatize(word):
+    # stop_words = set(stopwords.words("english"))
+    # tokens = tokenize(sentence.lower())
 
-    TokenizeWordsWithoutStopwords = [word for word in tokens if word not in stop_words]
-    return [Lemmatizer.lemmatize(word) for word in TokenizeWordsWithoutStopwords]
-
-# lemmatize word
-def lemmatize_word(word):
+    # TokenizeWordsWithoutStopwords = [word for word in tokens if word not in stop_words]
+    # return [Lemmatizer.lemmatize(word) for word in TokenizeWordsWithoutStopwords]
     return Lemmatizer.lemmatize(word.lower())
 
 def extract_ne(quote):

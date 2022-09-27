@@ -1,5 +1,5 @@
 # alphabet is a module for natural language processing and machine learning.
-from assets.nltk_utils import tf_idf, lemmatize, tokenize
+from assets.nltk_utils import bag_of_words, tf_idf, lemmatize, tokenize, stopwords
 import numpy, spacy, nltk, math
 
 nlp = spacy.load('en_core_web_md')
@@ -43,17 +43,24 @@ def isQuestion(sentence):
 # Calculate the cosine similarity
 def CalcCosine(sentence, pattern):
     # https://newscatcherapi.com/blog/ultimate-guide-to-text-similarity-with-python
-    def squared_sum(x): return round(math.sqrt(sum([a * a for a in x])), 3)
+    squared_sum = lambda x : round(math.sqrt(sum([a * a for a in x])), 3)
+    stop_words = set(stopwords.words("english"))
 
-    sentence = " ".join(lemmatize(sentence))
-    pattern = " ".join(lemmatize(pattern))
+    # Remove stopwords and lemmatize the sentence and pattern
+    tok1 = tokenize(sentence.lower())
+    tok2 = tokenize(pattern.lower())
 
-    sentence = " ".join(tf_idf(sentence))
-    pattern = " ".join(tf_idf(pattern))
+    clean_tok1 = [word for word in tok1 if word not in stop_words]
+    clean_tok2 = [word for word in tok2 if word not in stop_words]
 
-    vec1 = nlp(sentence).vector
-    vec2 = nlp(pattern).vector
+    clean_sentence = " ".join([lemmatize(word) for word in clean_tok1])
+    clean_pattern = " ".join([lemmatize(word) for word in clean_tok2])
 
+    # Create vectors of the given sentence and pattern
+    vec1 = nlp(clean_sentence).vector
+    vec2 = nlp(clean_pattern).vector
+
+    # Calc the cosine similarity
     numerator = sum(a * b for a, b in zip(vec1, vec2))
     denominator = squared_sum(vec1) * squared_sum(vec2)
     return 0.0 if not float(denominator) else round(numerator / float(denominator), 3)

@@ -1,9 +1,12 @@
 from assets.components import *
 from assets.core import *
 
+def assure():
+    Speak(w2.add_sir(w2.assure())) if random.randrange(11) > 7 else None
+
 class Protocol:
     def CalcMath(Command):
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         ans, question = CalcMath(Command)
 
         # T1, T2: Template
@@ -16,11 +19,11 @@ class Protocol:
         Speak(out.capitalize())
 
     def CrackJokes():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         Speak(CrackJokes())
 
     def CreateProject(Command):
-        Speak(w2.add_sir(w2.assure()))
+        assure()
 
         while CreateProject(Command) == "No project name" or not CreateProject(Command):
             T1 = [["What"], ["shall", "may", "should"], ["I"], ["name", "call", "save", "index", "mark"], ["it"], ["as", 3]]
@@ -37,15 +40,19 @@ class Protocol:
         Speak(out.capitalize())
 
     def Exit():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         sys.exit()
 
+    def Summarize(Command):
+        assure()
+        Speak(Summarize(Command))
+
     def Facts():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         Speak(Facts())
 
     def GetTime():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         Time, _ = GetTime()
 
         # T1, T2: Template
@@ -58,7 +65,7 @@ class Protocol:
         Speak(out.capitalize())
 
     def GreetUs():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         TimeOfTheDay = GreetUs()
         _, Hour = GetTime()
 
@@ -109,43 +116,43 @@ class Protocol:
             Speak(out.capitalize())
 
     def KillTask(Command):
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         KillTask(Command)
 
     def LockPC():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         LockPC()
 
     def OpenSitesOrApps(Command):
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         OpenSitesOrApps(Command)
 
     def PlayOfflineMedia(Command):
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         PlayOfflineMedia(Command)
 
     def PlayOnYT(Command):
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         PlayOnYT(Command)
 
     def RestartPC():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         RestartPC()
 
     def SearchOnline(Command):
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         Speak(SearchOnline(Command))
 
     def ShutdownPC():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         ShutdownPC()
 
     def SwitchWindows(Command):
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         SwitchWindows(Command)
 
     def TempReport():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         Temp, City = WeatherTemp()
 
         # T1, T2: Template
@@ -158,11 +165,11 @@ class Protocol:
         Speak(out.capitalize())
 
     def Translate(Command):
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         Speak(Translate(Command))
 
     def WeatherReport():
-        Speak(w2.add_sir(w2.assure()))
+        assure()
         Weather, City = WeatherReport()
 
         # T1, T2: Template
