@@ -6,6 +6,7 @@ from torch.utils.data import Dataset, DataLoader
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
+# TODO: Make everything object oriented so that training on more intents can be done easily.
 with open("data\\models\\intents.json", 'r') as f: intents = json.load(f)
 
 all_words = []

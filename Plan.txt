@@ -5,7 +5,8 @@ TODO:
     - [] Refactor WINTER:
         1. [*] First divide intents.json into 2 parts, chats.json and functions.json and train models on them.
         2. [*] Refactor train.py and model.py
-        3. [] Refactor main.py:
+        3. [] Compile all, model, train and classify.py files in one single file.
+        4. [] Refactor main.py:
             a. [*] Rewrite functions and implement them in a class.
             b. [*] Improve classification methods.
             c. [*] Make the dialogues sound smarter and more dynamic.
@@ -17,11 +18,23 @@ Natural Language Processing:
     - The system can be phylosophical and sarcastic at times.
 
     1. Natural Language Understanding:
-        - Understand the correct meaning of a given sentence.
-        - Special understanding required for 'and' or 'or' cases.
         - Translate from the given language to english.
-        - Do intent classification.
-        - Do pattern recognition via cosine similarity.
+        - Do pattern recognition via cosine similarity:
+                o/ Will be used to quickly classify something without using neural networks.
+
+        - Do intent classification:
+                o/ There will be many intents making up the model.
+                o/ More yet seperate intents will provide a diverse yet unique pattern recognition.
+                o/ Special understanding required for 'and' or 'or' cases:
+                        a. A seperate section in intents.json to handle such tasks.
+                        b. There will be labels to mark the difference b\w 'and' and 'or'.
+
+        - Understand the correct meaning of a given sentence:
+                o/ It depends on the situation, if an intent is availabe from our neural networks then use them,
+                   otherwise use the cosine similarity function to classify.
+
+                o/ The keywords of each sentence will be given to drive it's context and some nlp tasks such as,
+                   Named Entity Recognition or relation b\w nouns and pronouns.
 
     2. Natural Language Skills:
         - Have a short term memory of almost past 2-3 commands and their responses.

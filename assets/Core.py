@@ -13,10 +13,11 @@ recognizer.pause_threshold = 1
 
 # Speak out loud the text
 def Speak(audio):
-    if audio:
-        print(audio)
-        engine.say(audio)
-        engine.runAndWait()
+    if not audio: return
+
+    print(audio)
+    engine.say(audio)
+    engine.runAndWait()
 
 # Listen to the microphone and return a speech to text
 def TakeCommand():
@@ -26,14 +27,12 @@ def TakeCommand():
         try:
             with sr.Microphone() as source: audio = recognizer.listen(source, phrase_time_limit=4)
 
-        except KeyboardInterrupt: sys.exit()
-
-        try:
             Query = recognizer.recognize_google(audio, language = 'en-in')
             Output = Query.lower().strip()
             print(Output)
 
         except sr.RequestError: Output = input().lower().strip()
+        except KeyboardInterrupt: sys.exit()
         except Exception: Output = ""
     return Output
 
@@ -61,10 +60,6 @@ class w2:
     @staticmethod
     def assure():
         # T1: Template
-        # T1 = [["Yup", "Very well", "Right on", "Alright", "For sure", "By all means", "Always", "You're on", "Yes",
-        #         "Yep", "Yeah", "Of course", "Affirmative", "Sure", "Ok", "Okay", "As you wish", "Here you go",
-        #         "No problem", "Right away", "Sure, no problem", "Ok, no problem", "Okay, no problem"]]
-
         T1 = [["Yup", "Right on", "Alright", "For sure", "Yes", "Yep", "Yeah", "Of course", "Sure", "Ok", "Okay",
                 "As you wish", "Here you go", "No problem", "Right away", "Sure, no problem", "Ok, no problem",
                 "Okay, no problem"]]

@@ -28,13 +28,16 @@ def ShutdownPC():
 def RestartPC():
     os.system("shutdown /r /t0")
 
-# Do math #! It can do "2 - 1" but fails to do "-1 + 2", solve it
+# Do math
+# #* It can do "2 - 1" but fails to do "-1 + 2", solve it ~> (Solved)
 # https://medium.com/codex/another-python-question-that-took-me-days-to-solve-as-a-beginner-37b5e144ecc
 def CalcMath(Query):
-    regex = re.findall(r'(\d.*\d)', Query)
+    regex = re.findall(r'(\(\d.*\d|\+\d.*\d|\-\d.*\d|\d.*\d)', Query)
     if not regex: return None
 
     expression = regex[0].replace(" ", "")
+    expression = expression if not expression.startswith("-") else "0" + expression
+
     def splitby(string, separators):
         lis = []
         current = ""
@@ -80,7 +83,9 @@ def CalcMath(Query):
             elif operator == "-": output -= number
 
     except ZeroDivisionError: output = "undefined"
-    return output, " ".join(regex[0].split())
+
+    output = output if not str(output).endswith(".0") else int(output)
+    return str(output), "".join(regex[0].split())
 
 # Greet the user according to the current time.
 def GreetUs():
