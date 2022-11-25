@@ -78,6 +78,12 @@ class Train:
     def __init__(self, intents, outpath):
         self.intents = []
         self.outpath = outpath
+
+        self.num_epochs = 4000
+        self.batch_size = 120
+        self.learning_rate = 0.001
+        self.hidden_size = 120
+
         with open(intents, 'r') as f:
             self.intents = json.load(f)
 
@@ -125,12 +131,12 @@ class Train:
         X_train = np.array(X_train)
         y_train = np.array(y_train)
 
-        # Hyper-parameters 
-        num_epochs = 4000
-        batch_size = 120
-        learning_rate = 0.001
+        # Hyper-parameters
+        num_epochs = self.num_epochs
+        batch_size = self.batch_size
+        learning_rate = self.learning_rate
+        hidden_size = self.hidden_size
         input_size = len(X_train[0])
-        hidden_size = 120
         output_size = len(tags)
         print(input_size, output_size)
 

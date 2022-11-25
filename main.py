@@ -11,9 +11,6 @@ from src.core import Speak, Listen
 # print(Prediction)
 
 # Shell = AOs()
-# Shell.input = ""
+# Shell.input = Listen()
 # Shell.interpreter()
-# Shell.output
-
-# Speak("Hello world!")
-print(Listen())
+# Speak(Shell.output)

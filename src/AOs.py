@@ -1,5 +1,5 @@
 from src import components
-import re
+import sys, re
 
 class lexer:
     def __init__(self, line:str):
@@ -44,11 +44,13 @@ class AOs:
             cmd = e[0]
             args = e[1:] if len(tokens) > 0 else []
 
-            if cmd == "lock": components.LockPC()
+            if cmd == "exit": sys.exit()
+            elif cmd == "lock": components.LockPC()
             elif cmd == "restart": components.RestartPC()
             elif cmd == "shutdown": components.ShutdownPC()
 
             elif cmd == "time": self.output.append( components.GetTime() )
+            elif cmd == "date": self.output.append( components.GetDate() )
             elif cmd == "greet": self.output.append( components.GreetUs() )
             elif cmd == "temp": self.output.append( components.WeatherTemp() )
             elif cmd == "joke": self.output.append( components.CrackJokes() )
@@ -67,3 +69,4 @@ class AOs:
             elif cmd == "search" and args: self.output.append( components.SearchOnline(args) )
             elif cmd == "summary" and args: self.output.append( components.Summarize(args[0]) )
             elif cmd == "translate" and args: self.output.append( components.Translate(args[0]) )
+            else: self.output.append("")

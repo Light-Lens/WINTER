@@ -139,6 +139,10 @@ def GetTime():
     CTime = f"{Hrs-12}:{Mins} PM" if Hrs >= 13 else f"{Hrs}:{Mins} AM"
     return CTime, [Hrs, Mins]
 
+# Get the today's date
+def GetDate():
+    return datetime.today().strftime('%Y-%m-%d')
+
 # # Create a new project
 def CreateProject(proj_name="_git"):
     if proj_name == "_git": OpenSitesOrApps("new github project")
