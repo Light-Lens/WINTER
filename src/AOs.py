@@ -1,4 +1,4 @@
-import components
+from src import components
 import re
 
 class lexer:
@@ -67,8 +67,3 @@ class AOs:
             elif cmd == "search" and args: self.output.append( components.SearchOnline(args) )
             elif cmd == "summary" and args: self.output.append( components.Summarize(args[0]) )
             elif cmd == "translate" and args: self.output.append( components.Translate(args[0]) )
-
-a = AOs()
-a.input = ''
-a.interpreter()
-# print(a.output)

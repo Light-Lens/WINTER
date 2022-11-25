@@ -1,7 +1,7 @@
 import win32process, webbrowser, subprocess, wikipedia, randfacts, pywhatkit, pyautogui, requests, datetime, pyjokes
 import psutil, ctypes, heapq, numpy, re, os
 
-from nltk_utils import tokenize, sent_tokenize, ClassifyIntent
+from src.nltk_utils import tokenize, sent_tokenize, ClassifyIntent
 from googletrans import Translator
 from nltk.corpus import stopwords
 
