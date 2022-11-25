@@ -6,7 +6,7 @@ class lexer:
         self.line = line
 
     def tokenizer(self):
-        tokens = re.findall(r'\".*?[\".*\"]|[-+]?\d[-+*\.\/x]\d|\w+', self.line)
+        tokens = re.findall(r'\".*\"|[-+]?\d[-+*\.\/x]\d|\w+', self.line)
 
         # remove empty-space from tokens
         tokens = [s.strip('"') for s in tokens]
