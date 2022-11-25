@@ -281,6 +281,8 @@ def OpenSitesOrApps(appname):
     out = out.split("\r\n")
     out.pop()
 
-    if not out: return ""
-    AppID = out[0]
-    os.system(f"start explorer shell:appsfolder\{AppID}")
+    if out:
+        AppID = out[0]
+        os.system(f"start explorer shell:appsfolder\{AppID}")
+
+    else: pywhatkit.search(appname)

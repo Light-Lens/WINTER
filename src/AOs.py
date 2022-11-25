@@ -69,6 +69,6 @@ class AOs:
             elif cmd == "translate" and args: self.output.append( components.Translate(args[0]) )
 
 a = AOs()
-a.input = 'open "sublime text"'
+a.input = ''
 a.interpreter()
 # print(a.output)
