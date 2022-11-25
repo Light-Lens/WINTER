@@ -47,7 +47,7 @@ You need to install the following on your machine.
 Whatever you prefer (e.g. conda or venv)
 ```console
 cd WINTER
-$ python3 -m venv WINTER
+$ python -m venv WINTER
 $ WINTER\Scripts\activate
 ```
 
