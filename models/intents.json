@@ -13,7 +13,7 @@
         },
         {
             "tag": "math",
-            "patterns": ["add", "substract", "divide", "multiply", "what is 2 + 3", "what is 4 * 7", "solve 8 / 0",
+            "patterns": ["add", "substract", "divide", "multiply", "what is 2 + 3", "what is 4 * 7", "solve 8 / 0", "1+2", "1/0", "-3+2", "2*2", "1 - 1",
                         "solve this problem", "calculate the answer", "solve the equation", "evaluate this expression"],
 
             "responses": "calc"

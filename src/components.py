@@ -141,7 +141,7 @@ def GetTime():
 
 # Get the today's date
 def GetDate():
-    return datetime.today().strftime('%Y-%m-%d')
+    return datetime.datetime.today().strftime('%d-%m-%Y')
 
 # # Create a new project
 def CreateProject(proj_name="_git"):

@@ -23,9 +23,9 @@ class NeuralNet(nn.Module):
         return out
 
 class Classify:
-    def __init__(self, FILE, JSON):
-        self.FILE = FILE
+    def __init__(self, JSON, FILE):
         self.JSON = JSON
+        self.FILE = FILE
 
         self.tags = None
         self.model = None
@@ -67,7 +67,7 @@ class Classify:
         prob = probs[0][predicted.item()]
 
         confidence = prob.item()
-        if confidence > 0.90:
+        if confidence > 0.82:
             for intent in self.intents['intents']:
                 response = intent['responses']
                 if tag == intent["tag"]: return response
