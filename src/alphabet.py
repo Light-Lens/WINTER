@@ -72,7 +72,7 @@ class Classify:
                 response = intent['responses']
                 if tag == intent["tag"]: return response
 
-        else: return input_sent
+        else: return "chat"
 
 class Train:
     def __init__(self, intents, outpath):

@@ -3,7 +3,7 @@
         {
             "tag": "can't understand",
             "patterns": [""],
-            "responses": ""
+            "responses": "chat"
         },
         {
             "tag": "resizewindow",
@@ -14,6 +14,7 @@
         {
             "tag": "math",
             "patterns": ["add", "substract", "divide", "multiply", "what is 2 + 3", "what is 4 * 7", "solve 8 / 0", "1+2", "1/0", "-3+2", "2*2", "1 - 1",
+                        "what is 2+3", "solve -7+2", "calculate 2*2", "evaluate 2x3", "divide 1/0", "multiply 8 * 0", "add 1+1", "subtract 1-0",
                         "solve this problem", "calculate the answer", "solve the equation", "evaluate this expression"],
 
             "responses": "calc"
@@ -32,7 +33,8 @@
             "tag": "start",
             "patterns": ["can you open an app", "start an app please", "start minecraft for me", "can you show me the news",
                         "open google please", "start chrome buddy", "please get me today's news headlines",
-                        "open cmd", "start onenote please", "can you please start ondrive for me"],
+                        "open cmd", "start onenote please", "can you please start ondrive for me", "launch sublime text", "open chrome",
+                        "please launch this app", "start instagram", "get me some news", "search for today's weather", "open edge"],
 
             "responses": "open"
         },
@@ -52,7 +54,7 @@
         },
         {
             "tag": "switch",
-            "patterns": ["switch", "change", "switch app", "change window", "switch window", "change app", "switch to", "change to"],
+            "patterns": ["switch", "change", "switch app", "change window", "switch window", "change app", "switch to", "change to", "move to"],
             "responses": "switch"
         },
         {
@@ -90,7 +92,8 @@
         },
         {
             "tag": "summarize",
-            "patterns": ["summary", "summary of", "summary on", "summarize it", "give me a summary of", "tell me a summary of", "can you summarize"],
+            "patterns": ["summarize", "summary", "summary of", "summary on", "summarize it", "give me a summary of", "tell me a summary of", "can you summarize",
+                        "can give me a summary on", "please tell me the summary of", "summarize"],
             "responses": "summary"
         },
         {

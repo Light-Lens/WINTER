@@ -87,6 +87,7 @@ def CalcCosine(sentence, pattern):
 def ClassifyIntent(sentence, patterns):
     return max([[CalcCosine(sentence.lower(), pattern.lower()), pattern] for pattern in patterns])
 
+# Remove stopwords from a sentence
 def NormalizeSent(sent):
     with open("assets\\stopwords.txt") as file: stop_words = file.read().split(",")
 
