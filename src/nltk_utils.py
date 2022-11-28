@@ -7,6 +7,8 @@ from nltk.stem.porter import PorterStemmer
 stemmer = PorterStemmer()
 Lemmatizer = WordNetLemmatizer()
 nlp = spacy.load('en_core_web_md')
+with open("assets\\stopwords.txt") as file:
+    stop_words = file.read().split(",")
 
 # nltk.download('punkt')
 def tokenize(sentence):
@@ -89,7 +91,5 @@ def ClassifyIntent(sentence, patterns):
 
 # Remove stopwords from a sentence
 def NormalizeSent(sent):
-    with open("assets\\stopwords.txt") as file: stop_words = file.read().split(",")
-
     word_tokens = tokenize(sent)
     return " ".join([i for i in word_tokens if i not in stop_words])

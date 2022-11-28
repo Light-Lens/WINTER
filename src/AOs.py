@@ -62,6 +62,7 @@ class AOs:
         elif cmd == "create" and args: self.output = components.CreateProject(args[0])
         elif cmd == "youtube" and args: self.output = components.PlayOnYT(args[0])
 
+        elif cmd == "chat" and args: self.output = components.Chat(args[0])
         elif cmd == "calc" and args: self.output = components.CalcMath(args[0])
         elif cmd == "search" and args: self.output = components.SearchOnline(args[0])
         elif cmd == "summary" and args: self.output = components.Summarize(args[0])

@@ -1,6 +1,7 @@
-import win32process, webbrowser, subprocess, wikipedia, randfacts, pywhatkit, pyautogui, requests, datetime, pyjokes
-import psutil, ctypes, heapq, numpy, re, os
+import win32gui, win32process, subprocess, wikipedia, randfacts, pywhatkit, pyautogui, requests, datetime, pyjokes, psutil, ctypes, heapq, numpy, re, os
 
+from src.w2 import w2
+from src.core import Speak
 from src.nltk_utils import tokenize, sent_tokenize, ClassifyIntent
 from googletrans import Translator
 from nltk.corpus import stopwords
@@ -8,9 +9,31 @@ from nltk.corpus import stopwords
 # init modules
 translator = Translator()
 
+with open("assets\\API.txt") as f: API = f.read()
+with open("assets\\chatlog.txt") as f: prompt = f.read()
+
+agent = w2(API)
+agent.initalize()
+agent.prompt = prompt
+
+def IncognitoChat(text):
+    incognito = w2(API)
+    incognito.initalize()
+    incognito.prompt = "The following is a conversation with an AI assistant. The assistant is very helpful, creative, clever, friendly and has a strong memory."
+    return incognito.get_response(text)
+
+def Chat(text):
+    ans = agent.get_response(text)
+
+    with open("assets\\chatlog.txt", "w") as f:
+        f.write(agent.prompt)
+
+    return ans
+
 # This function has the same result as pressing Ctrl+Alt+Del and clicking Lock Workstation.
 # https://stackoverflow.com/a/20733443/18121288
 def LockPC():
+    Speak(IncognitoChat('make a sentence like "Sure sir, I\'m locking your pc" but don\'t change the meaning'))
     ctypes.windll.user32.LockWorkStation()
 
 # shutdown /s -> shuts down the computer [but it takes time],
@@ -18,6 +41,7 @@ def LockPC():
 # to avoid this we use /t parameter time = 0 seconds /t0, command = shutdown /s /t0, execute to the shell.
 # https://stackoverflow.com/a/67342911/18121288
 def ShutdownPC():
+    Speak(IncognitoChat('make a sentence like "As you wish, I\'m shutting down your pc" but don\'t change the meaning'))
     os.system("shutdown /s /t0")
 
 # shutdown /r -> restarts the computer [but it takes time],
@@ -25,11 +49,13 @@ def ShutdownPC():
 # to avoid this we use /t parameter time = 0 seconds /t0, command = shutdown /r /t0, execute to the shell.
 # https://stackoverflow.com/a/67342911/18121288
 def RestartPC():
+    Speak(IncognitoChat('make a sentence like "Sure, I\'m restarting your pc" but don\'t change the meaning'))
     os.system("shutdown /r /t0")
 
 # Minimize all apps
 def MiniMaxTask():
     pyautogui.hotkey('super', 'd')
+    return IncognitoChat('modify this sentence "Sure sir" but keep the same meaning')
 
 # Do math
 # https://medium.com/codex/another-python-question-that-took-me-days-to-solve-as-a-beginner-37b5e144ecc
@@ -97,7 +123,7 @@ def GreetUs():
     elif Hour >= 12 and Hour < 18: time_of_the_day = "Afternoon"
     elif Hour >= 18 and Hour < 22: time_of_the_day = "Evening"
     elif Hour >= 22 and Hour < 0: time_of_the_day = "Night"
-    return time_of_the_day
+    return IncognitoChat(f"greet me with {time_of_the_day}")
 
 # Get the weather report.
 def WeatherReport(City="Bhagalpur"):
@@ -108,7 +134,7 @@ def WeatherReport(City="Bhagalpur"):
     URL = f"https://wttr.in/{City}?format=%C"
     res = requests.get(URL)
 
-    return res.text, City
+    return IncognitoChat(f"tell the weather if it is {res.text}")
 
 # Get today's temperature.
 def WeatherTemp(City="Bhagalpur"):
@@ -120,7 +146,7 @@ def WeatherTemp(City="Bhagalpur"):
     res = requests.get(URL)
     Temp = res.text[1:] if res.text[0] == "+" else res.text
 
-    return Temp, City
+    return IncognitoChat(f"tell the temperature if it is {Temp}")
 
 # Translate to any language
 def Translate(sent):
@@ -129,27 +155,30 @@ def Translate(sent):
 
 # Search and play media on YouTube.
 def PlayOnYT(Query):
-    video_link = pywhatkit.playonyt(Query)
-    return video_link
+    pywhatkit.playonyt(Query)
+    return IncognitoChat(f'make a sentence like "Sure sir, I\'m (playing or opening) "{Query}" on youtube (on youtube part is optional)" but don\'t change the meaning')
 
 # Get the current time
 def GetTime():
     Hrs = int(datetime.datetime.now().hour)
     Mins = int(datetime.datetime.now().minute)
-    return f"{Hrs-12}:{Mins} PM" if Hrs >= 13 else f"{Hrs}:{Mins} AM"
+    CTime = f"{Hrs-12}:{Mins} PM" if Hrs >= 13 else f"{Hrs}:{Mins} AM"
+    return IncognitoChat(f'tell the time if is it {CTime}')
 
 # Get the today's date
 def GetDate():
-    return datetime.datetime.today().strftime('%d-%m-%Y')
+    date = datetime.datetime.today().strftime('%d-%m-%Y')
+    return IncognitoChat(f'tell the date if is it {date}')
 
-# # Create a new project
+# Create a new project
 def CreateProject(proj_name="_git"):
     if proj_name == "_git": OpenSitesOrApps("new github project")
     else:
         dir = f"D:\\Dev Projects\\{proj_name}"
 
         if not os.path.exists(dir): os.mkdir(dir)
-        return dir
+
+    return IncognitoChat(f'say something like "project initiated shall we start?"')
 
 # Tell some joke
 def CrackJokes():
@@ -196,10 +225,11 @@ def Summarize(Query):
         summary = ' '.join(summary_sentences)
 
         return summary
-    except Exception as e: return ""
+    except Exception as e: return IncognitoChat(f'say something like "failed to summarize" but don\'t change the meaning')
 
 # Search on Google or Wikipedia.
 def SearchOnline(Query):
+    Speak(IncognitoChat(f'say something like "here are you results sir"'))
     if Query[0] == "_search": pywhatkit.search(Query[1])
     else:
         try:
@@ -230,8 +260,8 @@ def PlayOfflineMedia(media):
         Dir = "D:\\Srijan\\Pictures"
         Name = StartPlaying(Dir)
 
-    else: return False
-    return Name
+    else: return IncognitoChat(f'say something like "sorry sir, but I failed to play from your pc (from your pc part is optional)" but don\'t change the meaning')
+    return IncognitoChat(f'say something like "as you wish sir, playing {Name} from your pc (from your pc part is optional)" but don\'t change the meaning')
 
 # Close an app.
 def KillTask(appname):
@@ -245,17 +275,18 @@ def KillTask(appname):
         process_name = process.name()
 
         os.system(f"taskkill /f /im {process_name}")
-        return process_name
 
     else:
-        hwnd = str(pyautogui.getWindowsWithTitle(appname)).replace("Win32Window(hWnd=", "")[1:-2]
+        app = str(pyautogui.getWindowsWithTitle(appname)[0].title)
+        hwnd = win32gui.FindWindow(None, app)
         _, pid = win32process.GetWindowThreadProcessId(hwnd)
 
         process = psutil.Process(pid)
         process_name = process.name()
 
         os.system(f"taskkill /f /im {process_name}")
-        return process_name
+
+    return IncognitoChat(f'say something like "sure sir, I\'ve closed {process_name}" but don\'t change the meaning')
 
 # Switch window
 def SwitchTask(appname):
@@ -275,8 +306,11 @@ def SwitchTask(appname):
 
         pyautogui.keyUp('alt')
 
+    return IncognitoChat(f'say something like "as you wish sir, switching (optional)" but don\'t change the meaning')
+
 # Open Sites or Apps
 def OpenSitesOrApps(appname):
+    Speak(IncognitoChat(f'say something like "sure sir, opening {appname}" but don\'t change the meaning'))
     proc = subprocess.Popen(["powershell", "get-StartApps", appname, "| Select-Object -ExpandProperty AppID"], stdout=subprocess.PIPE, shell=True)
     (out, _) = proc.communicate()
 
@@ -289,3 +323,4 @@ def OpenSitesOrApps(appname):
         os.system(f"start explorer shell:appsfolder\{AppID}")
 
     else: pywhatkit.search(appname)
+    return ""

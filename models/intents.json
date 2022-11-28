@@ -114,7 +114,8 @@
         {
             "tag": "close app",
             "patterns": ["exit", "kill", "close", "quit", "shutdown", "close this app", "close the window",
-                        "exit this app", "kill the window", "close current app", "quit the app", "shutdown this process"],
+                        "exit this app", "kill the window", "close current app", "quit the app", "shutdown this process", "close chrome", "kill edge",
+                        "please close the app for me"],
 
             "responses": "close"
         },
