@@ -19,14 +19,12 @@ agent.prompt = prompt
 def IncognitoChat(text):
     incognito = w2(API)
     incognito.initalize()
-    incognito.prompt = "The following is a conversation with an AI assistant. The assistant is very helpful, creative, clever, friendly and has a strong memory."
+    incognito.prompt = "The following is a conversation with an AI assistant. The assistant is very helpful, creative, clever, friendly."
     return incognito.get_response(text)
 
 def Chat(text):
     ans = agent.get_response(text)
-
-    with open("assets\\chatlog.txt", "w") as f:
-        f.write(agent.prompt)
+    with open("assets\\chatlog.txt", "w") as f: f.write(agent.prompt)
 
     return ans
 
@@ -60,59 +58,60 @@ def MiniMaxTask():
 # Do math
 # https://medium.com/codex/another-python-question-that-took-me-days-to-solve-as-a-beginner-37b5e144ecc
 def CalcMath(expr):
-    expr = expr.replace(" ", "")
+    return IncognitoChat(f'solve, {expr} and say {expr} = the answer')
+    # expr = expr.replace(" ", "")
 
-    #* It can do "2 - 1" but fails to do "-1 + 2", solve it ~> (Solved)
-    expr = expr if not expr.startswith("-") else "0" + expr
+    # #* It can do "2 - 1" but fails to do "-1 + 2", solve it ~> (Solved)
+    # expr = expr if not expr.startswith("-") else "0" + expr
 
-    def splitby(string, separators):
-        lis = []
-        current = ""
-        for ch in string:
-            if ch in separators:
-                lis.append(current)
-                lis.append(ch)
-                current = ""
-            else: current += ch
+    # def splitby(string, separators):
+    #     lis = []
+    #     current = ""
+    #     for ch in string:
+    #         if ch in separators:
+    #             lis.append(current)
+    #             lis.append(ch)
+    #             current = ""
+    #         else: current += ch
 
-        lis.append(current)
-        return lis
+    #     lis.append(current)
+    #     return lis
 
-    lis = splitby(expr, "+-")
-    def evaluate_mul_div(string):
-        lis = splitby(string, "x/")
-        if len(lis) == 1: return lis[0]
+    # lis = splitby(expr, "+-")
+    # def evaluate_mul_div(string):
+    #     lis = splitby(string, "x/")
+    #     if len(lis) == 1: return lis[0]
 
-        output = float(lis[0])
-        lis = lis[1:]
+    #     output = float(lis[0])
+    #     lis = lis[1:]
 
-        while len(lis) > 0:
-            operator = lis[0]
-            number = float(lis[1])
-            lis = lis[2:]
+    #     while len(lis) > 0:
+    #         operator = lis[0]
+    #         number = float(lis[1])
+    #         lis = lis[2:]
 
-            if operator == "x": output *= number
-            elif operator == "/": output /= number
+    #         if operator == "x": output *= number
+    #         elif operator == "/": output /= number
 
-        return output
+    #     return output
 
-    try:
-        for i in range(len(lis)): lis[i] = evaluate_mul_div(lis[i])
-        output = float(lis[0])
-        lis = lis[1:]
+    # try:
+    #     for i in range(len(lis)): lis[i] = evaluate_mul_div(lis[i])
+    #     output = float(lis[0])
+    #     lis = lis[1:]
 
-        while len(lis) > 0:
-            operator = lis[0]
-            number = float(lis[1])
-            lis = lis[2:]
+    #     while len(lis) > 0:
+    #         operator = lis[0]
+    #         number = float(lis[1])
+    #         lis = lis[2:]
 
-            if operator == "+": output += number
-            elif operator == "-": output -= number
+    #         if operator == "+": output += number
+    #         elif operator == "-": output -= number
 
-    except ZeroDivisionError: output = "undefined"
+    # except ZeroDivisionError: output = "undefined"
 
-    output = output if not str(output).endswith(".0") else int(output)
-    return f"{expr} = {output}"
+    # output = output if not str(output).endswith(".0") else int(output)
+    # return f"{expr} = {output}"
 
 # Greet the user according to the current time.
 def GreetUs():
@@ -277,7 +276,16 @@ def KillTask(appname):
         os.system(f"taskkill /f /im {process_name}")
 
     else:
-        app = str(pyautogui.getWindowsWithTitle(appname)[0].title)
+        tasks = list(filter(None, pyautogui.getAllTitles()))
+        tasks.remove("Microsoft Text Input Application")
+        tasks.remove("Program Manager")
+
+        app_score = ClassifyIntent(appname, tasks)
+        if not app_score: return ""
+
+        title = app_score[1]
+        app = pyautogui.getWindowsWithTitle(title)[0].title
+
         hwnd = win32gui.FindWindow(None, app)
         _, pid = win32process.GetWindowThreadProcessId(hwnd)
 
@@ -285,7 +293,6 @@ def KillTask(appname):
         process_name = process.name()
 
         os.system(f"taskkill /f /im {process_name}")
-
     return IncognitoChat(f'say something like "sure sir, I\'ve closed {process_name}" but don\'t change the meaning')
 
 # Switch window

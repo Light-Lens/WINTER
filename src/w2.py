@@ -1,4 +1,3 @@
-from click import prompt
 import openai
 
 class w2:

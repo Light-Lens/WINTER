@@ -67,12 +67,12 @@ class Classify:
         prob = probs[0][predicted.item()]
 
         confidence = prob.item()
-        if confidence > 0.82:
+        if confidence > 0.8:
             for intent in self.intents['intents']:
                 response = intent['responses']
-                if tag == intent["tag"]: return response
+                if tag == intent["tag"]: return tag, response
 
-        else: return "chat"
+        else: return "can't understand", ""
 
 class Train:
     def __init__(self, intents, outpath):
@@ -80,9 +80,9 @@ class Train:
         self.outpath = outpath
 
         self.num_epochs = 4000
-        self.batch_size = 120
+        self.batch_size = 256
         self.learning_rate = 0.001
-        self.hidden_size = 120
+        self.hidden_size = 256
 
         with open(intents, 'r') as f:
             self.intents = json.load(f)

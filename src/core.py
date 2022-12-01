@@ -5,7 +5,8 @@ import speech_recognition as sr, pyttsx3
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('rate', 190)
-engine.setProperty('voice', voices[1].id)
+# engine.setProperty('voice', voices[1].id) #! Causing problem (Changing directory)
+engine.setProperty('voice', voices[0].id)
 
 recognizer = sr.Recognizer()
 recognizer.pause_threshold = 1

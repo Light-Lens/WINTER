@@ -47,7 +47,7 @@ You need to install the following on your machine.
 Whatever you prefer (e.g. conda or venv)
 ```console
 cd WINTER
-$ python -m venv WINTER
+$ python -m venv venv
 $ WINTER\Scripts\activate
 ```
 
@@ -63,6 +63,7 @@ $ python
 >>> import nltk
 >>> nltk.download('punkt')
 >>> nltk.download('wordnet')
+>>> nltk.download('omw-1.4')
 >>> nltk.download('nps_chat')
 >>> nltk.download('stopwords')
 ```
