@@ -1,4 +1,5 @@
 import win32gui, win32process, subprocess, wikipedia, randfacts, pywhatkit, pyautogui, requests, datetime, pyjokes, psutil, ctypes, heapq, numpy, re, os
+import train
 
 from src.w2 import w2
 from src.core import Speak
@@ -12,43 +13,58 @@ translator = Translator()
 with open("assets\\API.txt") as f: API = f.read()
 with open("assets\\chatlog.txt") as f: prompt = f.read()
 
+incognito = w2(API)
+incognito.initalize()
+incognito.prompt = "The following is a conversation with an AI assistant. The assistant is very helpful, creative, clever, friendly."
+
 agent = w2(API)
 agent.initalize()
 agent.prompt = prompt
 
+# Chat with WINTER without saving chatlog
 def IncognitoChat(text):
-    incognito = w2(API)
     incognito.initalize()
     incognito.prompt = "The following is a conversation with an AI assistant. The assistant is very helpful, creative, clever, friendly."
     return incognito.get_response(text)
 
+# Chat with WINTER
 def Chat(text):
     ans = agent.get_response(text)
     with open("assets\\chatlog.txt", "w") as f: f.write(agent.prompt)
 
     return ans
 
+# Train WINTER
+def SelfTrain():
+    train.init()
+    return ""
+
+# Mute the system audio
+def MutePC():
+    pyautogui.press("volumemute")
+    return ""
+
 # This function has the same result as pressing Ctrl+Alt+Del and clicking Lock Workstation.
 # https://stackoverflow.com/a/20733443/18121288
 def LockPC():
-    Speak(IncognitoChat('make a sentence like "Sure sir, I\'m locking your pc" but don\'t change the meaning'))
     ctypes.windll.user32.LockWorkStation()
+    return ""
 
 # shutdown /s -> shuts down the computer [but it takes time],
 # also shows message windows is going to be shutdown within a minute,
 # to avoid this we use /t parameter time = 0 seconds /t0, command = shutdown /s /t0, execute to the shell.
 # https://stackoverflow.com/a/67342911/18121288
 def ShutdownPC():
-    Speak(IncognitoChat('make a sentence like "As you wish, I\'m shutting down your pc" but don\'t change the meaning'))
     os.system("shutdown /s /t0")
+    return ""
 
 # shutdown /r -> restarts the computer [but it takes time],
 # also shows message windows is going to be shutdown within a minute,
 # to avoid this we use /t parameter time = 0 seconds /t0, command = shutdown /r /t0, execute to the shell.
 # https://stackoverflow.com/a/67342911/18121288
 def RestartPC():
-    Speak(IncognitoChat('make a sentence like "Sure, I\'m restarting your pc" but don\'t change the meaning'))
     os.system("shutdown /r /t0")
+    return ""
 
 # Minimize all apps
 def MiniMaxTask():

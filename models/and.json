@@ -1,15 +1,11 @@
 {
     "intents": [
         {
-            "tag": "can't understand",
-            "patterns": [""],
-            "responses": ""
-        },
-        {
             "tag": "true",
             "patterns": ["play mere hi liye and search what is a neural network", "start chrome and close sublime text", "what is today's time and date",
                         "search for steve jobs' life and summarize a neural network", "minimize the app and hit some song from my pc", "mute the system and go to sleep",
-                        "add 2 + 2 and lock my pc", "start a new project and tell me a joke", "switch the window and translate tum kya kar rahe ho", "temperature and weather"],
+                        "add 2 + 2 and lock my pc", "start a new project and tell me a joke", "switch the window and translate tum kya kar rahe ho", "temperature and weather",
+                        "this is just a text and open chrome", "yesterday I was playing a game and I fell and lost, and close edge"],
 
             "responses": ""
         },

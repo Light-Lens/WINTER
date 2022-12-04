@@ -72,7 +72,7 @@ class Classify:
                 response = intent['responses']
                 if tag == intent["tag"]: return tag, response
 
-        else: return "can't understand", ""
+        else: return "default", ""
 
 class Train:
     def __init__(self, intents, outpath):
@@ -80,9 +80,9 @@ class Train:
         self.outpath = outpath
 
         self.num_epochs = 4000
-        self.batch_size = 256
+        self.batch_size = 521
         self.learning_rate = 0.001
-        self.hidden_size = 256
+        self.hidden_size = 521
 
         with open(intents, 'r') as f:
             self.intents = json.load(f)
@@ -187,9 +187,9 @@ class Train:
                 optimizer.step()
 
             if (epoch+1) % 100 == 0:
-                print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.11f}')
+                print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.18f}')
 
-        print(f'Final loss: {loss.item():.11f}')
+        print(f'Final loss: {loss.item():.18f}')
 
         data = {
         "model_state": model.state_dict(),

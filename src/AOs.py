@@ -1,5 +1,9 @@
+from src.alphabet import Classify
 from src.components import *
 import sys, re
+
+Classifier = Classify("models\\and.json", "models\\and.pth")
+Classifier.initalize()
 
 class lexer:
     def __init__(self, line:str):
@@ -17,18 +21,27 @@ class lexer:
 
 class AOs:
     def __init__(self):
-        self.input = ""
         self.output = ""
         self.list_of_outputs = []
 
-    def formatter(self):
-        tokens = lexer(self.input).tokenizer()
+    @staticmethod
+    def formatter(text):
+        tokens = lexer(text).tokenizer()
+        text_split = text.split(" and ")
         list_of_commands = [[]]
 
+        count = 1
         for i in tokens:
-            if i == "and": list_of_commands.append([])
-            else: list_of_commands[-1].append(i)
+            if i == "and":
+                prev_text, next_text = text_split[count-1], text_split[count]
+                tag, _ = Classifier.get_response(f"{prev_text} and {next_text}")
 
+                if tag == "true": list_of_commands.append([])
+                else: list_of_commands[-1].append(i)
+
+                count += 1
+
+            else: list_of_commands[-1].append(i)
         return list_of_commands
 
     def interpreter(self, tokens):
@@ -40,8 +53,9 @@ class AOs:
         elif cmd == "lock": self.output = LockPC()
         elif cmd == "restart": self.output = RestartPC()
         elif cmd == "shutdown": self.output = ShutdownPC()
-        elif cmd == "resizewindow": self.output = MiniMaxTask()
+        elif cmd == "train": self.output = SelfTrain()
 
+        elif cmd == "mute": self.output = MutePC()
         elif cmd == "time": self.output = GetTime()
         elif cmd == "date": self.output = GetDate()
         elif cmd == "greet": self.output = GreetUs()
@@ -49,6 +63,7 @@ class AOs:
         elif cmd == "joke": self.output = CrackJokes()
         elif cmd == "fact": self.output = Facts()
         elif cmd == "weather": self.output = WeatherReport()
+        elif cmd == "resizewindow": self.output = MiniMaxTask()
 
         elif cmd == "open" and args: self.output = OpenSitesOrApps(args[0])
         elif cmd == "play" and args: self.output = PlayOfflineMedia(args[0])
@@ -57,7 +72,6 @@ class AOs:
         elif cmd == "create" and args: self.output = CreateProject(args[0])
         elif cmd == "youtube" and args: self.output = PlayOnYT(args[0])
 
-        elif cmd == "chat" and args: self.output = Chat(args[0])
         elif cmd == "calc" and args: self.output = CalcMath(args[0])
         elif cmd == "search" and args: self.output = SearchOnline(args)
         elif cmd == "summary" and args: self.output = Summarize(args[0])

@@ -1,0 +1,60 @@
+{
+    "intents": [
+        {
+            "tag": "true",
+            "patterns": [
+                "search which is correct", "search what is google search", "start project mark 5", "create project gta 5",
+                "make project test", "make project alphabet", "open chrome",
+                "open spotify", "open sublime text", "open code", "open vs code", "open microsoft edge",
+                "open minecraft", "exit chrome", "close obs", "quit spotify", "close edge",
+                "search how to make a game engine", "search what is a search engine", "search what is machine learning",
+                "search how neural networks are made", "summary elon musk",
+                "summarize steve jobs life", "summarize google search", "summary french revolution", "summary world war 2",
+                "play mere hi liye", "play a fatal flow of math", "play chailie puth song",
+                "search veritasium", "start project mark 5", "translate tum kya kar rahe ho", "summary google search",
+                "search what is machine learning", "create project test", "make project mark 5",
+                "translate tum kya kar rahe ho", "translate he kaha ja rahe ho",
+                "translate machine learning kya hai", "translate neural networks kaise bante hai"
+            ],
+
+            "responses": ""
+        },
+        {
+            "tag": "false",
+            "patterns": [
+                "bro please start a new project indexed as mark 5", "please start a new project indexed as mark 5",
+                "can you create a project and name it gta 5",
+                "make a project and call it test",
+                "open spotify please",
+                "please open sublime text for me", "open sublime text for me",
+                "please open code for me", "open code for me",
+                "can you open microsoft edge please", "open microsoft edge please",
+                "can you open minecraft",
+                "please exit obs studio",
+                "bro quit spotify",
+                "ok close edge",
+                "close chrome please",
+                "ok bro close edge please",
+                "ok buddy translate tum kya kar rahe ho", "buddy translate tum kya kar rahe ho",
+                "please translate on google machine learning kya hai", "translate on google machine learning kya hai", "on google machine learning kya hai",
+                "can you translate neural networks kaise bante hai please", "translate neural networks kaise bante hai please",
+                "ok bro search about how to make a game engine on google", "bro search about how to make a game engine on google", "search about how to make a game engine on google",
+                "please search on google what is machine learning", "search on google what is machine learning", "on google what is machine learning",
+                "can you search how neural networks are made please", "search how neural networks are made please",
+                "give me a summary of elon musk", "a summary of elon musk",
+                "buddy please summarize google search", "please summarize google search",
+                "if you don't mind can you tell me the summary of french revolution", "don't mind can you tell me the summary of french revolution", "can you tell me the summary of french revolution", "tell me the summary of french revolution",
+                "tell me the summary of world war 2",
+                "play mere hi liye on youtube", "on youtube",
+                "play on youtube a fatal flow of math", "on youtube a fatal flow of math",
+                "can you play chailie puth song on youtube", "play chailie puth song on youtube",
+                "please search for veritasium on youtube", "search for veritasium on youtube", "for on youtube",
+                "can you please search on google what is google search", "please search on google what is google search", "search on google what is google search",
+                "ok buddy do a google search which is correct", "buddy do a google search which is correct", "google search which is correct",
+                "ok", "buddy", "for me please", "on youtube", "for", "on", "on google", "for me", "please"
+            ],
+
+            "responses": ""
+        }
+    ]
+}

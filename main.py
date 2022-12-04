@@ -1,20 +1,38 @@
-import re
+import re, os
 from src.AOs import AOs
 from src.core import Speak, Listen
 from src.alphabet import Classify
-from src.nltk_utils import ClassifyIntent, NormalizeSent
+from src.nltk_utils import ClassifyIntent
 
 CMD = AOs()
 
 C1 = Classify("models\\intents.json", "models\\data.pth")
 C1.initalize()
 
-C2 = Classify("models\\and.json", "models\\and.pth")
+C2 = Classify("models\\nlp.json", "models\\nlp.pth")
 C2.initalize()
 
-text = ""
-tag, _ = C2.get_response(text)
-print(tag)
+text = "can you please search on google what is google search and add 2 + 2"
+input_list = CMD.formatter(text)
+Prediction = [[i, list(C1.get_response( " ".join(i) ))] for i in input_list]
+
+# Natural language to Command
+def NLC(tokens):
+    textlist = []
+
+    for i in tokens:
+        text = (" ".join(textlist) + " " + i).strip()
+        tag, _ = C2.get_response(text)
+
+        if tag == "true": textlist.append(i)
+
+    return textlist
+
+for i in Prediction:
+    text, tag, response = i[0], i[1][0], i[1][1]
+    tokens = NLC(text)
+
+    print(tag, tokens)
 
 # Shell.input = input("> ")
 # input_list = [" ".join(i) for i in Shell.formatter()]

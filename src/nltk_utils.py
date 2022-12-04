@@ -1,11 +1,12 @@
 import numpy, spacy, nltk, math
-from operator import itemgetter
+
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
 
 stemmer = PorterStemmer()
 Lemmatizer = WordNetLemmatizer()
+
 nlp = spacy.load('en_core_web_md')
 with open("assets\\stopwords.txt") as file:
     stop_words = file.read().split(",")
@@ -88,8 +89,3 @@ def CalcCosine(sentence, pattern):
 # Classify intentions
 def ClassifyIntent(sentence, patterns):
     return max([[CalcCosine(sentence.lower(), pattern.lower()), pattern] for pattern in patterns])
-
-# Remove stopwords from a sentence
-def NormalizeSent(sent):
-    word_tokens = tokenize(sent)
-    return " ".join([i for i in word_tokens if i not in stop_words])

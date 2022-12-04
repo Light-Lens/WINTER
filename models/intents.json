@@ -1,7 +1,7 @@
 {
     "intents": [
         {
-            "tag": "can't understand",
+            "tag": "default",
             "patterns": [""],
             "responses": ""
         },
@@ -47,7 +47,7 @@
             "patterns": ["can you open an app", "start an app please", "start minecraft for me", "can you show me the news",
                         "open google please", "start chrome buddy", "please get me today's news headlines",
                         "open cmd", "start onenote please", "can you please start ondrive for me", "launch sublime text", "open chrome",
-                        "please launch this app", "start instagram", "get me some news", "search for today's weather", "open edge"],
+                        "please launch this app", "start instagram", "get me some news", "open edge"],
 
             "responses": [["Right on", "Alright", "Yes", "Of course", "Sure", "Ok", "As you wish", "Here you go", "No problem", "Right away", 6], ["sir", 5]]
         },
@@ -95,7 +95,9 @@
         },
         {
             "tag": "search",
-            "patterns": ["search on google", "search on wikipedia", "do a google search", "do a search", "search for", "search"],
+            "patterns": ["search on google", "search on wikipedia", "do a google search", "do a search", "search for", "search", "search google", "search wikipedia",
+                        "can you please search on google", "do a search on google"],
+
             "responses": [["Right on", "Alright", "Yes", "Of course", "Sure", "Ok", "As you wish", "Here you go", "No problem", "Right away", "Please wait", 6],
                         ["Searching on the web", "Please wait", "Searching on Google", "Searching on Wikipedia", 5], ["sir", 5]]
         },
@@ -103,6 +105,7 @@
             "tag": "summarize",
             "patterns": ["summarize", "summary", "summary of", "summary on", "summarize it", "give me a summary of", "tell me a summary of", "can you summarize",
                         "can give me a summary on", "please tell me the summary of", "summarize"],
+
             "responses": [["Right on", "Alright", "Yes", "Of course", "Sure", "Ok", "As you wish", "Here you go", "No problem", "Right away", "Please wait", 6],
                         ["Searching on the web", "Please wait", "Searching on Wikipedia", 5], ["sir", 5]]
         },
