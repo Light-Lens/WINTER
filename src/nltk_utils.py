@@ -89,3 +89,22 @@ def CalcCosine(sentence, pattern):
 # Classify intentions
 def ClassifyIntent(sentence, patterns):
     return max([[CalcCosine(sentence.lower(), pattern.lower()), pattern] for pattern in patterns])
+
+# Arrange words in such a way to form a logical sentence.
+def ArrangeWords(Words):
+    # A number will represent the number of empty strings in a list.
+    # For example: 4 -> ["", "", "", ""].
+    for i in Words:
+        for j in i:
+            if isinstance(j, int):
+                EmptyList = [""] * j
+                i.extend(EmptyList)
+                i.remove(j)
+                break
+
+    GreetingSentence = [numpy.random.choice(i) for i in Words]
+
+    # Reconstruct the string to form a logical sentence.
+    FinalSentence = " ".join(GreetingSentence)
+    rm_extra_spaces = " ".join(FinalSentence.split())
+    return rm_extra_spaces

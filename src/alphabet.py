@@ -33,6 +33,8 @@ class Classify:
         self.intents = None
         self.all_words = None
 
+        self.confidence = 0
+
     def initalize(self):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -70,9 +72,13 @@ class Classify:
         if confidence > 0.8:
             for intent in self.intents['intents']:
                 response = intent['responses']
-                if tag == intent["tag"]: return tag, response
+                if tag == intent["tag"]:
+                    self.confidence = confidence
+                    return tag, response
 
-        else: return "default", ""
+        else:
+            self.confidence = 0
+            return "default", ""
 
 class Train:
     def __init__(self, intents, outpath):
@@ -204,3 +210,19 @@ class Train:
         torch.save(data, FILE)
 
         print(f'Training complete. File saved to {FILE}')
+
+# Natural language to Command
+class NLC:
+    def __init__(self):
+        self.C2 = Classify("models\\nlp.json", "models\\nlp.pth")
+        self.C2.initalize()
+
+    def predict(self, tokens):
+        textlist = [""]
+
+        for i in tokens:
+            text = (" ".join(textlist) + " " + i).strip()
+            tag, _ = self.C2.get_response(text)
+            if tag == "true": textlist.append(i)
+
+        return " ".join(textlist).strip()
