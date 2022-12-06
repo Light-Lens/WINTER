@@ -1,7 +1,7 @@
 import torch, torch.nn as nn, numpy as np
 import json, torch
 
-from src.nltk_utils import bag_of_words, tokenize, stem
+from src.nltk_utils import bag_of_words, tokenize, stem, nGrams
 from torch.utils.data import Dataset, DataLoader
 
 class NeuralNet(nn.Module):
@@ -218,11 +218,20 @@ class NLC:
         self.C2.initalize()
 
     def predict(self, tokens):
-        textlist = [""]
+        textlist, unigram, outputlist = [], [], []
+        toks = nGrams(tokens, 3)
 
-        for i in tokens:
-            text = (" ".join(textlist) + " " + i).strip()
-            tag, _ = self.C2.get_response(text)
+        for i in toks:
+            tag, _ = self.C2.get_response( " ".join(i) )
             if tag == "true": textlist.append(i)
 
-        return " ".join(textlist).strip()
+        for i in textlist:
+            for j in i:
+                if not j in unigram: unigram.append(j)
+
+        for i in unigram:
+            text = (" ".join(outputlist) + " " + i)
+            tag, _ = self.C2.get_response(text)
+            if tag == "true": outputlist.append(i)
+
+        return " ".join(outputlist)

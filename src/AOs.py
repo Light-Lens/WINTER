@@ -25,8 +25,8 @@ class AOs:
         self.list_of_outputs = []
 
     @staticmethod
-    def formatter(text):
-        tokens = lexer(text).tokenizer()
+    def formatter(text, tokens=[]):
+        if not tokens: tokens = lexer(text).tokenizer()
         text_split = text.split(" and ")
         list_of_commands = [[]]
 

@@ -1,5 +1,6 @@
 import numpy, spacy, nltk, math
 
+from nltk.util import ngrams
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
@@ -108,3 +109,6 @@ def ArrangeWords(Words):
     FinalSentence = " ".join(GreetingSentence)
     rm_extra_spaces = " ".join(FinalSentence.split())
     return rm_extra_spaces
+
+def nGrams(words, ngram):
+    return ngrams(words, ngram)
