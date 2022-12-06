@@ -6,6 +6,15 @@
             "responses": ""
         },
         {
+            "tag": "chat",
+            "patterns": ["yesterday i was playing a game and i fell and lost", "system that perceives its environment and takes actions that maximize its chance",
+                        "tomorrow i will go to talk to mohit", "please, don't forget to thank them after they do", "now let's get this conversation started",
+                        "it is rude bro", "thanks bro", "is there anything else i can help you with", "you are a natual language interface designed to assist me with a varaity tasks",
+                        "i'm just a human with a nerdy brain", "probably not, i guess, you are just a neural network trying to make sense of my inputs"],
+
+            "responses": ""
+        },
+        {
             "tag": "mute",
             "patterns": ["mute", "mute the system", "disable the sound", "lower the volume to zero", "set the sound to 0", "reduce the volume"],
             "responses": ""
@@ -89,7 +98,7 @@
         },
         {
             "tag": "play youtube",
-            "patterns": ["play", "play on yt", "play on youtube", "search on yt", "search on youtube", "play from youtube"],
+            "patterns": ["play", "play on yt", "play on youtube", "search on yt", "search on youtube", "play from youtube", "search youtube"],
             "responses": [["Right on", "Alright", "Yes", "Of course", "Sure", "Ok", "As you wish", "Here you go", "No problem", "Right away", 6],
                         ["Playing on youtube", "Searching on the web", "Playing from the web", "Searching on youtube", 5], ["sir", 5]]
         },

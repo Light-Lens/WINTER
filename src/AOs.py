@@ -44,37 +44,35 @@ class AOs:
             else: list_of_commands[-1].append(i)
         return list_of_commands
 
-    def interpreter(self, tokens):
-        if not tokens: return None
-        args = tokens[1:] if len(tokens) > 0 else []
-        cmd = tokens[0]
+    def interpreter(self, cmd="default", args=[""]):
+        for i in args:
+            if cmd == "default": self.output = Chat(i)
+            elif cmd == "bye": sys.exit()
+            elif cmd == "lock pc": self.output = LockPC()
+            elif cmd == "restart pc": self.output = RestartPC()
+            elif cmd == "shutdown pc": self.output = ShutdownPC()
+            # elif cmd == "train": self.output = SelfTrain()
 
-        if cmd == "exit": sys.exit()
-        elif cmd == "lock": self.output = LockPC()
-        elif cmd == "restart": self.output = RestartPC()
-        elif cmd == "shutdown": self.output = ShutdownPC()
-        elif cmd == "train": self.output = SelfTrain()
+            elif cmd == "mute": self.output = MutePC()
+            elif cmd == "time": self.output = GetTime()
+            elif cmd == "date": self.output = GetDate()
+            elif cmd == "greet": self.output = GreetUs()
+            elif cmd == "joke": self.output = CrackJokes()
+            elif cmd == "fact": self.output = Facts()
+            elif cmd == "weather": self.output = WeatherReport()
+            elif cmd == "temperature": self.output = WeatherTemp()
+            elif cmd == "resizewindow": self.output = MiniMaxTask()
 
-        elif cmd == "mute": self.output = MutePC()
-        elif cmd == "time": self.output = GetTime()
-        elif cmd == "date": self.output = GetDate()
-        elif cmd == "greet": self.output = GreetUs()
-        elif cmd == "temp": self.output = WeatherTemp()
-        elif cmd == "joke": self.output = CrackJokes()
-        elif cmd == "fact": self.output = Facts()
-        elif cmd == "weather": self.output = WeatherReport()
-        elif cmd == "resizewindow": self.output = MiniMaxTask()
+            elif cmd == "start": self.output = OpenSitesOrApps(i)
+            elif cmd == "play pc": self.output = PlayOfflineMedia(i)
+            elif cmd == "close app": self.output = KillTask(i)
+            elif cmd == "switch": self.output = SwitchTask(i)
+            elif cmd == "project": self.output = CreateProject(i)
+            elif cmd == "play youtube": self.output = PlayOnYT(i)
 
-        elif cmd == "open" and args: self.output = OpenSitesOrApps(args[0])
-        elif cmd == "play" and args: self.output = PlayOfflineMedia(args[0])
-        elif cmd == "close" and args: self.output = KillTask(args[0])
-        elif cmd == "switch" and args: self.output = SwitchTask(args[0])
-        elif cmd == "create" and args: self.output = CreateProject(args[0])
-        elif cmd == "youtube" and args: self.output = PlayOnYT(args[0])
-
-        elif cmd == "calc" and args: self.output = CalcMath(args[0])
-        elif cmd == "search" and args: self.output = SearchOnline(args)
-        elif cmd == "summary" and args: self.output = Summarize(args[0])
-        elif cmd == "translate" and args: self.output = Translate(args[0])
-        else: self.output = ""
-        self.list_of_outputs.append(self.output)
+            elif cmd == "math": self.output = CalcMath(i)
+            elif cmd == "search": self.output = SearchOnline(i)
+            elif cmd == "summarize": self.output = Summarize(i)
+            elif cmd == "translate": self.output = Translate(i)
+            else: self.output = ""
+            self.list_of_outputs.append(self.output)

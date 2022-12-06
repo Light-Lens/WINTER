@@ -245,14 +245,11 @@ def Summarize(Query):
 # Search on Google or Wikipedia.
 def SearchOnline(Query):
     Speak(IncognitoChat(f'say something like "here are you results sir"'))
-    if Query[0] == "_search": pywhatkit.search(Query[1])
-    else:
-        try:
-            pywhatkit.search(Query[0])
-            return wikipedia.summary(Query[0], sentences=2)
+    try:
+        pywhatkit.search(Query)
+        return wikipedia.summary(Query, sentences=2)
 
-        except Exception as e: pass
-    return ""
+    except Exception as e: return ""
 
 # Play offline media
 def PlayOfflineMedia(media):

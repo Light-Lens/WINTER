@@ -11,14 +11,19 @@ Classifier = Classify("models\\intents.json", "models\\data.pth")
 Classifier.initalize()
 
 # main code
-text = "can you search on google about google chrome and tell me the time"
+text = "search what is game engine"
 input_list = CMD.formatter(text)
 Prediction = [[i, list(Classifier.get_response( " ".join(i) ))] for i in input_list]
 
 for i in Prediction:
     text, tag, response = i[0], i[1][0], i[1][1]
-    nlc = Nlc.predict(text)
-    topics = [" ".join(i) for i in CMD.formatter(nlc, nlc.split())]
 
-    # Speak(ArrangeWords(response))
-    print([tag, topics])
+    if tag == "default" or tag == "chat": topics = [" ".join(text)]
+    else:
+        nlc = Nlc.predict(text)
+        topics = [" ".join(i) for i in CMD.formatter(nlc, nlc.split())]
+
+    Speak(ArrangeWords(response)) if isinstance(response, list) else None
+
+    CMD.interpreter(tag, topics)
+    Speak(CMD.output)
