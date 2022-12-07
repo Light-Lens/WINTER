@@ -23,8 +23,9 @@ def Speak(audio):
 
 # Listen to the microphone and return a speech to text
 def Listen():
-    output = ""
     print("> ", end="")
+
+    output = ""
     while not output:
         try:
             with sr.Microphone() as source: audio = recognizer.listen(source, phrase_time_limit=4)
