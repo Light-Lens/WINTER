@@ -22,7 +22,7 @@
         {
             "tag": "sleep",
             "patterns": ["go to sleep", "goto sleep", "you should sleep now", "take some rest buddy", "you can go now"],
-            "responses": [["Alright", "Ok", "As you wish", 3], ["I'm always there for you", "You can call me whenever you need", 3], ["sir", 5]]
+            "responses": [["Alright", "Ok,", "As you wish,", 3], ["I'm always there for you", "You can call me whenever you need", 3], ["sir", 5]]
         },
         {
             "tag": "resizewindow",
@@ -49,7 +49,7 @@
             "tag": "project",
             "patterns": ["start a new project indexed", "create a project named", "make a new project and name it"],
             "responses": [["Right on", "Alright", "Yes", "Of course", "Sure", "Ok", "As you wish", "Here you go", "No problem", "Right away", 6],
-                        ["Creating", "Initiating", "Starting"], ["project", "a new project", 2], ["<1>"], ["Shall we start?", 3], ["sir", 5]]
+                        ["Creating", "Initiating", "Starting"], ["project", "a new project", 2], ["<1>", 1], ["Shall we start?", 3], ["sir", 5]]
         },
         {
             "tag": "start",
@@ -122,7 +122,7 @@
             "tag": "weather",
             "patterns": ["weather", "check weather", "tell weather", "tell me about the weather today", "today's weather", "is it sunny today", "is it rainy today", "is it cloudy today"],
             "responses": [["Right on", "Alright", "Yes", "Of course", "Sure", "Ok", "As you wish", "Here you go", "No problem", "Right away", "Please wait", 6],
-                        ["Today's weather", "The weather"], ["outsite", "in <1>"], ["is <2>"], ["It will be a <2> day", "It will be a <2> day outside in <1>", "It will be a <2> day outside", "It will be a <2> day in <1>", 4], ["sir", 5]]
+                        ["Today's weather", "The weather"], ["outside", "in <1>"], ["is <2>"], ["It will be a <2> day", "It will be a <2> day outside in <1>", "It will be a <2> day outside", "It will be a <2> day in <1>", 4], ["sir", 5]]
         },
         {
             "tag": "temperature",
@@ -130,7 +130,7 @@
                         "is it 30 degree celsius", "what's today's temperature"],
                         
             "responses": [["Right on", "Alright", "Yes", "Of course", "Sure", "Ok", "As you wish", "Here you go", "No problem", "Right away", "Please wait", 6],
-                        ["Today's temperature", "The temperature"], ["outsite", "in <1>"], ["is <2>"], ["It will be a <2> day", "It will be a <2> day outside in <1>", "It will be a <2> day outside", "It will be a <2> day in <1>", 4], ["sir", 5]]
+                        ["Today's temperature", "The temperature"], ["outside", "in <1>"], ["is <2>"], ["It will be a <2> day", "It will be a <2> day outside in <1>", "It will be a <2> day outside", "It will be a <2> day in <1>", 4], ["sir", 5]]
         },
         {
             "tag": "close app",

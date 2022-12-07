@@ -9,8 +9,6 @@ stemmer = PorterStemmer()
 Lemmatizer = WordNetLemmatizer()
 
 nlp = spacy.load('en_core_web_md')
-with open("assets\\stopwords.txt") as file:
-    stop_words = file.read().split(",")
 
 # nltk.download('punkt')
 def tokenize(sentence):
