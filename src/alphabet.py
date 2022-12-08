@@ -85,7 +85,7 @@ class Train:
         self.intents = []
         self.outpath = outpath
 
-        self.num_epochs = 4000
+        self.num_epochs = 5000
         self.batch_size = 521
         self.learning_rate = 0.001
         self.hidden_size = 521
@@ -219,19 +219,26 @@ class NLC:
 
     def predict(self, tokens):
         textlist, unigram, outputlist = [], [], []
-        toks = nGrams(tokens, 3)
+        toks = [i for i in nGrams(tokens, 3)]
 
-        for i in toks:
-            tag, _ = self.C2.get_response( " ".join(i) )
-            if tag == "true": textlist.append(i)
+        if toks == []:
+            for i in tokens:
+                text = (" ".join(outputlist) + " " + i).strip()
+                tag, _ = self.C2.get_response(text)
+                if tag == "true": outputlist.append(i)
 
-        for i in textlist:
-            for j in i:
-                if not j in unigram: unigram.append(j)
+        else:
+            for i in toks:
+                tag, _ = self.C2.get_response( " ".join(i) )
+                if tag == "true": textlist.append(i)
 
-        for i in unigram:
-            text = (" ".join(outputlist) + " " + i)
-            tag, _ = self.C2.get_response(text)
-            if tag == "true": outputlist.append(i)
+            for i in textlist:
+                for j in i:
+                    if not j in unigram: unigram.append(j)
+
+            for i in unigram:
+                text = " ".join(outputlist) + " " + i
+                tag, _ = self.C2.get_response(text)
+                if tag == "true": outputlist.append(i)
 
         return " ".join(outputlist)

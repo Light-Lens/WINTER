@@ -10,7 +10,8 @@
             "patterns": ["yesterday i was playing a game and i fell and lost", "system that perceives its environment and takes actions that maximize its chance",
                         "tomorrow i will go to talk to mohit", "please, don't forget to thank them after they do", "now let's get this conversation started",
                         "it is rude bro", "thanks bro", "is there anything else i can help you with", "you are a natual language interface designed to assist me with a varaity tasks",
-                        "i'm just a human with a nerdy brain", "probably not, i guess, you are just a neural network trying to make sense of my inputs"],
+                        "i'm just a human with a nerdy brain", "probably not, i guess, you are just a neural network trying to make sense of my inputs",
+                        "hello how are you buddy", "what are you doing bro", "how about you"],
 
             "responses": ""
         },
@@ -56,7 +57,8 @@
             "patterns": ["can you open an app", "start an app please", "start minecraft for me", "can you show me the news",
                         "open google please", "start chrome buddy", "please get me today's news headlines",
                         "open cmd", "start onenote please", "can you please start ondrive for me", "launch sublime text", "open chrome",
-                        "please launch this app", "start instagram", "get me some news", "open edge"],
+                        "please launch this app", "start instagram", "get me some news", "open edge", "start spotify", "launch telegram", "start minecraft",
+                        "open gta vice city", "launch google chrome", "launch spotify", "open microsoft edge", "start settings", "open control panel"],
 
             "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", 6], ["sir", 5]]
         },

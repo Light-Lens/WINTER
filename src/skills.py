@@ -272,7 +272,7 @@ def PlayOfflineMedia(media):
 # Close an app.
 def KillTask(appname):
     score = ClassifyIntent(appname, ["current tab", "current app", "this app", "this tab", "current window", "this window", "this window"])
-    if score[0] > 0.8:
+    if score[0] > 0.9:
         if "tab" in score[1]: appname = "_tab"
         elif "app" in score[1] or "window" in score[1]: appname = "_currentapp"
 
@@ -310,7 +310,7 @@ def KillTask(appname):
 # Switch window
 def SwitchTask(appname):
     score = ClassifyIntent(appname, ["current tab", "current app", "this app", "this tab", "current window", "this window", "this window"])
-    if score[0] > 0.8:
+    if score[0] > 0.9:
         if "tab" in score[1]: appname = "_tab"
         elif "app" in score[1] or "window" in score[1]: appname = "_currentapp"
 
