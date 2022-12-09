@@ -240,8 +240,8 @@ def Summarize(Query):
 def SearchOnline(Query):
     try:
         pywhatkit.search(Query)
-        wiki = wikipedia.summary(Query, sentences=2)
-        return "\n".join["Here are your results, sir", wiki]
+        wiki = wikipedia.summary(Query, sentences=3)
+        return ". ".join["Here are your results, sir", wiki]
 
     except Exception as e: return ""
 

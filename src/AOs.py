@@ -57,7 +57,7 @@ class AOs:
                 elif daytime == "Evening": greeting.append(ArrangeWords(responses[2]))
                 elif daytime == "Night": greeting.append(ArrangeWords(responses[3]))
 
-                Speak("\n".join(greeting))
+                Speak(". ".join(greeting))
                 sys.exit()
 
             elif cmd == "lock pc": LockPC()
@@ -85,7 +85,7 @@ class AOs:
                 elif daytime == "Evening": greeting.append(ArrangeWords(responses[1:][2]))
                 elif daytime == "Night": greeting.append(ArrangeWords(responses[1:][3]))
 
-                self.output = "\n".join(greeting)
+                self.output = ". ".join(greeting)
 
             elif cmd == "joke": self.output = CrackJokes()
             elif cmd == "fact": self.output = Facts()
@@ -132,13 +132,13 @@ class AOs:
             elif cmd == "search":
                 search = SearchOnline(i)
                 response = ArrangeWords(responses)
-                self.output = "\n".join([response, search])
+                self.output = ". ".join([response, search])
 
             elif cmd == "summarize":
                 summary = Summarize(i)
 
                 response = ArrangeWords(responses)
-                self.output = "\n".join([response, summary])
+                self.output = ". ".join([response, summary])
 
             elif cmd == "translate": self.output = Translate(i)
             else: self.output = ""

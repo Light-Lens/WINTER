@@ -13,8 +13,9 @@ Classifier.initalize()
 
 # main code
 print(f"{Fore.BLUE}{Style.BRIGHT}WINTER")
-while True:
-    text = input("> ")
+def main(text):
+# while True:
+    # text = input("> ")
     input_list = CMD.formatter(text)
     Prediction = [[i, list(Classifier.get_response( " ".join(i) ))] for i in input_list]
 
@@ -27,4 +28,4 @@ while True:
             topics = [" ".join(i) for i in CMD.formatter(nlc, nlc.split())]
 
         CMD.interpreter(tag, topics, responses)
-        Speak(CMD.output)
+        return CMD.output

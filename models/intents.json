@@ -23,12 +23,12 @@
         {
             "tag": "sleep",
             "patterns": ["go to sleep", "goto sleep", "you should sleep now", "take some rest buddy", "you can go now"],
-            "responses": [["Alright,", "Ok,", "As you wish,", 3], ["I'm always there for you", "You can call me whenever you need", 3], ["sir", 5]]
+            "responses": [["Alright,", "Ok,", "As you wish,", 3], ["I'm always there for you", "You can call me whenever you need", 3], ["sir", 2]]
         },
         {
             "tag": "resizewindow",
             "patterns": ["maximize the window", "minimize app", "minimize all apps", "restore all windows", "restore the window", "maximize windows"],
-            "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok,", "As you wish,", "Here you go,", "No problem,", "Right away,", 6], ["sir", 5]]
+            "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok,", "As you wish,", "Here you go,", "No problem,", "Right away,", 6], ["sir", 2]]
         },
         {
             "tag": "math",
@@ -36,21 +36,21 @@
                         "what is 2+3", "solve -7+2", "calculate 2*2", "evaluate 2x3", "divide 1/0", "multiply 8 * 0", "add 1+1", "subtract 1-0",
                         "solve this problem", "calculate the answer", "solve the equation", "evaluate this expression"],
 
-            "responses": [["Sure,", "Here you go,", "Right away,", "Right on,", "No problem,", 6], ["sir", 5], ["It's", "It is", 3], ["<1> = <2>", "<2>"]]
+            "responses": [["Sure,", "Here you go,", "Right away,", "Right on,", "No problem,", 6], ["sir", 2], ["It's", "It is", 3], ["<1> = <2>", "<2>"]]
         },
         {
             "tag": "bye",
             "patterns": ["bye", "ok bye", "see you", "see ya", "see you later", "bye bye", "ok bye talk to you later", "ttyl", "talk to you later"],
-            "responses": [[["Ok", "You're welcome", "You are welcome", 5], ["Goodbye", "Bye", "See you", "See you soon", "See you later", "Talk to you later", "Have a nice day"], ["sir", 5]],
-                        [["Ok", "You're welcome", "You are welcome", 3], ["Goodbye", "Bye", "Hope you are having a good day", "Hope you are enjoying your day"], ["sir", 5]],
-                        [["Ok", "You're welcome", "You are welcome", 2], ["Goodbye", "Bye", "Hope you had a good day", "Hope you enjoyed your day"], ["sir", 5]],
-                        [["Ok", "You're welcome", "You are welcome", 4], ["Goodbye", "Bye", "Have a good night", "Good night", "It's night already", "It's <1>"], ["You should now probably sleep", "It's time to get some rest", 1], ["sir", 5]]]
+            "responses": [[["Ok", "You're welcome", "You are welcome", 5], ["Goodbye", "Bye", "See you", "See you soon", "See you later", "Talk to you later", "Have a nice day"], ["sir", 2]],
+                        [["Ok", "You're welcome", "You are welcome", 3], ["Goodbye", "Bye", "Hope you are having a good day", "Hope you are enjoying your day"], ["sir", 2]],
+                        [["Ok", "You're welcome", "You are welcome", 2], ["Goodbye", "Bye", "Hope you had a good day", "Hope you enjoyed your day"], ["sir", 2]],
+                        [["Ok", "You're welcome", "You are welcome", 4], ["Goodbye", "Bye", "Have a good night", "Good night", "It's night already", "It's <1>"], ["You should now probably sleep", "It's time to get some rest", 1], ["sir", 2]]]
         },
         {
             "tag": "project",
             "patterns": ["start a new project indexed", "create a project named", "make a new project and name it"],
             "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", 6],
-                        ["Creating", "Initiating", "Starting"], ["project", "a new project", 2], ["<1>", 1], ["Shall we start?", 3], ["sir", 5]]
+                        ["Creating", "Initiating", "Starting"], ["project", "a new project", 2], ["<1>", 1], ["Shall we start?", 3], ["sir", 2]]
         },
         {
             "tag": "start",
@@ -60,23 +60,23 @@
                         "please launch this app", "start instagram", "get me some news", "open edge", "start spotify", "launch telegram", "start minecraft",
                         "open gta vice city", "launch google chrome", "launch spotify", "open microsoft edge", "start settings", "open control panel"],
 
-            "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", 6], ["sir", 5]]
+            "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", 6], ["sir", 2]]
         },
         {
             "tag": "time",
             "patterns": ["time", "what's the current time", "tell me time", "what time is it", "what's the time", "is it morning", "isn't it evening", "is it 6 o clock", "is it 7 am", "isn't it 8 pm"],
-            "responses": [["The time is", "It's", "It's currently"], ["<1>"], ["sir", 5]]
+            "responses": [["The time is", "It's", "It's currently"], ["<1>"], ["sir", 2]]
         },
         {
             "tag": "date",
             "patterns": ["date", "what's today's date", "tell me the date", "what date is it", "what's the date", "is it 2022", "isn't it 2018", "is it 2 november", "is it 14 feb", "isn't it 15 august"],
 
-            "responses": [["The date is", "Today's date is", "It's"], ["<1>"], ["sir", 5]]
+            "responses": [["The date is", "Today's date is", "It's"], ["<1>"], ["sir", 2]]
         },
         {
             "tag": "switch",
             "patterns": ["switch", "change", "switch app", "change window", "switch window", "change app", "switch to", "change to", "move to"],
-            "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", 6], ["sir", 5]]
+            "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", 6], ["sir", 2]]
         },
         {
             "tag": "fact",
@@ -96,13 +96,13 @@
         {
             "tag": "play pc",
             "patterns": ["play from pc", "play from desktop", "play from local", "play local", "show a", "open any", "open me some", "hit some", "play me some", "play any", "song", "music", "video", "movie", "picture", "pic", "image"],
-            "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", 6], ["Playing from you pc", 4], ["sir", 5]]
+            "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", 6], ["Playing from you pc", 4], ["sir", 2]]
         },
         {
             "tag": "play youtube",
             "patterns": ["play", "play on yt", "play on youtube", "search on yt", "search on youtube", "play from youtube", "search youtube"],
             "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", 6],
-                        ["Playing on youtube", "Searching on the web", "Playing from the web", "Searching on youtube", 5], ["sir", 5]]
+                        ["Playing on youtube", "Searching on the web", "Playing from the web", "Searching on youtube", 5], ["sir", 2]]
         },
         {
             "tag": "search",
@@ -110,7 +110,7 @@
                         "can you please search on google", "do a search on google"],
 
             "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", "Please wait", 6],
-                        ["Searching on the web", "Please wait", "Searching on Google", "Searching on Wikipedia", 5], ["sir", 5]]
+                        ["Searching on the web", "Please wait", "Searching on Google", "Searching on Wikipedia", 5], ["sir", 2]]
         },
         {
             "tag": "summarize",
@@ -118,13 +118,13 @@
                         "can give me a summary on", "please tell me the summary of", "summarize"],
 
             "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", "Please wait", 6],
-                        ["Searching on the web", "Please wait", "Searching on Wikipedia", 5], ["sir", 5]]
+                        ["Searching on the web", "Please wait", "Searching on Wikipedia", 5], ["sir", 2]]
         },
         {
             "tag": "weather",
             "patterns": ["weather", "check weather", "tell weather", "tell me about the weather today", "today's weather", "is it sunny today", "is it rainy today", "is it cloudy today"],
             "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", "Please wait", 6],
-                        ["Today's weather", "The weather"], ["outside", "in <1>"], ["is <2>"], ["It will be a <2> day", "It will be a <2> day outside in <1>", "It will be a <2> day outside", "It will be a <2> day in <1>", 4], ["sir", 5]]
+                        ["Today's weather", "The weather"], ["outside", "in <1>"], ["is <2>"], ["It will be a <2> day", "It will be a <2> day outside in <1>", "It will be a <2> day outside", "It will be a <2> day in <1>", 4], ["sir", 2]]
         },
         {
             "tag": "temperature",
@@ -132,22 +132,22 @@
                         "is it 30 degree celsius", "what's today's temperature"],
                         
             "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", "Please wait", 6],
-                        ["Today's temperature", "The temperature"], ["outside", "in <1>"], ["is <2>"], ["It will be a <2> day", "It will be a <2> day outside in <1>", "It will be a <2> day outside", "It will be a <2> day in <1>", 4], ["sir", 5]]
+                        ["Today's temperature", "The temperature"], ["outside", "in <1>"], ["is <2>"], ["It will be a <2> day", "It will be a <2> day outside in <1>", "It will be a <2> day outside", "It will be a <2> day in <1>", 4], ["sir", 2]]
         },
         {
             "tag": "close app",
             "patterns": ["exit", "kill", "close", "quit", "shutdown", "close this app", "close the window", "exit this app", "kill the window", "close current app", "quit the app", "shutdown this process", "close chrome", "kill edge", "please close the app for me"],
             "responses": [["Right on,", "Alright,", "Yes,", "Of course,", "Sure,", "Ok", "As you wish,", "Here you go,", "No problem,", "Right away,", "Please wait", 6],
-                        ["Closing", "Exiting", "Quiting", "Shutting down"], ["<1>", 3], ["sir", 5]]
+                        ["Closing", "Exiting", "Quiting", "Shutting down"], ["<1>", 3], ["sir", 2]]
         },
         {
             "tag": "greet",
             "patterns": ["good morning", "good afternoon", "good evening", "good night", "morning", "afternoon", "evening"],
             "responses": [[["Good"], ["<1>.", "<1>,"]],
-                        [["Hope you have a good day.", "Hope you enjoy your day.", 8], ["sir", 5]],
-                        [["Hope you are having a good day.", "Hope you are enjoying your day."], ["sir", 5]],
-                        [["Hope you had a good day.", "Hope you enjoyed your day."], ["sir", 5]],
-                        [["It's <1> already.", 4], ["You should now probably sleep.", "You should probably sleep now."], ["sir", 5]]]
+                        [["Hope you have a good day.", "Hope you enjoy your day.", 8], ["sir", 2]],
+                        [["Hope you are having a good day.", "Hope you are enjoying your day."], ["sir", 2]],
+                        [["Hope you had a good day.", "Hope you enjoyed your day."], ["sir", 2]],
+                        [["It's <1> already.", 4], ["You should now probably sleep.", "You should probably sleep now."], ["sir", 2]]]
         },
         {
             "tag": "restart pc",
