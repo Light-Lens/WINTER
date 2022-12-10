@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&display=swap');
 
 :root
 {
@@ -16,8 +16,8 @@
 
 body
 {
-    font-family: "Montserrat";
     color: var(--white);
+    font-family: "Montserrat", sans-serif;
     background-image: url("background.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -28,7 +28,7 @@ body
 nav ul
 {
     display: flex;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
 }
 
@@ -40,7 +40,7 @@ nav ul li
 
 nav ul li a
 {
-    color: var(--white);
+    color: var(--black);
     text-decoration: none;
     transition: 0.2s;
 }
@@ -53,10 +53,14 @@ nav ul li a:hover
 
 .Title
 {
-    margin-top: 12%;
-    font-size: 80px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-size: 120px;
     text-align: center;
     cursor: default;
+    font-weight: 900px;
 }
 
 #inputbox
@@ -75,6 +79,7 @@ nav ul li a:hover
     width: 800px;
     height: 45px;
     transition: 0.2s;
+    z-index: 2;
 }
 
 #inputbox:hover
@@ -108,6 +113,7 @@ nav ul li a:hover
     height: 45px;
     cursor: pointer;
     transition: 0.2s;
+    z-index: 2;
 }
 
 #inputbtn:hover
@@ -115,4 +121,16 @@ nav ul li a:hover
     color: var(--blue);
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 1);
 	transition: 0.2s;
+}
+
+.santa-cap
+{
+    position: absolute;
+    top: 22%;
+    left: 29%;
+    transform: translate(-29%, -22%);
+    width: 200px;
+    height: 200px;
+    transform: scaleX(-1);
+    z-index: 1;
 }
