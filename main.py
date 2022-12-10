@@ -31,5 +31,3 @@ while True:
 
             CMD.interpreter(tag, topics, responses)
             Speak(CMD.output)
-
-            with open("assets\\current.txt", "w") as f: f.write("")

@@ -12,10 +12,11 @@ def index():
             with open("assets\\current.txt", "w") as f: f.write(text)
 
         text = ""
+        with open("assets\\current.txt", "w") as f: f.write("")
 
     return render_template("index.html")
 
 if __name__ == "__main__":
-    webbrowser.open("http://127.0.0.1:8000/")
     os.system("start python main.py")
+    webbrowser.open("http://127.0.0.1:8000/")
     app.run(port=8000)
