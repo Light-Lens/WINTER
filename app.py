@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-from main import main
 import webbrowser, os
 
 app = Flask(__name__)
@@ -8,14 +7,15 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
         text = request.form["inputbox"]
-        out = main(text) if text != "" else ""
 
-        print(f"> {text}")
-        os.system(f'python speak.py "{out}"')
+        if text:
+            with open("assets\\current.txt", "w") as f: f.write(text)
+
         text = ""
 
     return render_template("index.html")
 
 if __name__ == "__main__":
     webbrowser.open("http://127.0.0.1:8000/")
+    os.system("start python main.py")
     app.run(port=8000)

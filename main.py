@@ -13,19 +13,23 @@ Classifier.initalize()
 
 # main code
 print(f"{Fore.BLUE}{Style.BRIGHT}WINTER")
-def main(text):
-# while True:
-    # text = input("> ")
-    input_list = CMD.formatter(text)
-    Prediction = [[i, list(Classifier.get_response( " ".join(i) ))] for i in input_list]
 
-    for i in Prediction:
-        text, tag, responses = i[0], i[1][0], i[1][1]
+while True:
+    with open("assets\\current.txt") as f: text = f.read()
+    if text:
+        print(f"> {text}")
+        input_list = CMD.formatter(text)
+        Prediction = [[i, list(Classifier.get_response( " ".join(i) ))] for i in input_list]
 
-        if tag == "default" or tag == "chat": topics = [" ".join(text)]
-        else:
-            nlc = Nlc.predict(text)
-            topics = [" ".join(i) for i in CMD.formatter(nlc, nlc.split())]
+        for i in Prediction:
+            text, tag, responses = i[0], i[1][0], i[1][1]
 
-        CMD.interpreter(tag, topics, responses)
-        return CMD.output
+            if tag == "default" or tag == "chat": topics = [" ".join(text)]
+            else:
+                nlc = Nlc.predict(text)
+                topics = [" ".join(i) for i in CMD.formatter(nlc, nlc.split())]
+
+            CMD.interpreter(tag, topics, responses)
+            Speak(CMD.output)
+
+            with open("assets\\current.txt", "w") as f: f.write("")
