@@ -28,9 +28,9 @@ def main(text):
 
         print(tag, topics)
         CMD.interpreter(tag, topics, responses)
-        # Speak(CMD.output)
+        Speak(CMD.output)
 
-main("open sublime text")
+while True: main(input("> "))
 
 # if __name__ == "__main__":
 #     while True:

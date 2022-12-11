@@ -1,0 +1,1576 @@
+{
+    "intents": [
+        {
+            "tag": "default",
+            "patterns": [
+                ""
+            ],
+            "responses": ""
+        },
+        {
+            "tag": "chat",
+            "patterns": [
+                "let's have a talk.",
+                "let's chat about something.",
+                "hello how are you buddy",
+                "how about you",
+                "can we have a conversation?",
+                "what are you capable of doing and answering",
+                "what is our purpose",
+                "what is the meaning behind life, do you think",
+                "thanks bro",
+                "do you want to talk about something?",
+                "do you have time to talk?",
+                "how are you doing",
+                "tell me the meaning of life",
+                "do you have anything to talk about?",
+                "what's on your mind?",
+                "what do you want to chat about?",
+                "now let's get this conversation started",
+                "what do you want to talk about?",
+                "tell me your thoughts about the meaning of life",
+                "what are you thinking about?",
+                "what topics do you want to discuss?",
+                "i'm just a human with a nerdy brain",
+                "what place do you come from",
+                "would you like to talk?",
+                "is there anything else i can help you with",
+                "do you feel like talking?",
+                "what do you want to discuss?",
+                "do you have some time to talk?",
+                "what place were you born",
+                "what is your name",
+                "what place were you born at",
+                "what questions can you answer",
+                "what are you doing",
+                "it is rude bro",
+                "are you up for a chat?",
+                "can i tell you something?",
+                "can we chat for a bit?",
+                "what is life's purpose",
+                "where you from",
+                "what all can i ask you",
+                "show me the channel guide",
+                "do you want to chat?",
+                "tell me where you were created",
+                "you are a natual language interface designed to assist me with a varaity tasks",
+                "let's have a conversation."
+            ],
+            "responses": ""
+        },
+        {
+            "tag": "mute",
+            "patterns": [
+                "turn down your volume please",
+                "i want your volume louder",
+                "can you turn off the volume?",
+                "can you silence the pc?",
+                "please turn your volume up",
+                "disable the sound",
+                "can you decrease the volume?",
+                "can you mute the sound?",
+                "can you please turn your volume down",
+                "turn up your volume",
+                "mute",
+                "i want the volume at 4 please",
+                "can you make the pc quiet?",
+                "a volume of 4 is ideal please",
+                "can you make the pc silent?",
+                "can you increase the speaker volume please",
+                "set the sound to 0",
+                "i want the volume at level 4",
+                "make your volume quieter please",
+                "increase the speaker volume please",
+                "would you please increase the speaker volume",
+                "i want your volume lowered",
+                "can you turn off the audio?",
+                "could you mute the pc?",
+                "can you stop the noise?",
+                "could you reduce the volume?",
+                "can you stop the sound?",
+                "mute the system",
+                "could you please raise your volume",
+                "could you increase the speaker volume please",
+                "can you lower the sound?",
+                "could you turn down the sound?",
+                "lower the volume to zero",
+                "please turn your speaker volume up",
+                "can you make the sound go away?",
+                "adjust the volume to level 4",
+                "i need your volume increased",
+                "please turn the volume to 4",
+                "can you turn off the sound?",
+                "reduce the volume",
+                "i want your volume decreased please"
+            ],
+            "responses": ""
+        },
+        {
+            "tag": "sleep",
+            "patterns": [
+                "could you put the pc to rest?",
+                "can you go to sleep?",
+                "you can go now",
+                "can you enter rest mode?",
+                "could you put the pc to sleep?",
+                "can you shut down for a bit?",
+                "take some rest buddy",
+                "is it time to shut down?",
+                "is it time for a power nap?",
+                "is it time to go to sleep?",
+                "can you sleep for a bit?",
+                "do you need some rest?",
+                "is it time to enter sleep mode?",
+                "you should sleep now",
+                "can you enter sleep mode?",
+                "can you rest for a while?",
+                "can you enter hibernation mode?",
+                "can you go to sleep mode?",
+                "goto sleep",
+                "you should go to sleep now",
+                "can you hibernate for a while?",
+                "can you shutdown for a bit?",
+                "go to sleep",
+                "do you need to hibernate?",
+                "can you enter standby mode?",
+                "is it time for some rest?",
+                "you should now take some rest"
+            ],
+            "responses": [
+                [
+                    "alright,",
+                    "ok,",
+                    "as you wish,",
+                    3
+                ],
+                [
+                    "i'm always there for you",
+                    "you can call me whenever you need",
+                    3
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "resizewindow",
+            "patterns": [
+                "can you resize the window?",
+                "can you make the window smaller?",
+                "can you adjust the window size?",
+                "can you make the window bigger?",
+                "minimize app",
+                "maximize windows",
+                "restore all windows",
+                "can you reduce the window size?",
+                "can you decrease the window size?",
+                "can you change the window size?",
+                "could you change the window dimensions?",
+                "can you shrink the window?",
+                "maximize the window",
+                "can you increase the size of the window?",
+                "can you reduce the window dimensions?",
+                "can you expand the window?",
+                "restore the window",
+                "could you resize the window?",
+                "can you modify the window size?",
+                "minimize all apps",
+                "can you increase the window size?",
+                "can you enlarge the window?",
+                "can you adjust the window dimensions?"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok,",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    6
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "math",
+            "patterns": [
+                "can you add 5 and 89",
+                "solve 8 / 0",
+                "what is seventeen plus three",
+                "can you factor x squared plus 4 x plus 4",
+                "1 - 1",
+                "is 126 divisible by 8",
+                "what is the sum of 3, 7, 9, and 24",
+                "what is 4 * 7",
+                "add up 8 and 7",
+                "multiply 8 * 0",
+                "substract",
+                "multiply",
+                "-3+2",
+                "divide",
+                "can you subract 36 from 5",
+                "can you tell me the square root of pi",
+                "what is the derivative of x squared plus 5",
+                "solve -7+2",
+                "evaluate 2x3",
+                "what is 2+3",
+                "can you multiply 45 by 23",
+                "2*2",
+                "what is the square root of 888",
+                "help me solve this math equation",
+                "add",
+                "calculate 2*2",
+                "1/0",
+                "what is 543 times 344",
+                "what is 2 + 3",
+                "can you divide 100 by 20",
+                "multiply 7 and 42",
+                "i need your assistance to solve this math problem",
+                "divide 1/0",
+                "1+2"
+            ],
+            "responses": [
+                [
+                    "sure,",
+                    "here you go,",
+                    "right away,",
+                    "right on,",
+                    "no problem,",
+                    6
+                ],
+                [
+                    "sir",
+                    2
+                ],
+                [
+                    "it's",
+                    "it is",
+                    3
+                ],
+                [
+                    "<1> = <2>",
+                    "<2>"
+                ]
+            ]
+        },
+        {
+            "tag": "bye",
+            "patterns": [
+                "see you",
+                "goodnight",
+                "this was a nice chat, goodbye",
+                "have a good day",
+                "this was a nice chat",
+                "bye bye",
+                "see you later",
+                "this was fun, see you around bye",
+                "i enjoyed speaking with you",
+                "ok bye",
+                "see ya!",
+                "i enjoyed our talk, bye",
+                "peace out!",
+                "see ya",
+                "this was a nice conversation",
+                "until next time",
+                "bye",
+                "good talk, see you later",
+                "farewell",
+                "ok bye talk to you later",
+                "ttyl",
+                "it was lovely to speak with you",
+                "talk to you later"
+            ],
+            "responses": [
+                [
+                    [
+                        "ok",
+                        "you're welcome",
+                        "you are welcome",
+                        5
+                    ],
+                    [
+                        "goodbye",
+                        "bye",
+                        "see you",
+                        "see you soon",
+                        "see you later",
+                        "talk to you later",
+                        "have a nice day"
+                    ],
+                    [
+                        "sir",
+                        2
+                    ]
+                ],
+                [
+                    [
+                        "ok",
+                        "you're welcome",
+                        "you are welcome",
+                        3
+                    ],
+                    [
+                        "goodbye",
+                        "bye",
+                        "hope you are having a good day",
+                        "hope you are enjoying your day"
+                    ],
+                    [
+                        "sir",
+                        2
+                    ]
+                ],
+                [
+                    [
+                        "ok",
+                        "you're welcome",
+                        "you are welcome",
+                        2
+                    ],
+                    [
+                        "goodbye",
+                        "bye",
+                        "hope you had a good day",
+                        "hope you enjoyed your day"
+                    ],
+                    [
+                        "sir",
+                        2
+                    ]
+                ],
+                [
+                    [
+                        "ok",
+                        "you're welcome",
+                        "you are welcome",
+                        4
+                    ],
+                    [
+                        "goodbye",
+                        "bye",
+                        "have a good night",
+                        "good night",
+                        "it's night already",
+                        "it's <1>"
+                    ],
+                    [
+                        "you should now probably sleep",
+                        "it's time to get some rest",
+                        1
+                    ],
+                    [
+                        "sir",
+                        2
+                    ]
+                ]
+            ]
+        },
+        {
+            "tag": "project",
+            "patterns": [
+                "can you build a new project?",
+                "can you create a new project?",
+                "start a project called test",
+                "create a project named",
+                "can you assemble a new project?",
+                "can you launch a new project?",
+                "make project mark 5",
+                "could you start a new project?",
+                "can you form a new project?",
+                "can you generate a new project?",
+                "can you develop a new project?",
+                "could you design a new project?",
+                "can you initiate a new project?",
+                "could you develop a new project?",
+                "could you create a new project?",
+                "can you construct a new project?",
+                "can you start a new project?",
+                "can you design a new project?",
+                "create a new project and call it",
+                "can you set up a new project?",
+                "can you make a new project?",
+                "start a new project indexed",
+                "make a new project and name it",
+                "could you make a new project?"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    6
+                ],
+                [
+                    "creating",
+                    "initiating",
+                    "starting"
+                ],
+                [
+                    "project",
+                    "a new project",
+                    2
+                ],
+                [
+                    "<1>",
+                    1
+                ],
+                [
+                    "shall we start?",
+                    3
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "start",
+            "patterns": [
+                "can you open the website?",
+                "start settings",
+                "open cmd",
+                "could you run the software?",
+                "open chrome",
+                "please get me today's news headlines",
+                "launch spotify",
+                "start spotify",
+                "start instagram",
+                "start an app please",
+                "can you activate the app?",
+                "start chrome buddy",
+                "start onenote please",
+                "launch sublime text",
+                "launch google chrome",
+                "can you begin the site?",
+                "start minecraft for me",
+                "get me some news",
+                "open edge",
+                "could you start the app?",
+                "can you initiate the software?",
+                "open control panel",
+                "can you show me the news",
+                "can you start the software?",
+                "can you launch the website?",
+                "can you launch the app?",
+                "can you please start ondrive for me",
+                "can you begin the app?",
+                "can you initiate the website?",
+                "can you run the software?",
+                "open gta vice city",
+                "can you open the software?",
+                "could you start the site?",
+                "please launch this app",
+                "start minecraft",
+                "can you activate the site?",
+                "open microsoft edge",
+                "launch telegram",
+                "can you open an app",
+                "could you open the app?",
+                "could you begin the site?",
+                "can you launch the site?",
+                "open google please"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    6
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "time",
+            "patterns": [
+                "is it 6 o clock",
+                "is it morning",
+                "what is the time right now?",
+                "tell me time",
+                "time in manhattan",
+                "what is the time in london",
+                "could you give me an update on the time?",
+                "can you tell me the exact time?",
+                "can you tell me the time right now?",
+                "can you give me the time?",
+                "what time is it now?",
+                "what time is it in the pacific timezone",
+                "can you tell me the current hour?",
+                "could you give me an update on the hour?",
+                "could you tell me what time it is?",
+                "what time is it in pacific standard time",
+                "do you know what time it is?",
+                "can you tell me the exact hour?",
+                "is it 7 am",
+                "how late is it now in ourense",
+                "isn't it evening",
+                "what time of day is it in london",
+                "what's the time",
+                "can you give me an update on the time?",
+                "tell me what time it is",
+                "do you know what time it currently is?",
+                "what's the time in london right now",
+                "what time is it",
+                "what is the current time right now in hollywood",
+                "what time is it in france",
+                "isn't it 8 pm",
+                "what hour is it in london",
+                "what time is it in the pacific standard time",
+                "time",
+                "what time is it over in pacific time",
+                "what time of day is it",
+                "could you tell me the time?",
+                "could you tell me the exact time?",
+                "can you tell me the time?",
+                "what's the current time",
+                "can you tell me what time it is?",
+                "what time is in over there in pacific standard time",
+                "what is the time in paris now",
+                "can you give me an update on the hour?",
+                "what's the clock say",
+                "can you tell me the current time?",
+                "what time is it now in michigan",
+                "i need to know what time it is"
+            ],
+            "responses": [
+                [
+                    "the time is",
+                    "it's",
+                    "it's currently"
+                ],
+                [
+                    "<1>"
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "date",
+            "patterns": [
+                "is it 2 november",
+                "what's today's date",
+                "what date will it be 9 days from now",
+                "can you tell me the date right now?",
+                "can you tell me what day it is?",
+                "give me the date",
+                "which day is it today",
+                "what is the date today?",
+                "can you tell me the exact date?",
+                "what is the current date",
+                "do you know what day it is?",
+                "can you tell me the date?",
+                "what date will it be 7 days from now",
+                "is today monday",
+                "date",
+                "is it 14 feb",
+                "can you give me an update on the date?",
+                "what date will it be 5 days from now",
+                "what date will it be 6 days from now",
+                "could you tell me the date right now?",
+                "is it 2022",
+                "tell me the date",
+                "can you give me an update on the day?",
+                "would you let me know today's date",
+                "what date is it",
+                "could you tell me the date?",
+                "what date will it be 8 days from now",
+                "can you tell me the exact day?",
+                "could you tell me the exact day?",
+                "what day of the week are we on",
+                "could you tell me the exact date?",
+                "isn't it 15 august",
+                "isn't it 2018",
+                "can you tell me the current date?",
+                "what is the current date?",
+                "do you know what date it is?",
+                "tell me what today's date is",
+                "would you let me know what date it will be in 3 days",
+                "tell me the date it will be 5 days from now",
+                "let me know what date it will be in 3 days",
+                "could you give me an update on the date?",
+                "i need to know the date it will be 4 days from now",
+                "in 4 days, what date will it be",
+                "let me know what today's date is",
+                "i would like to get today's date",
+                "what's the date"
+            ],
+            "responses": [
+                [
+                    "the date is",
+                    "today's date is",
+                    "it's"
+                ],
+                [
+                    "<1>"
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "switch",
+            "patterns": [
+                "could you switch to the tab?",
+                "could you move to the tab?",
+                "can you switch apps?",
+                "move to",
+                "change window",
+                "could you switch the tab?",
+                "can you switch to the app?",
+                "switch window",
+                "switch app",
+                "can you move to the app?",
+                "can you switch tabs?",
+                "switch",
+                "can you switch between apps?",
+                "can you move between apps?",
+                "can you switch to the tab?",
+                "can you go to the tab?",
+                "can you move to the tab?",
+                "change",
+                "could you move between tabs?",
+                "can you switch the tab?",
+                "change app",
+                "can you go to the app?",
+                "can you switch between tabs?",
+                "could you move to the app?",
+                "could you switch the app?",
+                "can you switch the app?",
+                "switch to",
+                "change to"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    6
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "fact",
+            "patterns": [
+                "tell some facts",
+                "tell me a fun fact about the moon landing",
+                "do you know a surprising fact?",
+                "tell me something interesting about dogs",
+                "read me cat trivia",
+                "give me a cool fact about seattle",
+                "could you tell me a fact?",
+                "do you have a surprising fact?",
+                "could you share a surprising fact?",
+                "tell me a cool fact about reno",
+                "can you tell me a surprising fact?",
+                "find me cat trivia now please",
+                "spit some facts",
+                "what's a fun fact about axolotls",
+                "i need a spider fact",
+                "could you share a fact?",
+                "tell me something interesting about new york state",
+                "could you share an interesting fact?",
+                "give me a cool fact about puppies",
+                "give me a cool fact about lsd",
+                "can you tell me an unusual fact?",
+                "tell me a fact",
+                "show me trivia about cats",
+                "can you give me a fact?",
+                "can you tell me an interesting fact?",
+                "do you have an interesting fact?",
+                "facts",
+                "can you give me a surprising fact?",
+                "read me some different cat trivia items",
+                "can you tell me a fact?",
+                "can you give me an interesting fact?",
+                "fact",
+                "could you tell me an interesting fact?",
+                "do you have a fact to share?",
+                "tell me a fact about the maned wolf",
+                "give me a cool fact about potatoes",
+                "do you know an unusual fact?",
+                "tell me something interesting about elephants",
+                "tell me an axolotl fact",
+                "give me a cool fact about new orleans",
+                "tell me something interesting about lake tahoe",
+                "do you know an interesting fact?",
+                "do you know a fact?",
+                "give me harry potter trivia",
+                "tell any fact you know",
+                "could you tell me a surprising fact?"
+            ],
+            "responses": ""
+        },
+        {
+            "tag": "translate",
+            "patterns": [
+                "would you translate a phrase into mandarin for me",
+                "could you interpret this phrase?",
+                "translate",
+                "can you translate this name into spanish for me, please",
+                "can you translate this phrase?",
+                "how do you say good bye in french",
+                "translate to english",
+                "can you convert this?",
+                "can you convert this phrase?",
+                "how do i say thank you in spanish",
+                "how do you say hello in japanese",
+                "could you translate this phrase?",
+                "can you interpret this?",
+                "can you translate this sentence?",
+                "could you translate this sentence?",
+                "can you decipher this phrase?",
+                "i need to know how to say hello in france",
+                "in french, how do i say, see you later",
+                "would you translate a sentence into russian for me, please",
+                "can you interpret this phrase?",
+                "could you interpret this?",
+                "can you convert this sentence?",
+                "how do i say good bye in chinese",
+                "how can i say thank you very much in chinese",
+                "could you translate this?",
+                "how do i ask about the weather in chinese",
+                "how do i say dinner in spanish",
+                "could you interpret this sentence?",
+                "can you translate this word?",
+                "can you decipher this?",
+                "i want to know how to say goodbye in france",
+                "could you translate this into chinese for me, please",
+                "tell me how to say hello in chile",
+                "would you tell me how to say goodbye in france",
+                "could you translate water into dutch for me",
+                "how do you say hello in mexico",
+                "how can i say \"cancel my order\" in french",
+                "in spanish, meet me tomorrow is said how",
+                "translate this to english",
+                "can you decipher this sentence?",
+                "can you interpret this sentence?",
+                "can you translate this?",
+                "can you interpret this word?"
+            ],
+            "responses": ""
+        },
+        {
+            "tag": "joke",
+            "patterns": [
+                "do you know any good jokes you would like to share",
+                "can you tell me a funny joke?",
+                "i want to hear something hilarious",
+                "have you heard any great jokes lately",
+                "tell joke",
+                "can you give me a funny joke?",
+                "do you know a funny joke?",
+                "what's the funniest thing you've got",
+                "could you share a hilarious joke?",
+                "do you know a corny joke?",
+                "could you tell me a funny joke?",
+                "can you tell me a hilarious joke?",
+                "do you know a joke?",
+                "do you know a hilarious joke?",
+                "crack a joke",
+                "joke",
+                "i'm in the mood for a joke",
+                "do you have a hilarious joke?",
+                "crack up some joke",
+                "can you tell me a joke?",
+                "can you give me a hilarious joke?",
+                "tell my something funny",
+                "do you have a funny joke?",
+                "tell me a funny joke about men",
+                "do you have any funny jokes you can tell",
+                "can you tell me a joke about a lawyer",
+                "tell some jokes",
+                "could you tell me a hilarious joke?",
+                "i want to hear doctor jokes",
+                "can you give me a joke?",
+                "i want to hear anything you have that's funny",
+                "can you joke",
+                "could you tell me a joke?",
+                "could you tell me a good joke",
+                "tell me something to make me laugh",
+                "give me your best joke",
+                "do you have a joke to share?",
+                "could you share a funny joke?",
+                "tell me your funniest joke",
+                "do you have any funny jokes",
+                "tell me a joke",
+                "let me hear something funny",
+                "could you share a joke?",
+                "do you know any jokes about librarians",
+                "what sort of jokes do you know",
+                "can you tell me a corny joke?",
+                "i want to hear jokes about toddlers"
+            ],
+            "responses": ""
+        },
+        {
+            "tag": "play pc",
+            "patterns": [
+                "show a",
+                "open any",
+                "could you play the sound file?",
+                "can you play the music clip?",
+                "movie",
+                "play me some",
+                "open me some",
+                "could you play the song?",
+                "can you play the audio file?",
+                "play from pc",
+                "picture",
+                "song",
+                "can you play the sound file?",
+                "could you play the file?",
+                "could you play the music file?",
+                "image",
+                "pic",
+                "could you play the media file?",
+                "can you play the media file?",
+                "play local",
+                "can you play the music file?",
+                "could you play the audio file?",
+                "music",
+                "can you play the movie file?",
+                "video",
+                "can you play the song?",
+                "play any",
+                "play from local",
+                "can you play the video?",
+                "hit some",
+                "could you play the video?",
+                "play from desktop",
+                "could you play the movie file?",
+                "can you play the video file?",
+                "can you play the file?",
+                "can you play the audio clip?",
+                "could you play the video file?"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    6
+                ],
+                [
+                    "playing from you pc",
+                    4
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "play youtube",
+            "patterns": [
+                "please play the song that goes like this: jingle bells jingle bells jingle all the way",
+                "can you play the sound file on youtube?",
+                "do you have any of the beatles music",
+                "can you play the video on youtube?",
+                "can i hear the beatles",
+                "i am in the mood to listen to mack the knife",
+                "can i hear the song that starts out doo doo doo",
+                "please start the song penny lane",
+                "play",
+                "can you play the song on youtube?",
+                "could you play the music file on youtube?",
+                "can you play the song clip on youtube?",
+                "can you play the movie file on youtube?",
+                "can you play music by the beatles",
+                "i want to hear satisfaction",
+                "can you play the media file on youtube?",
+                "can you play the song that starts with doo doo doo",
+                "could you play the movie file on youtube?",
+                "search on yt",
+                "play on youtube",
+                "can you play the video file on youtube?",
+                "fetch the song smells like teen spirit and play it",
+                "please play the song that goes like america the beautiful",
+                "please play the song that goes doo doo doo",
+                "can you play the song amazing grace and it goes like this, amazing grace how sweet the sound",
+                "play mere hi liye",
+                "could you play the video on youtube?",
+                "could you play the sound file on youtube?",
+                "let me hear the song sympathy for the devil",
+                "can you play the music clip on youtube?",
+                "play the queen one bite on youtube",
+                "play on yt",
+                "search on youtube",
+                "play from youtube",
+                "could you play the video file on youtube?",
+                "could you play the media file on youtube?",
+                "please play me the song that starts out with doo doo doo",
+                "could you play the audio clip on youtube?",
+                "can you play the audio clip on youtube?",
+                "could you play the audio file on youtube?",
+                "can you play the song that sounds like thun thun thun",
+                "play the song that goes like i like to move it, move it",
+                "search youtube",
+                "can you play the beatles",
+                "could you play the song on youtube?",
+                "can you play the music file on youtube?",
+                "can you play the audio file on youtube?",
+                "can you play the song that goes doo doo doo",
+                "are you able to play beatles songs"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    6
+                ],
+                [
+                    "playing on youtube",
+                    "searching on the web",
+                    "playing from the web",
+                    "searching on youtube",
+                    5
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "search",
+            "patterns": [
+                "can you look up this on wikipedia?",
+                "google what is the purpose or benefit of a cash advance",
+                "do a google search",
+                "can you look up the web on google?",
+                "can you search wikipedia?",
+                "search google what new reality shows are there for 2019",
+                "google what's the definition of nuclear engineering",
+                "search wikipedia does our bank have free notary",
+                "google king of acid",
+                "google wikipedia where does the power steering fluid go",
+                "search on wikipedia what is happening with brexit right nowu",
+                "google what are black holes",
+                "search",
+                "search on wikipedia",
+                "can you look up wikipedia?",
+                "can you search for this on the web?",
+                "can you search the web on wikipedia?",
+                "could you search wikipedia?",
+                "could you search google?",
+                "can you search for this on google?",
+                "search wikipedia what were the top stories this week",
+                "search on wikipedia how can i keep my windshield from fogging up in winter",
+                "search who has the best record in the nfl",
+                "could you search for this on wikipedia?",
+                "search wikipedia show me the channel guide",
+                "search how do i find the area of a circle",
+                "search how many onions do i have on hand",
+                "can you search the web for this?",
+                "can you search for this online?",
+                "could you search for this on google?",
+                "search google is it possible to survive in a black hole",
+                "do a search on google",
+                "search the birds fly with there wings",
+                "could you search the web for this?",
+                "search wikipedia how long will it take me to pay off my card if i pay an extra $50 a month over the minimum",
+                "search google what university in the united states offers the best biomedical engineering program",
+                "search set a warning for when my bank account starts running low",
+                "can you search for this on wikipedia?",
+                "search can you tell me the latest georgia news",
+                "search wikipedia",
+                "can you look up this on google?",
+                "google how can i root an android phone",
+                "do a search",
+                "google are bad habits closely related with addictions",
+                "could you search the web on wikipedia?",
+                "search wikipedia can i mix antifreeze with water",
+                "can you search google?",
+                "google are androids expensive",
+                "can you look up the web on wikipedia?",
+                "search for",
+                "search google does hypnosis work to break bad habits",
+                "google how long does it take to become an architect",
+                "can you please search on google",
+                "can you look up google?",
+                "search google is it true that nicotine is harder to kick than heroin"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    "please wait",
+                    6
+                ],
+                [
+                    "searching on the web",
+                    "please wait",
+                    "searching on google",
+                    "searching on wikipedia",
+                    5
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "summarize",
+            "patterns": [
+                "tell me a summary of brexit referendum",
+                "could you provide an overview of the topic?",
+                "summary on androids",
+                "could you provide a quick summary of the topic?",
+                "could you summarize the topic?",
+                "summarize",
+                "summary of",
+                "give me a summary of",
+                "tell me a summary black hole",
+                "summary",
+                "can you give me an overview of the topic?",
+                "could you give me a summary of the topic?",
+                "please tell me the summary of",
+                "summarize it",
+                "tell me a summary of",
+                "tell me a summary of nuclear engineering",
+                "can you summarize famous living architects",
+                "can you provide a quick summary of the topic?",
+                "tell me a summary of electrical engineering",
+                "can you provide a summary of the topic?",
+                "tell me a summary on naval engineering",
+                "could you summarize this topic?",
+                "could you give me an overview of the topic?",
+                "can you provide an overview of the topic?",
+                "could you give me a brief overview of the topic?",
+                "can you give me a summary of the topic?",
+                "summarize flu",
+                "could you provide a short summary of the topic?",
+                "summarize architect",
+                "can you give me a brief summary of the topic?",
+                "can you summarize nicotine",
+                "can you summarize",
+                "summarize power steering fluid",
+                "can you provide a short summary of the topic?",
+                "summary on is android and iphone",
+                "could you provide a summary of the topic?",
+                "can you summarize bad habits and addictions",
+                "can you give me a quick summary of the topic?",
+                "summary on",
+                "can you summarize this topic?",
+                "can you give me a brief overview of the topic?",
+                "tell me a summary for biomedical engineering",
+                "summarize autism a genetic disease",
+                "can give me a summary on",
+                "summary of the 13th president",
+                "can you summarize the topic?"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    "please wait",
+                    6
+                ],
+                [
+                    "searching on the web",
+                    "please wait",
+                    "searching on wikipedia",
+                    5
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "weather",
+            "patterns": [
+                "what's the temperature going to be like today?",
+                "what is the weather in tokyo",
+                "what's the humidity today",
+                "what's today's weather",
+                "what's the forecast for tomorrow's temperature?",
+                "is it cloudy today",
+                "what type of weather should i expect today?",
+                "weather forecast please",
+                "what kind of weather can i expect tomorrow?",
+                "check weather",
+                "what kind of weather will it be tomorrow?",
+                "i need to know the weather",
+                "i need to know today's forecast",
+                "what's the current temperature?",
+                "tell me about the weather today",
+                "what's the weather like",
+                "today's weather",
+                "weather",
+                "what's the temperature outside?",
+                "what type of weather can i expect?",
+                "what's the weather like outside?",
+                "what's the chance of rain",
+                "what's is the current weather forecast",
+                "what type of weather is it going to be today?",
+                "what's the expected weather for today?",
+                "what's the weather forecast for the day",
+                "tell me the forecast",
+                "what's the weather like?",
+                "what will be the weather tomorrow",
+                "what's the weather today",
+                "what will the temperature be like tomorrow?",
+                "what is the weather outside",
+                "what's the forecast for tomorrow's weather?",
+                "what kind of weather should i expect tomorrow?",
+                "is it rainy today",
+                "is it going to rain tomorrow",
+                "what's the temperature going to be like tomorrow?",
+                "what will the temperature be like today?",
+                "is it sunny today",
+                "what is the weather in atlanta",
+                "tell weather",
+                "what will the weather be like tomorrow?",
+                "what's the forecast today?"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    "please wait",
+                    6
+                ],
+                [
+                    "today's weather",
+                    "the weather"
+                ],
+                [
+                    "outside",
+                    "in <1>"
+                ],
+                [
+                    "is <2>"
+                ],
+                [
+                    "it will be a <2> day",
+                    "it will be a <2> day outside in <1>",
+                    "it will be a <2> day outside",
+                    "it will be a <2> day in <1>",
+                    4
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "temperature",
+            "patterns": [
+                "what was the temperature yesterday",
+                "what's today's high and low",
+                "what's the humidity today",
+                "i need to know today's temperature",
+                "can you tell the temperature it will tomorrow",
+                "what is the temperature inside?",
+                "tell me the temperature",
+                "what is the temperature in the room?",
+                "temperature",
+                "what's today's temperature",
+                "what is the temperature in the city?",
+                "what's the current temperature?",
+                "what's the temperature outside?",
+                "today's temperature",
+                "how cold is it in wisconsin today",
+                "what is the temperature in the building?",
+                "what temperature is it today",
+                "what is the temperature in the area right now?",
+                "what's the temperature in the office?",
+                "is it 30 degree celsius",
+                "what is the temperature now?",
+                "what's the temperature of the air?",
+                "tell me about today's temperature",
+                "what's the temperature outside today?",
+                "what is the temperature outside?",
+                "what's the temperature in the area?",
+                "what's the temperature of the environment?",
+                "what is the temperature in the room right now?",
+                "what's the temperature at the moment?",
+                "check temperature",
+                "what is the temperature in the house?",
+                "what's the temperature?",
+                "what's the temperature outside right now?",
+                "what's the temperature around here?"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    "please wait",
+                    6
+                ],
+                [
+                    "today's temperature",
+                    "the temperature"
+                ],
+                [
+                    "outside",
+                    "in <1>"
+                ],
+                [
+                    "is <2>"
+                ],
+                [
+                    "it will be a <2> day",
+                    "it will be a <2> day outside in <1>",
+                    "it will be a <2> day outside",
+                    "it will be a <2> day in <1>",
+                    4
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "close app",
+            "patterns": [
+                "can you exit the app?",
+                "exit this app",
+                "shutdown",
+                "can you shut down the app?",
+                "could you end the program?",
+                "could you end the app?",
+                "could you terminate the program?",
+                "could you shut down the app?",
+                "could you exit the app?",
+                "exit",
+                "please close the app for me",
+                "can you terminate the program?",
+                "close chrome",
+                "can you close the program?",
+                "shutdown this process",
+                "close",
+                "can you close the app?",
+                "could you close the program?",
+                "can you end the app?",
+                "kill",
+                "close current app",
+                "could you close the app?",
+                "kill the window",
+                "quit the app",
+                "can you shut down the program?",
+                "can you quit the app?",
+                "close the window",
+                "could you terminate the app?",
+                "close this app",
+                "can you end the program?",
+                "kill edge",
+                "quit",
+                "can you terminate the app?",
+                "could you shut down the program?",
+                "could you quit the app?"
+            ],
+            "responses": [
+                [
+                    "right on,",
+                    "alright,",
+                    "yes,",
+                    "of course,",
+                    "sure,",
+                    "ok",
+                    "as you wish,",
+                    "here you go,",
+                    "no problem,",
+                    "right away,",
+                    "please wait",
+                    6
+                ],
+                [
+                    "closing",
+                    "exiting",
+                    "quiting",
+                    "shutting down"
+                ],
+                [
+                    "<1>",
+                    3
+                ],
+                [
+                    "sir",
+                    2
+                ]
+            ]
+        },
+        {
+            "tag": "greet",
+            "patterns": [
+                "konichiwa!",
+                "good afternoon",
+                "namaste!",
+                "howdy-doody!",
+                "hi there!",
+                "hiya!",
+                "hey!",
+                "greetings!",
+                "ni hao!",
+                "good morning",
+                "morning",
+                "aloha!",
+                "good morning!",
+                "bonjour!",
+                "good night!",
+                "shalom!",
+                "hey there!",
+                "good afternoon!",
+                "good night",
+                "howdy!",
+                "salaam!",
+                "good evening!",
+                "hola!",
+                "hi!",
+                "afternoon",
+                "evening",
+                "good evening"
+            ],
+            "responses": [
+                [
+                    [
+                        "good"
+                    ],
+                    [
+                        "<1>.",
+                        "<1>,"
+                    ]
+                ],
+                [
+                    [
+                        "hope you have a good day.",
+                        "hope you enjoy your day.",
+                        8
+                    ],
+                    [
+                        "sir",
+                        2
+                    ]
+                ],
+                [
+                    [
+                        "hope you are having a good day.",
+                        "hope you are enjoying your day."
+                    ],
+                    [
+                        "sir",
+                        2
+                    ]
+                ],
+                [
+                    [
+                        "hope you had a good day.",
+                        "hope you enjoyed your day."
+                    ],
+                    [
+                        "sir",
+                        2
+                    ]
+                ],
+                [
+                    [
+                        "it's <1> already.",
+                        4
+                    ],
+                    [
+                        "you should now probably sleep.",
+                        "you should probably sleep now."
+                    ],
+                    [
+                        "sir",
+                        2
+                    ]
+                ]
+            ]
+        },
+        {
+            "tag": "restart pc",
+            "patterns": [
+                "could you turn off my pc and turn it back on?",
+                "reboot my workstation",
+                "can you restart my pc?",
+                "can you reset my pc?",
+                "restart this computer",
+                "could you reboot my pc?",
+                "can you turn off my pc and turn it back on?",
+                "could you shut down the computer and start it up again?",
+                "could you shut down my pc and start it up again?",
+                "could you reset the computer?",
+                "can you reboot my pc?",
+                "reboot system",
+                "reboot my system",
+                "could you restart the computer?",
+                "could you reboot the computer?",
+                "restart pc",
+                "can you shut down my pc and start it up again?",
+                "can you reboot the computer?",
+                "can you restart the computer?",
+                "can you reset the computer?",
+                "could you power off the computer and turn it back on?",
+                "could you reset my pc?",
+                "can you shut down the computer and start it up again?",
+                "restart my pc",
+                "could you restart my pc?",
+                "can you power off the computer and turn it back on?"
+            ],
+            "responses": ""
+        },
+        {
+            "tag": "shutdown pc",
+            "patterns": [
+                "shutdown my system",
+                "shutdown my pc",
+                "shutdown system",
+                "can you power down my pc?",
+                "could you turn off my pc?",
+                "can you power down the computer?",
+                "shutdown this computer",
+                "could you power down the computer?",
+                "could you power down the system?",
+                "could you power down my pc?",
+                "can you shut down the computer?",
+                "could you shut down the system?",
+                "could you power off the computer?",
+                "can you turn off the computer?",
+                "can you shut down the system?",
+                "can you power off the computer?",
+                "could you shutdown my pc?",
+                "can you shutdown my pc?",
+                "can you power down the system?",
+                "shutdwon my workstation",
+                "could you shut down the computer?",
+                "can you turn off my pc?",
+                "could you turn off the computer?",
+                "can you turn off the system?",
+                "could you turn off the system?",
+                "shutdown pc"
+            ],
+            "responses": ""
+        },
+        {
+            "tag": "lock pc",
+            "patterns": [
+                "can you secure the computer?",
+                "can you lock the pc?",
+                "can you lock the computer?",
+                "could you lock the computer?",
+                "could you secure my pc?",
+                "lock this computer",
+                "could you lock the system?",
+                "can you secure the system?",
+                "could you lock the pc?",
+                "could you secure the system?",
+                "can you secure my pc?",
+                "lock my system",
+                "could you protect the computer?",
+                "can you lock my pc?",
+                "can you lock the system?",
+                "can you protect the computer?",
+                "lock my workstation",
+                "could you protect my pc?",
+                "can you protect the system?",
+                "lock system",
+                "could you secure the computer?",
+                "lock my pc",
+                "lock pc",
+                "could you lock my pc?",
+                "can you protect my pc?",
+                "could you protect the system?"
+            ],
+            "responses": ""
+        }
+    ]
+}
