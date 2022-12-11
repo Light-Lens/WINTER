@@ -2,22 +2,47 @@
     "intents": [
         {
             "tag": "true",
-            "patterns": ["play mere hi liye and search what is a neural network", "start chrome and close sublime text", "what is today's time and date",
-                        "search for steve jobs' life and summarize a neural network", "minimize the app and hit some song from my pc", "mute the system and go to sleep",
-                        "add 2 + 2 and lock my pc", "start a new project and tell me a joke", "switch the window and translate tum kya kar rahe ho", "temperature and weather",
-                        "this is just a text and open chrome", "yesterday I was playing a game and I fell and lost, and close edge"],
+            "patterns": [
+                "play mere hi liye and search what is a neural network",
+                "start chrome and close sublime text",
+                "what is today's time and date",
+                "search for steve jobs' life and summarize a neural network",
+                "minimize the app and hit some song from my pc",
+                "mute the system and go to sleep",
+                "add 2 + 2 and lock my pc",
+                "start a new project and tell me a joke",
+                "switch the window and translate tum kya kar rahe ho",
+                "temperature and weather",
+                "this is just a text and open chrome",
+                "yesterday I was playing a game and I fell and lost, and close edge"
+            ],
 
             "responses": ""
         },
         {
             "tag": "false",
-            "patterns": ["synthetic body made of vibranium and, in conjunction with", "Ultron's personality and an Infinity Stone", "yesterday I was playing a game and I fell and lost",
-                        "system that perceives its environment and takes actions that maximize its chance", "I am married and I have two children.",
-                        "6 and 8 years old", "I moved here from Tokyo 5 years ago and I still have trouble sometimes", "start a new project and name it T1",
-                        "from greetings and small talk to saying goodbye", "boost your speaking skills and confidence level", "A neutral and friendly greeting",
-                        "US, Canada and England", "fine, thanks and yourself", "they're well and doing well", "asking and answering Questions",
-                        "This is very informal, and it can sound rude to some people", "And please, don't forget to thank them after they do.",
-                        "And now let's get this conversation started", "search and summarize steve jobs' biography", "play markov chains and neural networks on youtube"],
+            "patterns": [
+                "synthetic body made of vibranium and, in conjunction with",
+                "Ultron's personality and an Infinity Stone",
+                "yesterday I was playing a game and I fell and lost",
+                "system that perceives its environment and takes actions that maximize its chance",
+                "I am married and I have two children.",
+                "6 and 8 years old",
+                "I moved here from Tokyo 5 years ago and I still have trouble sometimes",
+                "start a new project and name it T1",
+                "from greetings and small talk to saying goodbye",
+                "boost your speaking skills and confidence level",
+                "A neutral and friendly greeting",
+                "US, Canada and England",
+                "fine, thanks and yourself",
+                "they're well and doing well",
+                "asking and answering Questions",
+                "This is very informal, and it can sound rude to some people",
+                "And please, don't forget to thank them after they do.",
+                "And now let's get this conversation started",
+                "search and summarize steve jobs' biography",
+                "play markov chains and neural networks on youtube"
+            ],
 
             "responses": ""
         }

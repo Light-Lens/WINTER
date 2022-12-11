@@ -1,5 +1,5 @@
 import torch, torch.nn as nn, numpy as np
-import json, torch
+import json, torch, time
 
 from src.nltk_utils import bag_of_words, tokenize, stem, nGrams
 from torch.utils.data import Dataset, DataLoader
@@ -85,10 +85,10 @@ class Train:
         self.intents = []
         self.outpath = outpath
 
-        self.num_epochs = 5000
-        self.batch_size = 521
+        self.num_epochs = 10000
+        self.batch_size = 128
         self.learning_rate = 0.001
-        self.hidden_size = 521
+        self.hidden_size = 64
 
         with open(intents, 'r') as f:
             self.intents = json.load(f)
@@ -119,9 +119,7 @@ class Train:
         all_words = sorted(set(all_words))
         tags = sorted(set(tags))
 
-        print(len(xy), "patterns")
-        print(len(tags), "tags:", tags)
-        print(len(all_words), "unique lemmatized words:", all_words)
+        print(len(xy), "patterns,", len(tags), "tags,", len(all_words), "unique lemmatized words")
 
         # create training data
         X_train = []
@@ -144,7 +142,7 @@ class Train:
         hidden_size = self.hidden_size
         input_size = len(X_train[0])
         output_size = len(tags)
-        print(input_size, output_size)
+        print("input size:", input_size, "output size:", output_size)
 
         class ChatDataset(Dataset):
 
@@ -176,6 +174,8 @@ class Train:
         optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
         # Train the model
+        losses, acc = [], []
+        start_time = time.perf_counter()
         for epoch in range(num_epochs):
             for (words, labels) in train_loader:
                 words = words.to(device)
@@ -192,10 +192,18 @@ class Train:
                 loss.backward()
                 optimizer.step()
 
-            if (epoch+1) % 100 == 0:
-                print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.18f}')
+                losses.append(loss.item())
+                preds = torch.argmax(outputs, -1)
+                acc.append((preds == labels).float().mean().item())
 
-        print(f'Final loss: {loss.item():.18f}')
+                accuracy = np.array(acc).mean()
+                currentloss = np.array(losses).mean()
+
+                print(f'Epoch {epoch+1}/{num_epochs}, Loss: {currentloss}, Accuracy: {accuracy}', end="\r")
+            if (epoch+1) % 100 == 0: print()
+
+        print(f'Final loss: {currentloss}, Final accuracy: {accuracy}')
+        print("Time taken:", (time.perf_counter() - start_time), "sec")
 
         data = {
         "model_state": model.state_dict(),
