@@ -85,10 +85,10 @@ class Train:
         self.intents = []
         self.outpath = outpath
 
-        self.num_epochs = 10000
-        self.batch_size = 128
-        self.learning_rate = 0.01
-        self.hidden_size = 64
+        self.num_epochs = 4000
+        self.batch_size = 256
+        self.learning_rate = 0.001
+        self.hidden_size = 256
 
         with open(intents, 'r') as f:
             self.intents = json.load(f)
@@ -174,7 +174,7 @@ class Train:
         optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
         # Train the model
-        losses, acc = [], []
+        acc = []
         start_time = time.perf_counter()
         for epoch in range(num_epochs):
             for (words, labels) in train_loader:
@@ -192,12 +192,11 @@ class Train:
                 loss.backward()
                 optimizer.step()
 
-                losses.append(loss.item())
                 preds = torch.argmax(outputs, -1)
                 acc.append((preds == labels).float().mean().item())
 
-                accuracy = np.array(acc).mean()
-                currentloss = np.array(losses).mean()
+                accuracy = f"{np.array(acc).mean():.18f}"
+                currentloss = f"{loss.item():.18f}"
 
                 print(f'Epoch {epoch+1}/{num_epochs}, Loss: {currentloss}, Accuracy: {accuracy}', end="\r")
             if (epoch+1) % (num_epochs/10) == 0: print()

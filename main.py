@@ -30,9 +30,8 @@ def main(text):
         CMD.interpreter(tag, topics, responses)
         Speak(CMD.output)
 
-while True: main(input("> "))
-
-# if __name__ == "__main__":
-#     while True:
-#         with open("assets\\current.txt") as f: text = f.read()
-#         main(text) if text else None
+if __name__ == "__main__":
+    while True:
+        # with open("assets\\current.txt") as f: text = f.read()
+        text = input("> ")
+        main(text) if text else None
