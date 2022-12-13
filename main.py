@@ -19,11 +19,11 @@ def main(text):
     Prediction = [[i, list(Classifier.get_response( " ".join(i) ))] for i in input_list]
 
     for i in Prediction:
-        text, tag, responses = i[0], i[1][0], i[1][1]
+        txt, tag, responses = i[0], i[1][0], i[1][1]
 
-        if tag == "default" or tag == "chat": topics = [" ".join(text)]
+        if tag == "default" or tag == "chat": topics = [" ".join(txt)]
         else:
-            nlc = Nlc.predict(text)
+            nlc = Nlc.predict(txt)
             topics = [" ".join(i) for i in CMD.formatter(nlc, nlc.split())]
 
         CMD.interpreter(tag, topics, responses)

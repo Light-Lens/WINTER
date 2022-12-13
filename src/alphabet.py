@@ -226,7 +226,7 @@ class NLC:
 
     def predict(self, tokens):
         textlist, unigram, outputlist = [], [], []
-        toks = [i for i in nGrams(tokens, 3)]
+        toks = [i for i in nGrams(tokens, 3 if len(tokens)-1 > 3 else 2 if len(tokens)-1 > 2 else 1)]
 
         if toks == []:
             for i in tokens:

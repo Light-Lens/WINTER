@@ -5,7 +5,7 @@ def init():
     T2 = Train("models\\nlp.json", "models\\nlp.pth")
     T3 = Train("models\\intents.json", "models\\data.pth")
 
-    T2.batch_size = 32
+    T2.batch_size = 128
     T2.hidden_size = 128
 
     T1.initalize()
