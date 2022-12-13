@@ -85,10 +85,10 @@ class Train:
         self.intents = []
         self.outpath = outpath
 
-        self.num_epochs = 4000
-        self.batch_size = 256
+        self.num_epochs = 1000
+        self.batch_size = 32
         self.learning_rate = 0.001
-        self.hidden_size = 256
+        self.hidden_size = 8
 
         with open(intents, 'r') as f:
             self.intents = json.load(f)
@@ -142,7 +142,7 @@ class Train:
         hidden_size = self.hidden_size
         input_size = len(X_train[0])
         output_size = len(tags)
-        print("input size:", input_size, "output size:", output_size)
+        print("input size:", input_size, "\b,", "output size:", output_size)
 
         class ChatDataset(Dataset):
 

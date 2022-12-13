@@ -1,21 +1,22 @@
 # Core
 import speech_recognition as sr, pyttsx3, os
 
-# TTS engine
-engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
-engine.setProperty('rate', 190)
-engine.setProperty('voice', voices[1].id) #! Causing problem (Changing directory) ~> Solved
-ROOT_DIR = os.path.dirname(os.path.normpath(  os.path.dirname(os.path.abspath(__file__))  ))
-
+# Speech recognizer
 recognizer = sr.Recognizer()
 recognizer.pause_threshold = 1
+ROOT_DIR = os.path.dirname(os.path.normpath(  os.path.dirname(os.path.abspath(__file__))  ))
 
 # Speak out loud the text
 def Speak(audio):
     if not audio: return
 
+    # TTS engine
     print(audio)
+    engine = pyttsx3.Engine()
+    voices = engine.getProperty('voices')
+    engine.setProperty('rate', 190)
+    engine.setProperty('voice', voices[1].id) #! Causing problem (Changing directory) ~> Solved
+
     engine.say(audio)
     engine.runAndWait()
 

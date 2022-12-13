@@ -26,12 +26,5 @@ def main(text):
             nlc = Nlc.predict(text)
             topics = [" ".join(i) for i in CMD.formatter(nlc, nlc.split())]
 
-        print(tag, topics)
         CMD.interpreter(tag, topics, responses)
         Speak(CMD.output)
-
-if __name__ == "__main__":
-    while True:
-        # with open("assets\\current.txt") as f: text = f.read()
-        text = input("> ")
-        main(text) if text else None
