@@ -59,7 +59,7 @@ $ python
 ```
 
 ## Usage
-Run from `main.py`
+From [`main.py`]("main.py"), run
 ```python
 train_all()
 ```
