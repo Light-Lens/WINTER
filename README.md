@@ -70,7 +70,7 @@ python main.py
 ```
 
 ## Customize
-Have a look at [intents.json](models/intents.json). You can customize it according to your own use case. Just define a new `tag`, possible `patterns`, and possible `responses` for the system. You have to re-run the training whenever this file is modified.
+Have a look at [intents.json](models/intents.json). You can customize it according to your own use case. Just define a new `tag`, and possible `patterns` for the system. You have to re-run the training whenever this file is modified.
 ```json
 {
     "intents": [
