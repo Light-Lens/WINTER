@@ -17,7 +17,7 @@ def train_all():
     T3.init()
 
 # initalize
-train_all()
+# train_all()
 AOs = aos()
 NLC = nlc()
 init(autoreset = True)
