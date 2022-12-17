@@ -1,4 +1,6 @@
 # WINTER
+### NOTE: This version of WINTER is obsolete and will not be updated any further.
+
 WINTER (Witty Intelligence with Natural Emotions and Rationality) is an artificially intelligent system inspired by JARVIS from the Iron man movies.
 
 ## Getting Started
