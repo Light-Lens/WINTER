@@ -1,5 +1,5 @@
-# WINTER
-WINTER (Witty Intelligence with Natural Emotions and Rationality) is an artificially intelligent system inspired by JARVIS from the Iron man movies.
+# WINTER — (Witty Intelligence with Natural Emotions and Rationality)
+WINTER in particular is an AI program that is designed to help users gain a better understanding of the language they use by providing contextual information to the words they enter. It is built upon concepts like natural language processing (NLP), machine learning (ML), and reinforcement learning (RL), which are all used to create such a comprehensive system.
 
 ## Getting Started
 Visual Studio Code is recommended, WINTER is officially untested on other development environments whilst we focus on a Windows build.
@@ -7,34 +7,22 @@ Visual Studio Code is recommended, WINTER is officially untested on other develo
 Start by cloning the repository with `git clone https://github.com/Light-Lens/WINTER.git`
 
 ## The Plan
-The plan for WINTER is to create a Powerful, General Purpose, AI system which can assist you with a variety of tasks, 24 hours a day, 7 days a week.
+The plan for WINTER is to create a Powerful, General Purpose, AI system which can assist you with a variety of tasks.
 
 ## Demo
 ```console
 WINTER
 ```
 ```
-~> Wake up
-Online and ready!
+~> WINTER, You up?
+For you sir, always.
 
-~> Hello
-Namaste :)
+~> Start a new project indexed as mark 5
+Sure.
+Shall I store it on your GitHub sir?
 
-~> How are you?
-I am doing a bit better than before, but not nearly as awesome as I am going to be.
-
-~> What are you doing?
-Existing.
-What are you doing?
-
-~> Nothing, just talking to you.
-Hmmm
-
-~> Do you know what is life?
-I think, therefore I am.
-
-~> Impressive!
-I know, right.
+~> Yeah sure
+Project initalize, shall we start?
 ```
 
 ## Installation
@@ -58,8 +46,10 @@ pip install -r requirements.txt
 
 If you get an error during the first run, you also need to install `nltk` utils:
 Run this once in your terminal:
- ```console
+```console
 $ python
+```
+```python
 >>> import nltk
 >>> nltk.download('punkt')
 >>> nltk.download('wordnet')
@@ -69,46 +59,58 @@ $ python
 ```
 
 ## Usage
-Run
-```console
-train.bat
+Run from `main.py`
+```python
+train_all()
 ```
 
-This will dump `data.pth` file in [`.\data\models`](data/models) directory. And then run
+This will dump `data.pth`, `and.pth`, `nlp.pth` file in [`models`](models) directory. And then run
 ```console
 python main.py
 ```
 
 ## Customize
-Have a look at [intents.json](data/models/intents.json). You can customize it according to your own use case. Just define a new `tag`, possible `patterns`, and possible `responses` for the system. You have to re-run the training whenever this file is modified.
+Have a look at [intents.json](models/intents.json). You can customize it according to your own use case. Just define a new `tag`, possible `patterns`, and possible `responses` for the system. You have to re-run the training whenever this file is modified.
 ```json
 {
     "intents": [
         {
-            "tag": "say hello",
-            "patterns": [
-                "hello",
-                "hi there",
-                "hey",
-                "namaste"
-            ],
-            "responses": [
-                [
-                    "Hello.",
-                    "Hi.",
-                    "How are you doing.",
-                    "Namaste.",
-                    "Greetings and salutations.",
-                    "What's up with you?",
-                    "How are you doing?",
-                    "How have you been?"
-                ]
-            ]
+            "tag": "default",
+            "patterns": [""]
+        }
+    ],
+    "and": [
+        {
+            "tag": "true",
+            "patterns": [""]
         },
-        ...
+        {
+            "tag": "false",
+            "patterns": [""]
+        }
+    ],
+    "nlp": [
+        {
+            "tag": "true",
+            "patterns": [""]
+        },
+        {
+            "tag": "false",
+            "patterns": [""]
+        }
     ]
 }
 ```
+
+## Acknowledgements
+This project is inspired from Tony Stark's JARVIS, and the following videos helped me to make this possible.
+
+[My J.A.R.V.I.S. Program Quick Demo - Kartikey Sankhdher](https://youtu.be/OCxL-V2Zt8A)
+[Iron Man Jarvis AI Desktop Voice Assistant - CodeWithHarry](https://youtu.be/Lp9Ftuq2sVI)
+
+
+[Building JARVIS - Huw Prosser](https://youtube.com/playlist?list=PLMN3MpL-Rb0APuaKJdORgiIWY9vzeHrcp)
+[Chat Bot With PyTorch - Patrick Loeber](https://youtube.com/playlist?list=PLqnslRFeH2UrFW4AUgn-eY37qOAWQpJyg)
 
 ## License and Contributions
 All code is licensed under a MIT license. This allows you to re-use the code freely, remixed in both commercial and non-commercial projects. The only requirement is to include the same license when distributing.

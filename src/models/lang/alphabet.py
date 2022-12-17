@@ -22,7 +22,7 @@ class NeuralNet(nn.Module):
         return out
 
 class Classify:
-    def __init__(self, JSON, FILE, intentclass='intents'):
+    def __init__(self, JSON="models\\intents.json", FILE="models\\data.pth", intentclass='intents'):
         self.JSON = JSON
         self.FILE = FILE
         self.intentclass = intentclass
@@ -213,9 +213,9 @@ class Train:
         print(f'Training complete. File saved to {FILE}')
 
 # Natural language to Command
-class NLC:
+class nlc:
     def __init__(self):
-        self.Classifier = Classify("models\\nlp.json", "models\\nlp.pth", "nlp")
+        self.Classifier = Classify("models\\intents.json", "models\\nlp.pth", "nlp")
         self.Classifier.init()
 
     def predict(self, tokens):
@@ -223,8 +223,8 @@ class NLC:
         toks = [i for i in nGrams(tokens, 3 if len(tokens)-1 > 3 else 2 if len(tokens)-1 > 2 else 1)]
 
         for i in toks:
-            tag = self.Classifier.predict( " ".join(i) )
-            if tag == True: textlist.append(i)
+            tag = self.Classifier.predict(" ".join(i))
+            if tag == "true": textlist.append(i)
 
         for i in textlist:
             for j in i:
@@ -233,6 +233,6 @@ class NLC:
         for i in unigram:
             text = " ".join(outputlist) + " " + i
             tag = self.Classifier.predict(text)
-            if tag == True: outputlist.append(i)
+            if tag == "true": outputlist.append(i)
 
-        return " ".join(outputlist)
+        return outputlist

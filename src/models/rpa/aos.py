@@ -2,9 +2,6 @@ from src.models.lang.alphabet import Classify
 from src.utils import ArrangeWords
 import re
 
-Classifier = Classify("models\\intents.json", "models\\and.pth", "and")
-Classifier.init()
-
 class lexer:
     def __init__(self, line:str):
         self.line = line
@@ -24,8 +21,10 @@ class aos:
         self.output = ""
         self.list_of_outputs = []
 
-    @staticmethod
-    def formatter(text, tokens=[]):
+        self.Classifier = Classify("models\\intents.json", "models\\and.pth", "and")
+        self.Classifier.init()
+
+    def formatter(self, text, tokens=[]):
         if not tokens: tokens = lexer(text).tokenizer()
         text_split = text.split(" and ")
         list_of_commands = [[]]
@@ -34,7 +33,7 @@ class aos:
         for i in tokens:
             if i == "and":
                 prev_text, next_text = text_split[count-1], text_split[count]
-                tag = Classifier.predict(f"{prev_text} and {next_text}")
+                tag = self.Classifier.predict(f"{prev_text} and {next_text}")
 
                 if tag == "true": list_of_commands.append([])
                 else: list_of_commands[-1].append(i)
@@ -42,7 +41,7 @@ class aos:
                 count += 1
 
             else: list_of_commands[-1].append(i)
-        return [" ".join(i) for i in list_of_commands]
+        return list_of_commands
 
     def interpreter(self, cmd="default", args=[]):
         pass

@@ -1,83 +1,11 @@
 {
-    "intents": [],
-    "and": [
+    "intents": [
         {
             "tag": "default",
             "patterns": [""]
-        },
-        {
-            "tag": "true",
-            "patterns": [
-                "search what is a game engine and open chrome",
-                "open microsoft edge and play mere hi liye on youtube",
-                "google how to make my own search engine in python and tell me the time",
-                "time and date",
-                "start a new project and hit some music on youtube",
-                "play some song on youtube and lanuch sublime text 3",
-                "mute my system and close spotify",
-                "minimize the app size and open obs studio",
-                "bring up the app and initiate a project called mark 5",
-                "what is today's date and switch to telegram",
-                "change the current app and also change the switch tab",
-                "tell me a fact and a joke and play a song from my pc",
-                "open a picture from my computer and translate how are you and play some binural beats",
-                "what is today's weather forecast and temperature and humidity",
-                "summarize the life steve jobs and search on google about him",
-                "good morning and tell me today's news headlines",
-                "close all apps and shutdown my pc",
-                "reboot my pc and also kill all processes",
-                "quit this app and add 2 + 2 and lock my workstation",
-                "calculate 7 * 6 and search it on google",
-                "search on wikipedia and google what is mitochondria",
-                "play the queen one bite and play a fatal flaw in math",
-                "yesterday I was playing a game and I fell and lost, and close edge",
-                "play mere hi liye and search what is a neural network",
-                "start chrome and close sublime text",
-                "what is today's time and date",
-                "search for steve jobs' life and summarize a neural network",
-                "minimize the app and hit some song from my pc",
-                "mute the system and go to sleep",
-                "add 2 + 2 and lock my pc",
-                "start a new project and tell me a joke",
-                "switch the window and translate tum kya kar rahe ho",
-                "temperature and weather",
-                "this is just a text and open chrome",
-                "open sublime text 3 and get rid of this app",
-                "take all windows down and update my pc"
-            ]
-        },
-        {
-            "tag": "false",
-            "patterns": [
-                "synthetic body made of vibranium and, in conjunction with",
-                "ultron's personality and an infinity stone",
-                "yesterday i was playing a game and i fell and lost",
-                "system that perceives its environment and takes actions that maximize its chance",
-                "i am married and i have two children.",
-                "6 and 8 years old",
-                "i moved here from tokyo 5 years ago and i still have trouble sometimes",
-                "start a new project and name it t1",
-                "from greetings and small talk to saying goodbye",
-                "boost your speaking skills and confidence level",
-                "a neutral and friendly greeting",
-                "us, canada and england",
-                "fine, thanks and yourself",
-                "they're well and doing well",
-                "asking and answering questions",
-                "this is very informal, and it can sound rude to some people",
-                "and please, don't forget to thank them after they do.",
-                "and now let's get this conversation started",
-                "search and summarize steve jobs' biography",
-                "play markov chains and neural networks on youtube",
-                "today was my lucky day and it was because of you"
-            ]
         }
     ],
-    "or": [
-        {
-            "tag": "default",
-            "patterns": [""]
-        },
+    "and": [
         {
             "tag": "true",
             "patterns": [""]
@@ -88,10 +16,6 @@
         }
     ],
     "nlp": [
-        {
-            "tag": "default",
-            "patterns": [""]
-        },
         {
             "tag": "true",
             "patterns": [""]
