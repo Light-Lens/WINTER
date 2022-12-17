@@ -1,13 +1,11 @@
 # WINTER — (Witty Intelligence with Natural Emotions and Rationality)
-WINTER in particular is an AI program that is designed to help users gain a better understanding of the language they use by providing contextual information to the words they enter. It is built upon concepts like natural language processing (NLP), machine learning (ML), and reinforcement learning (RL), which are all used to create such a comprehensive system.
+WINTER is an AI system built using a combination of Natural Language Processing (NLP), Machine Learning (ML), and Reinforcement Learning (RL) technologies. It is designed to assist users with a variety of tasks, ranging from simple tasks such as setting reminders and scheduling appointments to more complex tasks such as managing emails and organizing data.
 
-## Getting Started
-Visual Studio Code is recommended, WINTER is officially untested on other development environments whilst we focus on a Windows build.
+One of the key features of WINTER is its ability to understand and respond to natural language inputs, allowing users to interact with it in a way that feels natural and intuitive. This makes it easy for users to communicate with WINTER and ask it to perform tasks or provide information.
 
-Start by cloning the repository with `git clone https://github.com/Light-Lens/WINTER.git`
+In addition to its natural language capabilities, WINTER is also able to learn and adapt to the preferences and habits of its users over time. This allows it to become more efficient at completing tasks and providing relevant information, ultimately making the life of the user easier and more comfortable.
 
-## The Plan
-The plan for WINTER is to create a Powerful, General Purpose, AI system which can assist you with a variety of tasks.
+Overall, WINTER is a powerful and intelligent AI system that has the potential to revolutionize the way we interact with technology and automate a variety of daily tasks. Its combination of NLP, ML, and RL technologies make it a versatile and adaptable system that is capable of handling a wide range of tasks and requests. So, it is like Tony Stark's JARVIS.
 
 ## Demo
 ```console
@@ -24,6 +22,22 @@ Shall I store it on your GitHub sir?
 ~> Yeah sure
 Project initalize, shall we start?
 ```
+
+## The Plan
+Plan for Implementing WINTER (Witty Intelligence with Natural Emotions and Rationality)
+
+Identify the specific tasks and responsibilities that WINTER will be responsible for. This may include tasks such as scheduling appointments, sending reminders, managing emails, and organizing data.
+
+Develop a natural language processing (NLP) system that allows WINTER to understand and respond to requests and commands made in natural language. This may involve training the system on a large dataset of natural language inputs and responses.
+
+Implement machine learning (ML) algorithms that allow WINTER to learn and adapt to the preferences and habits of its users over time. This will allow it to become more efficient at completing tasks and providing relevant information.
+
+Integrate reinforcement learning (RL) techniques that allow WINTER to learn from its own experiences and make decisions based on past outcomes. This will allow it to continually improve its performance and become more effective at completing tasks.
+
+## Getting Started
+Visual Studio Code is recommended, WINTER is officially untested on other development environments whilst we focus on a Windows build.
+
+Start by cloning the repository with `git clone https://github.com/Light-Lens/WINTER.git`
 
 ## Installation
 ### Requirments
