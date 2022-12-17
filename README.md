@@ -66,7 +66,7 @@ train_all()
 
 This will dump `data.pth`, `and.pth`, `nlp.pth` file in [`models`](models) directory. And then run
 ```console
-python main.py
+$ python main.py
 ```
 
 ## Customize
@@ -106,10 +106,11 @@ Have a look at [intents.json](models/intents.json). You can customize it accordi
 This project is inspired from Tony Stark's JARVIS, and the following videos helped me to make this possible.
 
 [My J.A.R.V.I.S. Program Quick Demo - Kartikey Sankhdher](https://youtu.be/OCxL-V2Zt8A)
+
 [Iron Man Jarvis AI Desktop Voice Assistant - CodeWithHarry](https://youtu.be/Lp9Ftuq2sVI)
 
-
 [Building JARVIS - Huw Prosser](https://youtube.com/playlist?list=PLMN3MpL-Rb0APuaKJdORgiIWY9vzeHrcp)
+
 [Chat Bot With PyTorch - Patrick Loeber](https://youtube.com/playlist?list=PLqnslRFeH2UrFW4AUgn-eY37qOAWQpJyg)
 
 ## License and Contributions
