@@ -41,7 +41,7 @@ $ WINTER\Scripts\activate
 
 ### Install dependencies
  ```console
-pip install -r requirements.txt
+$ pip install -r requirements.txt
  ```
 
 If you get an error during the first run, you also need to install `nltk` utils:
