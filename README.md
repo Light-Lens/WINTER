@@ -105,13 +105,10 @@ Have a look at [intents.json](models/intents.json). You can customize it accordi
 ## Acknowledgements
 This project is inspired from Tony Stark's JARVIS, and the following videos helped me to make this possible.
 
-[My J.A.R.V.I.S. Program Quick Demo - Kartikey Sankhdher](https://youtu.be/OCxL-V2Zt8A)
-
-[Iron Man Jarvis AI Desktop Voice Assistant - CodeWithHarry](https://youtu.be/Lp9Ftuq2sVI)
-
-[Building JARVIS - Huw Prosser](https://youtube.com/playlist?list=PLMN3MpL-Rb0APuaKJdORgiIWY9vzeHrcp)
-
-[Chat Bot With PyTorch - Patrick Loeber](https://youtube.com/playlist?list=PLqnslRFeH2UrFW4AUgn-eY37qOAWQpJyg)
+[My J.A.R.V.I.S. Program Quick Demo - Kartikey Sankhdher](https://youtu.be/OCxL-V2Zt8A)<br>
+[Iron Man Jarvis AI Desktop Voice Assistant - CodeWithHarry](https://youtu.be/Lp9Ftuq2sVI)<br>
+[Building JARVIS - Huw Prosser](https://youtube.com/playlist?list=PLMN3MpL-Rb0APuaKJdORgiIWY9vzeHrcp)<br>
+[Chat Bot With PyTorch - Patrick Loeber](https://youtube.com/playlist?list=PLqnslRFeH2UrFW4AUgn-eY37qOAWQpJyg)<br>
 
 ## License and Contributions
 All code is licensed under a MIT license. This allows you to re-use the code freely, remixed in both commercial and non-commercial projects. The only requirement is to include the same license when distributing.
