@@ -7,6 +7,11 @@ In addition to its natural language capabilities, WINTER is also able to learn a
 
 Overall, WINTER is a powerful and intelligent AI system that has the potential to revolutionize the way we interact with technology and automate a variety of daily tasks. Its combination of NLP, ML, and RL technologies make it a versatile and adaptable system that is capable of handling a wide range of tasks and requests. So, it is like Tony Stark's JARVIS.
 
+> Note:
+> ---
+>
+> The **"WINTER"** is under development. So, if you find any bugs or have any suggestion, feel free to post an _issue_ or a _pull request_.
+
 ## Demo
 ```console
 WINTER
