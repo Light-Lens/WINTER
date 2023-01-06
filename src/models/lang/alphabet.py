@@ -6,8 +6,8 @@ import json, time
 class NeuralNet(nn.Module):
     def __init__(self, input_size, hidden_size, num_classes):
         super(NeuralNet, self).__init__()
-        self.l1 = nn.Linear(input_size, hidden_size) 
-        self.l2 = nn.Linear(hidden_size, hidden_size) 
+        self.l1 = nn.Linear(input_size, hidden_size)
+        self.l2 = nn.Linear(hidden_size, hidden_size)
         self.l3 = nn.Linear(hidden_size, num_classes)
         self.relu = nn.ReLU()
     
@@ -106,7 +106,7 @@ class Train:
                 xy.append((w, tag))
 
         # stem and lower each word
-        ignore_words = ['?', '.', '!', "'", '"', ","]
+        ignore_words = ['?', '!', "."]
         all_words = [stem(w) for w in all_words if w not in ignore_words]
 
         # remove duplicates and sort
@@ -215,7 +215,7 @@ class Train:
 # Natural language to Command
 class nlc:
     def __init__(self):
-        self.Classifier = Classify("models\\intents.json", "models\\nlp.pth", "nlp")
+        self.Classifier = Classify("models\\intents.json", "models\\stopwords.pth", "stopwords")
         self.Classifier.init()
 
     def predict(self, tokens):
@@ -228,11 +228,6 @@ class nlc:
 
         for i in textlist:
             for j in i:
-                if not j in unigram: unigram.append(j)
-
-        for i in unigram:
-            text = " ".join(outputlist) + " " + i
-            tag = self.Classifier.predict(text)
-            if tag == "true": outputlist.append(i)
-
+                # if not j in unigram: unigram.append(j)
+                if not j in outputlist: outputlist.append(j)
         return outputlist

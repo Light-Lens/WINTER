@@ -1,141 +1,15 @@
 {
-    "intents": [
+    "wake up": [
         {
-            "tag": "default",
-            "patterns": [""]
-        },
-        {
-            "tag": "mute pc",
+            "tag": "true",
             "patterns": [
-                "disable the sound", "can you mute the sound", "can you make the pc quiet", "can you make the sound go away",
-                "would you please increase the speaker volume", "can you stop the noise", "lower the volume to zero", "mute",
-                "i want your volume decreased please", "could you turn down the sound", "i want your volume lowered", "can you lower the sound",
-                "reduce the volume", "can you turn off the volume", "could you mute the pc", "can you stop the sound",
-                "could you decrease the speaker volume please", "set the sound to 0", "turn down your volume", "can you turn off the audio",
-                "make your volume quieter please", "mute the system", "can you silence the pc", "please turn your volume down",
-                "i want your volume lower", "could you reduce the volume", "turn down your volume please", "can you turn off the sound",
-                "can you please turn your volume down", "can you make the pc silent", "can you decrease the volume"
+                "winter", "wake up", "winter wake up", "winter you up", "winter good morning", "winter good afternoon", "winter good evening", "you there winter"
             ]
         },
         {
-            "tag": "go to sleep",
+            "tag": "false",
             "patterns": [
-                "can you go to sleep", "you can go now", "you can enter rest mode", "can you shut down for a bit", "take some rest buddy",
-                "it is time for you to go to sleep", "you can sleep for a bit", "do you need some rest", "it is time to enter sleep mode",
-                "you should sleep now", "you can enter sleep mode", "you can rest for a while", "you can enter hibernation mode", "goto sleep",
-                "you should go to sleep now", "go to sleep", "can you enter standby mode", "you should now take some rest", "see you", "goodnight",
-                "this was a nice chat, goodbye", "have a good day", "this was a nice chat", "bye bye", "see you later", "this was fun, see you around bye",
-                "i enjoyed speaking with you", "ok bye", "see ya!", "i enjoyed our talk, bye", "peace out!", "see ya", "this was a nice conversation",
-                "until next time", "bye", "good talk, see you later", "farewell", "ok bye talk to you later", "ttyl", "it was lovely to speak with you",
-                "talk to you later"
-            ]
-        },
-        {
-            "tag": "resize window",
-            "patterns": [
-                "can you resize the window", "you can make the window smaller", "you can adjust the window size", "can you make the window bigger",
-                "minimize app", "maximize windows", "restore all windows", "you can reduce the window size", "can you decrease the window size",
-                "you can change the window size", "could you change the window dimensions", "can you shrink the window", "maximize the window",
-                "you can increase the size of the window", "you can reduce the window dimensions", "can you expand the window", "restore the window",
-                "could you resize the window", "can you modify the window size", "minimize all apps", "you can increase the window size",
-                "you can enlarge the window", "can you adjust the window dimensions"
-            ]
-        },
-        {
-            "tag": "do math",
-            "patterns": [
-                "can you add 5 and 89", "solve 8 / 0", "what is seventeen plus three", "can you factor x squared plus 4 x plus 4", "1 - 1",
-                "is 126 divisible by 8", "what is the sum of 3, 7, 9, and 24", "what is 4 * 7", "add up 8 and 7", "multiply 8 * 0", "substract",
-                "multiply", "-3+2", "divide", "can you subract 36 from 5", "can you tell me the square root of pi",
-                "what is the derivative of x squared plus 5", "solve -7+2", "evaluate 2x3", "what is 2+3", "can you multiply 45 by 23", "2*2",
-                "what is the square root of 888", "help me solve this math equation", "add", "calculate 2*2", "1/0", "what is 543 times 344",
-                "what is 2 + 3", "can you divide 100 by 20", "multiply 7 and 42", "i need your assistance to solve this math problem", "divide 1/0", "1+2"
-            ]
-        },
-        {
-            "tag": "create project",
-            "patterns": [
-                "can you build a new project", "create a new project", "start a project called test", "create a project named",
-                "can you assemble a new project", "launch a new project", "make project mark 5", "could you start a new project",
-                "can you form a new project", "can you generate a new project", "can you develop a new project", "could you design a new project",
-                "can you initiate a new project", "could you develop a new project", "create a new project", "can you construct a new project",
-                "start a new project", "can you design a new project", "create a new project and call it", "can you set up a new project",
-                "make a new project", "start a new project indexed", "make a new project and name it", "could you make a new project"
-            ]
-        },
-        {
-            "tag": "start app",
-            "patterns": [
-                "can you open the website", "start settings", "open cmd", "could you run the software", "open chrome",
-                "please get me today's news headlines", "launch spotify", "start spotify", "start instagram", "start an app please",
-                "can you activate the app", "start chrome buddy", "start onenote please", "launch sublime text", "launch google chrome",
-                "can you begin the site", "start minecraft for me", "get me some news", "open edge", "could you start the app",
-                "can you initiate the software", "open control panel", "can you show me the news", "start the software", "can you launch the website",
-                "can you launch the app", "please start ondrive for me", "begin the app", "can you initiate the website", "run the software",
-                "open gta vice city", "can you open the software", "could you start the site", "please launch this app", "start minecraft",
-                "can you activate the site", "open microsoft edge", "launch telegram", "can you open an app", "could you open the app",
-                "could you begin the site", "can you launch the site", "open google please"
-            ]
-        },
-        {
-            "tag": "tell time",
-            "patterns": [
-                "is it 6 o clock", "is it morning", "what is the time right now", "tell me time", "could you give me an update on the time",
-                "can you tell me the exact time", "can you tell me the time right now", "can you give me the time", "what time is it now",
-                "could you tell me what time it is", "do you know what time it is", "is it 7 am", "isn't it evening", "what's the time",
-                "tell me what time it is", "do you know what time it currently is", "isn't it 8 pm", "time", "can you tell me the time",
-                "what's the current time", "can you tell me what time it is", "what's the clock say", "can you tell me the current time",
-                "i need to know what time it is"
-            ]
-        },
-        {
-            "tag": "date",
-            "patterns": [
-                "is it 2 november",
-                "what's today's date",
-                "can you tell me the date right now",
-                "can you tell me what day it is",
-                "give me the date",
-                "which day is it today",
-                "what is the date today",
-                "can you tell me the exact date",
-                "what is the current date",
-                "do you know what day it is",
-                "can you tell me the date",
-                "what date will it be 7 days from now",
-                "is today monday",
-                "date",
-                "is it 14 feb",
-                "can you give me an update on the date",
-                "what date will it be 5 days from now",
-                "what date will it be 6 days from now",
-                "could you tell me the date right now",
-                "is it 2022",
-                "tell me the date",
-                "can you give me an update on the day",
-                "would you let me know today's date",
-                "what date is it",
-                "could you tell me the date",
-                "what date will it be 8 days from now",
-                "can you tell me the exact day",
-                "could you tell me the exact day",
-                "what day of the week are we on",
-                "could you tell me the exact date",
-                "isn't it 15 august",
-                "isn't it 2018",
-                "can you tell me the current date",
-                "what is the current date",
-                "do you know what date it is",
-                "tell me what today's date is",
-                "would you let me know what date it will be in 3 days",
-                "tell me the date it will be 5 days from now",
-                "let me know what date it will be in 3 days",
-                "could you give me an update on the date",
-                "i need to know the date it will be 4 days from now",
-                "in 4 days, what date will it be",
-                "let me know what today's date is",
-                "i would like to get today's date",
-                "what's the date"
+                "is it winter season"
             ]
         }
     ],
@@ -146,24 +20,24 @@
                 "play mere hi liye and search what is a neural network", "start chrome and close sublime text", "what is today's time and date",
                 "search for steve jobs' life and summarize a neural network", "minimize the app and hit some song from my pc", "mute the system and go to sleep",
                 "add 2 + 2 and lock my pc", "start a new project and tell me a joke", "switch the window and translate tum kya kar rahe ho", "temperature and weather",
-                "this is just a text and open chrome", "yesterday I was playing a game and I fell and lost, and close edge", "open chrome and start edge"
+                "this is just a text and open chrome", "yesterday I was playing a game and I fell and lost, and close edge", "open chrome and start edge",
+                "I studied atoms last night and search on google for what is a game engine"
             ]
         },
         {
             "tag": "false",
             "patterns": [
-                "synthetic body made of vibranium and, in conjunction with", "Ultron's personality and an Infinity Stone", "yesterday I was playing a game and I fell and lost",
-                "system that perceives its environment and takes actions that maximize its chance", "I am married and I have two children.",
-                "6 and 8 years old", "I moved here from Tokyo 5 years ago and I still have trouble sometimes", "start a new project and name it T1",
-                "from greetings and small talk to saying goodbye", "boost your speaking skills and confidence level", "A neutral and friendly greeting",
-                "US, Canada and England", "fine, thanks and yourself", "they're well and doing well", "asking and answering Questions",
-                "This is very informal, and it can sound rude to some people", "And please, don't forget to thank them after they do.",
-                "And now let's get this conversation started", "search and summarize steve jobs' biography",
-                "play markov chains and neural networks on youtube", "search on google for what is a game engine and how does it work"
+                "synthetic body made of vibranium and, in conjunction with", "ultron's personality and an infinity stone", "yesterday i was playing a game and i fell and lost",
+                "system that perceives its environment and takes actions that maximize its chance", "i am married and i have two children.",
+                "6 and 8 years old", "i moved here from tokyo 5 years ago and i still have trouble sometimes", "start a new project and name it t1",
+                "from greetings and small talk to saying goodbye", "boost your speaking skills and confidence level", "a neutral and friendly greeting",
+                "us, canada and england", "fine, thanks and yourself", "they're well and doing well", "asking and answering questions",
+                "this is very informal, and it can sound rude to some people", "and please, don't forget to thank them after they do.",
+                "and now let's get this conversation started", "search and summarize steve jobs' biography"
             ]
         }
     ],
-    "nlp": [
+    "stopwords": [
         {
             "tag": "true",
             "patterns": [""]
@@ -171,6 +45,88 @@
         {
             "tag": "false",
             "patterns": [""]
+        }
+    ],
+    "intents": [
+        {
+            "tag": "default",
+            "patterns": [""]
+        },
+        {
+            "tag": "chat",
+            "patterns": []
+        },
+        {
+            "tag": "mute pc",
+            "patterns": []
+        },
+        {
+            "tag": "go to sleep",
+            "patterns": []
+        },
+        {
+            "tag": "resize window",
+            "patterns": []
+        },
+        {
+            "tag": "do math",
+            "patterns": []
+        },
+        {
+            "tag": "create project",
+            "patterns": []
+        },
+        {
+            "tag": "start app",
+            "patterns": []
+        },
+        {
+            "tag": "tell TimeDateDay",
+            "patterns": []
+        },
+        {
+            "tag": "switch",
+            "patterns": []
+        },
+        {
+            "tag": "FactJoke",
+            "patterns": []
+        },
+        {
+            "tag": "play from pc",
+            "patterns": []
+        },
+        {
+            "tag": "play on youtube",
+            "patterns": []
+        },
+        {
+            "tag": "google search",
+            "patterns": []
+        },
+        {
+            "tag": "summarize topic",
+            "patterns": []
+        },
+        {
+            "tag": "today's weather",
+            "patterns": []
+        },
+        {
+            "tag": "today's temperature",
+            "patterns": []
+        },
+        {
+            "tag": "restart pc",
+            "patterns": []
+        },
+        {
+            "tag": "shutdown pc",
+            "patterns": []
+        },
+        {
+            "tag": "lock pc",
+            "patterns": []
         }
     ]
 }

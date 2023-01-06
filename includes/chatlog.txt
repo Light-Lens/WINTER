@@ -56,3 +56,18 @@ WINTER: Is there anything else I can help you with, sir?
 
 Me: thanks
 WINTER: You're welcome. Is there anything else I can help you with?
+
+Me: Give me the main phrase from the following sentence "can you please search on google what is the meaning of climate"
+WINTER: what is the meaning of climate
+
+Me: Give me the main phrase from the following sentence "would you search how to make a pizza on google"
+WINTER: how to make a pizza
+
+Me: Give me the main phrase from the following sentence "would you open chrome for me please"
+WINTER: chrome
+
+Me: Give me the main phrase from the following sentence "start edge"
+WINTER: edge
+
+Me: Give me the main phrase from the following sentence "play saans me teri on youtube"
+WINTER: saans me teri
