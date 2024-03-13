@@ -1,7 +1,7 @@
-from src.vendor.alphabet.train import Train
-from src.vendor.alphabet.sample import Sample
-from src.vendor.write.train import Train as wtrain
-from src.vendor.write.sample import Sample as wsample
+from src.vendor.GATw.src.alphabet.train import Train
+from src.vendor.GATw.src.alphabet.sample import Sample
+from src.vendor.GATw.src.write.train import Train as wtrain
+from src.vendor.GATw.src.write.sample import Sample as wsample
 import time
 
 # ChatGPT like print effect.
