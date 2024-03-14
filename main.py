@@ -55,7 +55,7 @@ classify.train(
     eval_iters = 500
 )
 
-classify.save("models\\and.pth")
+classify.save("bin\\and.pth")
 
 test = [
     "open Google chrome and Can you please search google for me?",
@@ -84,7 +84,7 @@ test = [
     "open chrome and search on the internet How do you make a game engine"
 ]
 
-S1 = Sample("models\\and.pth")
+S1 = Sample("bin\\and.pth")
 S1.load()
 for i in test:
     t, c = S1.predict(i)
