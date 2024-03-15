@@ -43,13 +43,14 @@ def dprint(text, delay=0.001):
 
 # Train the model
 classify = Train(
-    n_layer = 2,
+    n_layer = 3,
     n_hidden = 4,
     lr = 1e-3,
     batch_size = 32,
+    model = "RNN"
 )
 
-classify.preprocess("data\\and.json", metadata=("and", "bool", "patterns"), data_division=0.8)
+classify.preprocess("data\\and.json", metadata=("and", "bool", "patterns"))
 classify.train(
     n_steps = 2000,
     eval_interval = 200,
