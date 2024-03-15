@@ -3,15 +3,7 @@ from src.vendor.GATw.src.alphabet.sample import Sample
 # from src.vendor.GATw.src.write.train import Train as wtrain
 # from src.vendor.GATw.src.write.sample import Sample as wsample
 # from src.WINTER.src.core import Speak
-import time
 
-# ChatGPT like print effect.
-# dprint -> delay print
-def dprint(text, delay=0.001):
-    for char in text:
-        print(char, end="", flush=True)
-        time.sleep(delay)
-    print()
 
 # Train the model.
 # gen = wtrain(
