@@ -1,3 +1,6 @@
 [submodule "src/vendor/GATw"]
 	path = src/vendor/GATw
 	url = https://github.com/Light-Lens/GAT-w.git
+[submodule "src/vendor/AOs"]
+	path = src/vendor/AOs
+	url = https://github.com/Light-Lens/AOs.git
