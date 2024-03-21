@@ -25,3 +25,10 @@ for i in test:
     print(i)
     print(s.predict(i))
     print()
+
+while True:
+    i = input("> ")
+    if i == "":
+        break
+
+    print(s.predict(i))

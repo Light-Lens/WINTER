@@ -7,13 +7,7 @@ t = Train(
     batch_size = 64,
     model = "RNN"
 )
-t.preprocess(
-    filepath = "data\\skills.json",
-    metadata = ("skills", "skill", "patterns"),
-    data_division = 0.8,
-    data_augmentation = 0.4
-)
-
+t.preprocess("data\\skills.json", metadata=("skills", "skill", "patterns"), data_division=None, data_augmentation=0.4)
 t.train(
     n_steps = 10000,
     eval_interval = 200,
