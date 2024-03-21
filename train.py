@@ -7,11 +7,11 @@ t = Train(
     batch_size = 64,
     model = "RNN"
 )
-t.preprocess("data\\skills.json", metadata=("skills", "skill", "patterns"), data_division=None)
+t.preprocess("data\\skills.json", metadata=("skills", "skill", "patterns"), data_division=None, data_augmentation = 0.4)
 t.train(
-    n_steps = 7000,
-    eval_interval = 350,
-    eval_iters = 700,
+    n_steps = 20000,
+    eval_interval = 200,
+    eval_iters = 2000,
     n_loss_digits = 7
 )
 t.save("bin\\skills.pth")

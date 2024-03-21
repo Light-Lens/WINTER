@@ -17,6 +17,8 @@ test = [
     "please increase the volume",
     "please increase the volume by ten percent.",
     "please reduce the volume by fifteen points.",
+    "set volume fifty nine",
+    "pronto, I want you to set the volume slider to sixty nine."
 ]
 
 for i in test:
