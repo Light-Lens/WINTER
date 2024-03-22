@@ -13,6 +13,12 @@ class Features:
         pass
 
     def execute(self, classname, skillname):
+        # There are 3 execution engines.
+        # AOs, func, and skills.
+        # The AOs execution engine will execute tasks on AOs.
+        # The func execution engine will execute tasks on the functions written in for WINTER.
+        # The skills execution engine will execute a the task of a particular skill.
+
         for intent in self.jsondata[classname]:
             if skillname == intent["skill"]:
                 execution_engines = intent["execution_engine"]
