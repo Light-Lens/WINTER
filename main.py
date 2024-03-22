@@ -1,5 +1,5 @@
 from src.vendor.GATw.src.alphabet.classification.sample import Sample
-import json
+from src.WINTER.core.features import Features
 
 s = Sample("bin\\skills.pth")
 s.load()
@@ -27,29 +27,17 @@ test = [
     "please put my PC a lock. I won't be here."
 ]
 
-with open("data\\skills.json", 'r', encoding='utf-8') as f:
-    jsondata = json.load(f)
+f = Features("data\\skills.json")
 
 for i in test:
     print(i)
 
     out = s.predict(i)
-    score = out[1]
+
     classname = out[0].split(";")[0]
     tagname = out[0].split(";")[1]
 
-    if score >= 0.8:
-        for intent in jsondata[classname]:
-            if tagname == intent["skill"]:
-                # Shuffle the responses list based on a seed and print the results one-by-one not randomly.
-                # Keep track the index of the last response and print the following response.
-                print(tagname, score)
-                print(f"response: {intent['responses'][0]}")
-                print(intent["task"], intent["execution_engine"])
-                print()
+    print(tagname, out[1])
+    f.execute(classname, tagname)
 
-    else:
-        #* Temporary response when no intent matches the score of 80%.
-        # Make it more robust and give differnt responses each time.
-        # Keep track the index of the last response and print the following response.
-        print("Sorry, but I can't understand you :(")
+    print()
