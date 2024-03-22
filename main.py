@@ -1,5 +1,4 @@
 from src.vendor.GATw.src.alphabet.classification.sample import Sample
-from src.WINTER.src.utils.dprint import dprint
 import json
 
 s = Sample("bin\\skills.pth")
@@ -21,7 +20,11 @@ test = [
     "please reduce the volume by fifteen points.",
     "set volume fifty nine",
     "pronto, I want you to set the volume slider to sixty nine.",
-    "aalkjsdflkja9ierfasdfjlkaj adjfkkladjsfkl"
+    "aalkjsdflkja9ierfasdfjlkaj adjfkkladjsfkl",
+    "You know WINTER, my system has two button. One for sleep and the other one is for lock. No matter what you choose, they will perform the same function. Try it if you want.",
+    "Lock this PC",
+    "ya would you please put my system on sleep I'm going away for some time actually.",
+    "please put my PC a lock. I won't be here."
 ]
 
 with open("data\\skills.json", 'r', encoding='utf-8') as f:
@@ -49,4 +52,4 @@ for i in test:
         #* Temporary response when no intent matches the score of 80%.
         # Make it more robust and give differnt responses each time.
         # Keep track the index of the last response and print the following response.
-        dprint("Sorry, but I can't understand you :(")
+        print("Sorry, but I can't understand you :(")
