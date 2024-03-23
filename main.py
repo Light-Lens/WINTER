@@ -1,8 +1,16 @@
 from src.vendor.GATw.src.alphabet.classification.sample import Sample
 from src.WINTER.features.features import Features
 
-s = Sample("bin\\skills.pth")
-s.load()
+model = Sample("bin\\skills.pth")
+model.load()
+
+feature = Features("data\\skills.json")
+feature.load()
+
+# def main():
+#     while True:
+#         prompt = input("> ")
+#         feature.execute(model.predict(prompt))
 
 test = [
     "please make the volume one hundred percent.",
@@ -38,11 +46,8 @@ test = [
     "You know yesterday I was playing football and I fell. I fell so hard it got my knees hurt. They started to bleed and it was really painful. Dude only I know how I survived."
 ]
 
-f = Features("data\\skills.json")
-f.load()
-
 for i in test:
     print(i)
 
-    f.execute(s.predict(i))
+    feature.execute(model.predict(i))
     print("-"*100)

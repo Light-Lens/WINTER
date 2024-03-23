@@ -30,7 +30,7 @@ class Features:
         skillname = predicted_output[0].split(";")[1]
         score = predicted_output[1]
 
-        if score < 0.7:
+        if score < 0.6:
             # The "default" skill states that the particular input is actually a conversation rather than a intent.
             skillname = "default"
             score = 1
@@ -42,9 +42,9 @@ class Features:
                 response_config = intent["response_config"]
                 break
 
-        intent["response_config"] = self.__give_response__(responses, response_config)
+        # intent["response_config"] = self.__give_response__(responses, response_config)
         self.__exec_tasks__(tasks, skillname)
-        self.__update_response_config__()
+        # self.__update_response_config__()
         print(skillname, score)
 
     def __update_response_config__(self):
@@ -81,8 +81,6 @@ class Features:
             args = task["args"]
             exec_engine = task["execution_engine"]
 
-            print(cmd, args, exec_engine)
-
             if exec_engine == None:
                 pass
 
@@ -95,5 +93,5 @@ class Features:
                 pass
 
             elif exec_engine == "skills":
-                pass
- 
+                #TODO: Work on skills execution engine before working on AOs execution engine.
+                print(cmd, args, exec_engine)
