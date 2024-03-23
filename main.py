@@ -34,10 +34,12 @@ test = [
     "Have some sweet dreams, WINTER",
     "WINTER, I wanna listen to The King of Pop's Thriller song",
     "I want to watch some PewDiePie videos. Play them for me please.",
-    "Play Michael Jackson's Smooth Criminal lyrics."
+    "Play Michael Jackson's Smooth Criminal lyrics.",
+    "You know yesterday I was playing football and I fell. I fell so hard it got my knees hurt. They started to bleed and it was really painful. Dude only I know how I survived."
 ]
 
 f = Features("data\\skills.json")
+f.load()
 
 for i in test:
     print(i)
