@@ -6,3 +6,6 @@ def play_music():
 
 def playgames():
     pass
+
+def youtube():
+    pass

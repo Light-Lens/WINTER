@@ -13,7 +13,8 @@ class Features:
         self.func_dict = {
             "play,video": func.play_video,
             "play,music": func.play_music,
-            "open,game": func.playgames
+            "open,game": func.playgames,
+            "play,on_youtube": func.youtube
         }
 
     # There are 3 execution engines: AOs, func, and skills.
