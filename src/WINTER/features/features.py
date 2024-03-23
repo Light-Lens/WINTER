@@ -1,4 +1,5 @@
-import json, func
+from . import func
+import json
 
 class Features:
     def __init__(self, filepath):
@@ -14,7 +15,9 @@ class Features:
             "play,video": func.play_video,
             "play,music": func.play_music,
             "open,game": func.playgames,
-            "play,on_youtube": func.youtube
+            "play,on_youtube": func.youtube,
+            "search,wikipedia": func.search_on_wikipedia,
+            "translate,one_lang_to_another": func.translate
         }
 
     # There are 3 execution engines: AOs, func, and skills.
@@ -25,24 +28,26 @@ class Features:
 
         for intent in self.jsondata[classname]:
             if skillname == intent["skill"]:
-                execution_engine = intent["execution_engine"]
-                task = intent["task"]
+                tasks = intent["tasks"]
                 break
 
-        if execution_engine == None:
-            pass
+        # if execution_engine == None:
+        #     pass
 
-        # The AOs execution engine will execute tasks on AOs.
-        elif execution_engine == "AOs":
-            pass
+        # # The AOs execution engine will execute tasks on AOs.
+        # elif execution_engine == "AOs":
+        #     pass
 
-        # The func execution engine will execute tasks on the functions written in for WINTER.
-        elif execution_engine == "func":
-            pass
+        # # The func execution engine will execute tasks on the functions written in for WINTER.
+        # elif execution_engine == "func":
+        #     pass
 
-        # The skills execution engine will execute a the task of a particular skill.
-        elif execution_engine == "skills":
-            pass
+        # # The skills execution engine will execute a the task of a particular skill.
+        # elif execution_engine == "skills":
+        #     pass
 
-        else:
-            pass
+        # else:
+        #     pass
+            
+        print(tasks)
+        print(skillname, score)

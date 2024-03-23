@@ -9,3 +9,9 @@ def playgames():
 
 def youtube():
     pass
+
+def search_on_wikipedia():
+    pass
+
+def translate():
+    pass
