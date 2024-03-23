@@ -45,4 +45,4 @@ for i in test:
     print(i)
 
     f.execute(s.predict(i))
-    print()
+    print("-"*100)
