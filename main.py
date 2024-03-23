@@ -1,5 +1,5 @@
 from src.vendor.GATw.src.alphabet.classification.sample import Sample
-from src.WINTER.core.features import Features
+from src.WINTER.features.features import Features
 
 s = Sample("bin\\skills.pth")
 s.load()
@@ -24,7 +24,17 @@ test = [
     "You know WINTER, my system has two button. One for sleep and the other one is for lock. No matter what you choose, they will perform the same function. Try it if you want.",
     "Lock this PC",
     "ya would you please put my system on sleep I'm going away for some time actually.",
-    "please put my PC a lock. I won't be here."
+    "please put my PC a lock. I won't be here.",
+    "I think you should now send this PC to a quite deep sleep.",
+    "Go to sleep WINTER.",
+    "Sleep WINTER",
+    "Send my PC to sleep, pronto.",
+    "I want my PC to sleep",
+    "WINTER. I going away, please go to sleep.",
+    "Have some sweet dreams, WINTER",
+    "WINTER, I wanna listen to The King of Pop's Thriller song",
+    "I want to watch some PewDiePie videos. Play them for me please.",
+    "Play Michael Jackson's Smooth Criminal lyrics."
 ]
 
 f = Features("data\\skills.json")
@@ -32,12 +42,5 @@ f = Features("data\\skills.json")
 for i in test:
     print(i)
 
-    out = s.predict(i)
-
-    classname = out[0].split(";")[0]
-    tagname = out[0].split(";")[1]
-
-    print(tagname, out[1])
-    f.execute(classname, tagname)
-
+    f.execute(s.predict(i))
     print()
