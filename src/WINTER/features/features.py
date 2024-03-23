@@ -1,5 +1,6 @@
+from ..shared.utils import dprint
 from . import func
-import json
+import random, json
 
 class Features:
     def __init__(self, filepath):
@@ -7,9 +8,10 @@ class Features:
         @param filepath: the location of the json file.
         """
 
+        self.filepath = filepath
         self.func_dict = {}
 
-        with open(filepath, "r", encoding="utf-8") as f:
+        with open(self.filepath, "r", encoding="utf-8") as f:
             self.jsondata = json.load(f)
 
     def load(self):
@@ -40,11 +42,38 @@ class Features:
                 response_config = intent["response_config"]
                 break
 
-        self.__give_response__(responses, response_config)
+        intent["response_config"] = self.__give_response__(responses, response_config)
         self.__exec_tasks__(tasks, skillname)
+        self.__update_response_config__()
+        print(skillname, score)
+
+    def __update_response_config__(self):
+        # Serializing json
+        json_obj = json.dumps(self.jsondata, indent=4)
+        
+        # Writing to sample.json
+        with open(self.filepath, "w", encoding="utf-8") as f:
+            f.write(json_obj)
 
     def __give_response__(self, responses, response_config):
-        pass
+        enable_dprint = response_config["dprint"]
+        shuffle = response_config["shuffle"]
+        do_reverse = response_config["reverse"]
+        shuffle_seed = response_config["shuffle_seed"]
+
+        if (response_config["last_response_idx"] + 1) <= (len(responses) - 1):
+            if do_reverse:
+                responses.reverse()
+
+            if shuffle:
+                # https://stackoverflow.com/a/19307329/18121288
+                random.Random(shuffle_seed).shuffle(responses)
+
+            response_config["last_response_idx"] += 1
+            response = responses[response_config["last_response_idx"]]
+            dprint(response) if enable_dprint else print(response)
+
+        return response_config
 
     def __exec_tasks__(self, tasks, skillname):
         for task in tasks:
@@ -59,8 +88,8 @@ class Features:
 
             elif exec_engine == "func":
                 if skillname in self.func_dict.keys():
-                    print(args)
                     # self.func_dict[skillname]()
+                    pass
 
             elif exec_engine == "AOs":
                 pass
