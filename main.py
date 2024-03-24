@@ -4,7 +4,7 @@ from src.WINTER.features.features import Features
 model = Sample("bin\\skills.pth")
 model.load()
 
-feature = Features("data\\skills.json")
+feature = Features("data\\skills.json", "data\\extraction_models")
 feature.load()
 
 # def main():
@@ -49,5 +49,5 @@ test = [
 for i in test:
     print(i)
 
-    feature.execute(model.predict(i))
+    feature.execute(i, model.predict(i), False)
     print("-"*100)

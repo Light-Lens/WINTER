@@ -3,17 +3,20 @@ from . import func
 import random, json
 
 class Features:
-    def __init__(self, filepath):
+    def __init__(self, filepath, extraction_models):
         """
         @param filepath: the location of the json file.
+        @param extraction_models: the location where all the information extraction models are stored.
         """
 
         self.filepath = filepath
-        self.func_dict = {}
+        self.extraction_models = extraction_models
 
         with open(self.filepath, "r", encoding="utf-8") as f:
             self.jsondata = json.load(f)
+        self.func_dict = {}
 
+    # Map all the functions corresponding to their respective skills.
     def load(self):
         self.func_dict = {
             "play,video": func.play_video,
@@ -25,8 +28,7 @@ class Features:
         }
 
     # There are 3 execution engines: AOs, func, and skills.
-    def execute(self, predicted_output):
-        classname = predicted_output[0].split(";")[0]
+    def execute(self, input_prompt, predicted_output, respond=True):
         skillname = predicted_output[0].split(";")[1]
         score = predicted_output[1]
 
@@ -35,17 +37,18 @@ class Features:
             skillname = "default"
             score = 1
 
-        for intent in self.jsondata[classname]:
+        for intent in self.jsondata["skills"]:
             if skillname == intent["skill"]:
                 tasks = intent["tasks"]
                 responses = intent["responses"]
                 response_config = intent["response_config"]
                 break
 
-        # intent["response_config"] = self.__give_response__(responses, response_config)
-        self.__exec_tasks__(tasks, skillname)
-        # self.__update_response_config__()
-        print(skillname, score)
+        if respond:
+            intent["response_config"] = self.__give_response__(responses, response_config)
+            self.__update_response_config__()
+
+        self.__exec_tasks__(input_prompt, tasks, skillname)
 
     def __update_response_config__(self):
         # Serializing json
@@ -61,6 +64,10 @@ class Features:
         do_reverse = response_config["reverse"]
         shuffle_seed = response_config["shuffle_seed"]
 
+        # The response won't be selected randomly and, responses will be printed sequentially and only once.
+        # Responses won't be repeated therefore, after printing the last response,
+        # WINTER won't respond in that particular skill and directly execute the task.
+        # I chose this philosophy because I hate AIs who repeat themselves a lot.
         if (response_config["last_response_idx"] + 1) <= (len(responses) - 1):
             if do_reverse:
                 responses.reverse()
@@ -75,17 +82,26 @@ class Features:
 
         return response_config
 
-    def __exec_tasks__(self, tasks, skillname):
+    def __exec_tasks__(self, input_prompt, tasks, skillname):
         for task in tasks:
             cmd = task["cmd"]
             args = task["args"]
             exec_engine = task["execution_engine"]
+            extraction_models = task["extraction_models"]
+            print(skillname, cmd, args, exec_engine)
 
             if exec_engine == None:
                 pass
 
             elif exec_engine == "func":
                 if skillname in self.func_dict.keys():
+                    for model in extraction_models:
+                        # evaluate the model to extract text from 'input_prompt'
+                        # replace that extracted text with the integer value in args.
+
+                        # evaluate model here.
+                        pass
+
                     # self.func_dict[skillname]()
                     pass
 
@@ -93,5 +109,9 @@ class Features:
                 pass
 
             elif exec_engine == "skills":
-                #TODO: Work on skills execution engine before working on AOs execution engine.
-                print(cmd, args, exec_engine)
+                for intent in self.jsondata["skills"]:
+                    if cmd == intent["skill"]:
+                        tasks = intent["tasks"]
+                        break
+
+                self.__exec_tasks__(input_prompt, tasks, skillname)

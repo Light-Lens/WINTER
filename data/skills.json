@@ -15,7 +15,8 @@
                 {
                     "cmd": null,
                     "args": null,
-                    "execution_engine": null
+                    "execution_engine": null,
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -111,7 +112,8 @@
                 {
                     "cmd": "vol",
                     "args": ["-m"],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -197,7 +199,8 @@
                 {
                     "cmd": "vol",
                     "args": ["-m"],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -287,8 +290,9 @@
             "tasks": [
                 {
                     "cmd": "vol",
-                    "args": ["-i", 1],
-                    "execution_engine": "AOs"
+                    "args": ["-i 5"],
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -378,8 +382,9 @@
             "tasks": [
                 {
                     "cmd": "vol",
-                    "args": ["-i", 1],
-                    "execution_engine": "AOs"
+                    "args": ["-i -5"],
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -470,7 +475,8 @@
                 {
                     "cmd": "vol",
                     "args": [1],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -561,7 +567,8 @@
                 {
                     "cmd": "sleep",
                     "args": null,
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -652,7 +659,8 @@
                 {
                     "cmd": "sleep,PC",
                     "args": null,
-                    "execution_engine": "skills"
+                    "execution_engine": "skills",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -743,12 +751,14 @@
                 {
                     "cmd": "search,youtube",
                     "args": [1],
-                    "execution_engine": "skills"
+                    "execution_engine": "skills",
+                    "extraction_models": [null]
                 },
                 {
                     "cmd": "youtube",
                     "args": [1],
-                    "execution_engine": "func"
+                    "execution_engine": "func",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -838,7 +848,8 @@
                 {
                     "cmd": "play_video",
                     "args": [1],
-                    "execution_engine": "func"
+                    "execution_engine": "func",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -928,7 +939,8 @@
                 {
                     "cmd": "play_music",
                     "args": [1],
-                    "execution_engine": "func"
+                    "execution_engine": "func",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1018,7 +1030,8 @@
                 {
                     "cmd":  "pixelate",
                     "args": [1, "-e youtube"],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1108,7 +1121,8 @@
                 {
                     "cmd":  "pixelate",
                     "args": [1, "-e google"],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1198,7 +1212,8 @@
                 {
                     "cmd":  "pixelate",
                     "args": [1, "-e bing"],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1288,7 +1303,8 @@
                 {
                     "cmd":  "pixelate",
                     "args": [1, "-e duckduckgo"],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1378,12 +1394,14 @@
                 {
                     "cmd":  "pixelate",
                     "args": [1, "-e wikipedia"],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 },
                 {
                     "cmd":  "search_on_wikipedia",
                     "args": [1],
-                    "execution_engine": "func"
+                    "execution_engine": "func",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1473,12 +1491,14 @@
                 {
                     "cmd": "search,google",
                     "args": ["Today's weather in", 1],
-                    "execution_engine": "skills"
+                    "execution_engine": "skills",
+                    "extraction_models": [null]
                 },
                 {
                     "cmd":  "pixelate",
                     "args": ["-w", 1],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1568,12 +1588,14 @@
                 {
                     "cmd": "search,google",
                     "args": ["Today's temperature in", 1],
-                    "execution_engine": "skills"
+                    "execution_engine": "skills",
+                    "extraction_models": [null]
                 },
                 {
                     "cmd":  "pixelate",
                     "args": ["-t", 1],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1663,7 +1685,8 @@
                 {
                     "cmd":  "",
                     "args": [""],
-                    "execution_engine": ""
+                    "execution_engine": "",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1753,7 +1776,8 @@
                 {
                     "cmd": "playgames",
                     "args": [1],
-                    "execution_engine": "func"
+                    "execution_engine": "func",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1843,7 +1867,8 @@
                 {
                     "cmd":  "",
                     "args": [""],
-                    "execution_engine": ""
+                    "execution_engine": "",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -1933,7 +1958,8 @@
                 {
                     "cmd":  "",
                     "args": [""],
-                    "execution_engine": ""
+                    "execution_engine": "",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2023,7 +2049,8 @@
                 {
                     "cmd":  "",
                     "args": [""],
-                    "execution_engine": ""
+                    "execution_engine": "",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2113,7 +2140,8 @@
                 {
                     "cmd":  "",
                     "args": [""],
-                    "execution_engine": ""
+                    "execution_engine": "",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2203,7 +2231,8 @@
                 {
                     "cmd":  "",
                     "args": [""],
-                    "execution_engine": "AOs"
+                    "execution_engine": "AOs",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2293,7 +2322,8 @@
                 {
                     "cmd": "search,google",
                     "args": [1],
-                    "execution_engine": "skills"
+                    "execution_engine": "skills",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2383,12 +2413,14 @@
                 {
                     "cmd":  "search,google",
                     "args": [1],
-                    "execution_engine": "skills"
+                    "execution_engine": "skills",
+                    "extraction_models": [null]
                 },
                 {
                     "cmd":  "translate",
                     "args": [1],
-                    "execution_engine": "func"
+                    "execution_engine": "func",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2478,7 +2510,8 @@
                 {
                     "cmd":  "",
                     "args": [""],
-                    "execution_engine": ""
+                    "execution_engine": "",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2568,7 +2601,8 @@
                 {
                     "cmd":  "",
                     "args": [""],
-                    "execution_engine": ""
+                    "execution_engine": "",
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2658,7 +2692,8 @@
                 {
                     "cmd":  null,
                     "args": null,
-                    "execution_engine": null
+                    "execution_engine": null,
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2748,7 +2783,8 @@
                 {
                     "cmd":  null,
                     "args": null,
-                    "execution_engine": null
+                    "execution_engine": null,
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2838,7 +2874,8 @@
                 {
                     "cmd":  null,
                     "args": null,
-                    "execution_engine": null
+                    "execution_engine": null,
+                    "extraction_models": [null]
                 }
             ]
         },
@@ -2928,7 +2965,8 @@
                 {
                     "cmd":  null,
                     "args": null,
-                    "execution_engine": null
+                    "execution_engine": null,
+                    "extraction_models": [null]
                 }
             ]
         }
