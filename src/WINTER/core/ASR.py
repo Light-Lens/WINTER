@@ -13,21 +13,15 @@ recorder.energy_threshold = 1000 # change accordingly.
 recorder.dynamic_energy_threshold = False
 
 # Listen to the microphone and return a speech to text
-def Listen(phrase_time_limit=3):
-    output = ""
-    while not output:
-        try:
-            with sr.Microphone(sample_rate=16000) as source:
-                recorder.adjust_for_ambient_noise(source)
-                audio = recorder.listen(source, phrase_time_limit=phrase_time_limit)
+def Listen(phrase_time_limit=2):
+    try:
+        with sr.Microphone(sample_rate=16000) as source:
+            recorder.adjust_for_ambient_noise(source)
+            audio = recorder.listen(source, phrase_time_limit=phrase_time_limit)
 
-            output = recorder.recognize_google(audio, language='en-in')
+        output = recorder.recognize_google(audio, language='en-in')
 
-        except KeyboardInterrupt:
-            return output
-
-        except Exception as e:
-            print(f"{Style.BRIGHT}{Fore.RED}{e}")
-            output = ""
+    except Exception as e:
+        print(f"{Style.BRIGHT}{Fore.RED}{e}")
 
     return output
