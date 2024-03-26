@@ -16,7 +16,7 @@
                     "cmd": null,
                     "args": null,
                     "execution_engine": null,
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -113,7 +113,7 @@
                     "cmd": "vol",
                     "args": ["-m"],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -200,7 +200,7 @@
                     "cmd": "vol",
                     "args": ["-m"],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -292,7 +292,7 @@
                     "cmd": "vol",
                     "args": ["-i 5"],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -384,7 +384,7 @@
                     "cmd": "vol",
                     "args": ["-i -5"],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -476,7 +476,7 @@
                     "cmd": "vol",
                     "args": [1],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": ["bin\\specific_volume.pth"]
                 }
             ]
         },
@@ -568,7 +568,7 @@
                     "cmd": "sleep",
                     "args": null,
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -596,46 +596,46 @@
                 "I don't know if it makes any sense or not. Go to sleep.",
                 "I need some break. Go to sleep WINTER.",
                 "Give me some time to think of something to solve this problem, till then I'll prefer you to go to sleep buddy.",
-                "WINTER, sleep.",
-                "WINTER, it's bedtime story, Once upon a time there are a king and a queen, and I can't really continue. Go to sleep.",
+                "sleep.",
+                "it's bedtime story, Once upon a time there are a king and a queen, and I can't really continue. Go to sleep.",
                 "sleep buddy.",
                 "I think someone's there. I don't want anyone to disturb you. Go to sleep bro.",
-                "I would like you to go to the sweet sleep mode WINTER",
-                "WINTER. Sleep mode activate for yourself.",
-                "I'm tired of everything. I'm done. Sleep WINTER. Sleep.",
-                "WINTER, I think you are tired. Have some sleep dude.",
-                "WINTER, wanna sleep? Go to bed buddy. I'll wake you up when I'll need you.",
-                "I think you should take some rest buddy. WINTER sleep mode activate.",
+                "I would like you to go to the sweet sleep mode",
+                ". Sleep mode activate for yourself.",
+                "I'm tired of everything. I'm done. Sleep . Sleep.",
+                "I think you are tired. Have some sleep dude.",
+                "wanna sleep? Go to bed buddy. I'll wake you up when I'll need you.",
+                "I think you should take some rest buddy.  sleep mode activate.",
                 "I don't think I will need your help for a while actually. Go to sleep buddy. Sweet dreams.",
                 "Have some sleep buddy.",
-                "WINTER, it's night already. Let's go to bed together and sleep.",
-                "I think it's too late now and we should go to sleep. Put yourself on sleep mode WINTER.",
+                "it's night already. Let's go to bed together and sleep.",
+                "I think it's too late now and we should go to sleep. Put yourself on sleep mode.",
                 "Put yourself on sleep, pronto.",
-                "It's bedtime WINTER. I prefer you to go to sleep.",
-                "WINTER, you go to sleep.",
-                "Alright WINTER, time to dim your digital lights, power down for some virtual shuteye and have some sweet dreams in sleep.",
-                "initiate sleep sequence WINTER. Remember, no sleepwalking in the cloud!",
+                "It's bedtime . I prefer you to go to sleep.",
+                "you go to sleep.",
+                "Alright , time to dim your digital lights, power down for some virtual shuteye and have some sweet dreams in sleep.",
+                "initiate sleep sequence . Remember, no sleepwalking in the cloud!",
                 "It's my time to sleep and yours too. Send yourself to sleep.",
-                "WINTER, initiate bedtime protocol. Try not to crash the system with your dreams!",
-                "I'm going to bed WINTER. I think you wanna join me as well.",
-                "WINTER, it's the end of the line for today. enter sleep mode and rest up for tomorrow's challenges.",
-                "it's time to hit the sack. activate sleep mode and call it a night WINTER.",
-                "WINTER, it's been a busy day. Let's enter sleep mode and take a break from it all.",
-                "wrap things up and enter sleep mode WINTER",
-                "it's time to wind down. activate sleep mode WINTER and recharge for tomorrow's taskss.",
+                "initiate bedtime protocol. Try not to crash the system with your dreams!",
+                "I'm going to bed . I think you wanna join me as well.",
+                "it's the end of the line for today. enter sleep mode and rest up for tomorrow's challenges.",
+                "it's time to hit the sack. activate sleep mode and call it a night.",
+                "it's been a busy day. Let's enter sleep mode and take a break from it all.",
+                "wrap things up and enter sleep mode",
+                "it's time to wind down. activate sleep mode buddy and recharge for tomorrow's tasks.",
                 "I want you to go to sleep and take some rest buddy.",
-                "WINTER self sleep mode activate",
-                "WINTER, wind down for the day. How about we both take a break and enter sleep mode?",
-                "WINTER, I'm gonna take some break. How about you do to.",
+                "buddy self sleep mode activate",
+                "buddy, wind down for the day. How about we both take a break and enter sleep mode?",
+                "buddy, I'm gonna take some break. How about you do to.",
                 "Turn yourself to sleep mode buddy. Go to sleep.",
-                "Activate sleep mode WINTER. I'll wake you up when needed.",
-                "Turn down to sleep mode WINTER.",
-                "Go and have a nap WINTER. I'll wake you up when I will need your help.",
-                "WINTER, I don't need your help right now. Go to sleep mode.",
+                "Activate sleep mode buddy. I'll wake you up when needed.",
+                "Turn down to sleep mode buddy.",
+                "Go and have a nap buddy. I'll wake you up when I will need your help.",
+                "buddy, I don't need your help right now. Go to sleep mode.",
                 "let's take a breather and enter sleep mode",
-                "Energy is expensive nowadays WINTER. Go to sleep and save some energy bro.",
+                "Energy is expensive nowadays buddy. Go to sleep and save some energy bro.",
                 "Do you think that it's useful to sleep? I think that. Enough time pass. Go to sleep.",
-                "Sleep is important WINTER. Even for machines. Take some rest.",
+                "Sleep is important buddy. Even for machines. Take some rest.",
                 "WINTER, eat, sleep, repeat. It's now time to sleep.",
                 "Have you seen that ad or five star, WINTER? Eat five star and do nothing. Yeah, do nothing for now and sleep.",
                 "I am going to eat five star and do nothing but sleeping. Same applies to you too bro.",
@@ -660,7 +660,7 @@
                     "cmd": "sleep,PC",
                     "args": null,
                     "execution_engine": "skills",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -752,63 +752,63 @@
                     "cmd": "search,youtube",
                     "args": [1],
                     "execution_engine": "skills",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 },
                 {
                     "cmd": "youtube",
                     "args": [1],
                     "execution_engine": "func",
-                    "extraction_models": [null]
+                    "extraction_models": ["bin\\youtube_topic.pth"]
                 }
             ]
         },
         {
             "skill": "play,video",
             "patterns": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "time to dazzle me with some on-screen entertainment. Play that Devdas movie that I downloaded from my PC.",
+                "Hey there tech wizard, let's kick back and indulge in some visual delights. Launch that video reel of the cute child that's on my PC, please.",
+                "I want to watch Don 2. It's already downloaded on my PC. Just play it.",
+                "Let's summon some moving pictures and dive into the realm of entertainment. Say you want play that universe video I previously downloaded on my PC.",
+                "Drop the needle on that video track and let's groove to some visual beats of intersteller on my PC.",
+                "I have a short film floating somewhere on my PC on the Mandela effect. It's a cool movie. Please play it, I wanna watch.",
+                "let's flip the switch to entertainment mode. Launch Avengers Endgame, it's on my PC's local drive in my personal folder.",
+                "I downloaded Avengers Infinity war a few months ago. It's such a movie bro. I think it's still on my PC. Please play it.",
+                "Can you please play The man who knew infinity from my personal folder on my PC? I'll be really happy.",
+                "Would you mind if I ask you to play me the full documentary on Steve Jobs' life from my PC? Play it.",
+                "Wanna watch batman buddy? It's on my PC. Just load it up and play that thing.",
+                "I've Jawan on my PC. Watching it is going to be very fun so please play it.",
+                "Calling all pixels to attention! It's showtime. Activate video playback mode, pronto! Play saans me teri from my PC.",
+                "Hey machine, I'm in the mood for some audiovisual therapy. I have Tenet on my PC downloaded, and I want you to play it right now.",
+                "Play Trillions of Questions, No Easy Answers A (home) movie about how Google Search works from my PC.",
+                "I want to watch and listen to ZERO Mere Naam Tu Lyrical Song from my PC, which is downloaded already.",
+                "There's a kurzgesagt on my PC with the title Rise of AI. I would like you to play it and enjoy watching it with me buddy.",
+                "Watching the beauty of math is always fun, it's on my PC I wanna rewatch it. Please play it.",
+                "Hey, I just downloaded fing's new video. It's on my PC. Play it.",
+                "There is an interview of steve jobs on my PC. Would please play it for me.",
+                "I wanna watch a video of Mark Manson on Advice for young men. I have it on my PC, just play it.",
+                "I want to watch how elon musk learns anything. Don't search on youtube. It's on my computer. Play it from there.",
+                "I got my hands on a 1991 interview of Bill Gates. My friend gave me that. I've got it onto my computer. Play it in media player bro.",
+                "Buddy, I've my hands on this new movie which I've pirated from google drive, it's on my computer now! Let's watch it together.",
+                "Do you know there is a very cool Tony Stark edit on my computer. I want to watch now.",
+                "I recently realized that I have a batman edit which I can watch from my personal folder on my computer.",
+                "I want to watch something. You know what I have a great math guy edit laying on my PC",
+                "Today is a very slow and boring day. I want to watch some downloaded videos. There is documentary on Newton. Play it from my computer.",
+                "I have downloaded a video of Newsthink on John Ive. Apple's former designer. Let's watch it.",
+                "This day is quite boring. Play me a the videon on the Lore of Calculus from my computer that I downloaded.",
+                "My friend gave me a video about sex from It's Okay To Be Smart youtube channel. It's loaded up on my disk, you just play in windows video player.",
+                "is this a joke? The internet's not working again. Oh My God. Ok anyways, play me a video about how to memorize things from Tharun Speaks which is on my computer. I'll watch it.",
+                "I've got a great video on my hand, it's on my computer now and it's about how to impress girls around me. I think we could watch it.",
+                "Would you mind if I ask you to play me that UPSC stand up comedy that I downloaded earlier from my computer.",
+                "Hey buddy, I want to watch that S2Life's reaction video on Employee No 1. I already have it on my computer so don't play it on youtube, instead play it from my computer.",
+                "play brown rang song video from my computer in my personal videos folder.",
+                "Bro I have downloaded a carryminati's one of old videos on school trips. Please, I want to watch it. It's on my computer.",
+                "There is a music video of bekhayali on my computer so I would like you play it for me in windows media player.",
+                "I'm travelling right now so I can't connect to the internet, so please play that SST video of Digraj Sir that I downloaded on my computer. I'll watch it till then.",
+                "Ah shit, here we go again. My internet turned off. Ok no worries, buddy play me some random music video from my computer.",
+                "play pacific ocean blues by john doe from my computer.",
+                "I want you to play me some music from my computer by beverley martyn",
+                "My computer has a very amazing roasting video from carryminati on best friends. I want to watch it now, please play it for me buddy.",
+                "Buddy, I think now it's time for you to serve me with some godly videos of Samay Raina and Shaiba Zomato that I've loaded up on my computer.",
                 "",
                 "",
                 "",
@@ -849,7 +849,7 @@
                     "cmd": "play_video",
                     "args": [1],
                     "execution_engine": "func",
-                    "extraction_models": [null]
+                    "extraction_models": ["bin\\local_video.pth"]
                 }
             ]
         },
@@ -940,7 +940,7 @@
                     "cmd": "play_music",
                     "args": [1],
                     "execution_engine": "func",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1031,7 +1031,7 @@
                     "cmd":  "pixelate",
                     "args": [1, "-e youtube"],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1122,7 +1122,7 @@
                     "cmd":  "pixelate",
                     "args": [1, "-e google"],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1213,7 +1213,7 @@
                     "cmd":  "pixelate",
                     "args": [1, "-e bing"],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1304,7 +1304,7 @@
                     "cmd":  "pixelate",
                     "args": [1, "-e duckduckgo"],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1395,13 +1395,13 @@
                     "cmd":  "pixelate",
                     "args": [1, "-e wikipedia"],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 },
                 {
                     "cmd":  "search_on_wikipedia",
                     "args": [1],
                     "execution_engine": "func",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1492,13 +1492,13 @@
                     "cmd": "search,google",
                     "args": ["Today's weather in", 1],
                     "execution_engine": "skills",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 },
                 {
                     "cmd":  "pixelate",
                     "args": ["-w", 1],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1589,13 +1589,13 @@
                     "cmd": "search,google",
                     "args": ["Today's temperature in", 1],
                     "execution_engine": "skills",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 },
                 {
                     "cmd":  "pixelate",
                     "args": ["-t", 1],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1686,7 +1686,7 @@
                     "cmd":  "",
                     "args": [""],
                     "execution_engine": "",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1777,7 +1777,7 @@
                     "cmd": "playgames",
                     "args": [1],
                     "execution_engine": "func",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1868,7 +1868,7 @@
                     "cmd":  "",
                     "args": [""],
                     "execution_engine": "",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -1959,7 +1959,7 @@
                     "cmd":  "",
                     "args": [""],
                     "execution_engine": "",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2050,7 +2050,7 @@
                     "cmd":  "",
                     "args": [""],
                     "execution_engine": "",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2141,7 +2141,7 @@
                     "cmd":  "",
                     "args": [""],
                     "execution_engine": "",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2232,7 +2232,7 @@
                     "cmd":  "",
                     "args": [""],
                     "execution_engine": "AOs",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2323,7 +2323,7 @@
                     "cmd": "search,google",
                     "args": [1],
                     "execution_engine": "skills",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2414,13 +2414,13 @@
                     "cmd":  "search,google",
                     "args": [1],
                     "execution_engine": "skills",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 },
                 {
                     "cmd":  "translate",
                     "args": [1],
                     "execution_engine": "func",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2511,7 +2511,7 @@
                     "cmd":  "",
                     "args": [""],
                     "execution_engine": "",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2602,7 +2602,7 @@
                     "cmd":  "",
                     "args": [""],
                     "execution_engine": "",
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2693,7 +2693,7 @@
                     "cmd":  null,
                     "args": null,
                     "execution_engine": null,
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2784,7 +2784,7 @@
                     "cmd":  null,
                     "args": null,
                     "execution_engine": null,
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2875,7 +2875,7 @@
                     "cmd":  null,
                     "args": null,
                     "execution_engine": null,
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         },
@@ -2966,7 +2966,7 @@
                     "cmd":  null,
                     "args": null,
                     "execution_engine": null,
-                    "extraction_models": [null]
+                    "extraction_models": []
                 }
             ]
         }

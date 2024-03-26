@@ -1,4 +1,6 @@
 __pycache__/
 .venv/
+powertoys/
+cache/
 data/
-bin2/
+bin/

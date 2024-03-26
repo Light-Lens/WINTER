@@ -3,14 +3,8 @@ from . import func
 import random, json
 
 class Features:
-    def __init__(self, filepath, extraction_models):
-        """
-        @param filepath: the location of the json file.
-        @param extraction_models: the location where all the information extraction models are stored.
-        """
-
+    def __init__(self, filepath):
         self.filepath = filepath
-        self.extraction_models = extraction_models
 
         with open(self.filepath, "r", encoding="utf-8") as f:
             self.jsondata = json.load(f)
@@ -27,7 +21,7 @@ class Features:
             "translate,one_lang_to_another": func.translate
         }
 
-    # There are 3 execution engines: AOs, func, and skills.
+    # There are 4 execution engines: AOs, func, skills and external.
     def execute(self, input_prompt, predicted_output, respond=True):
         skillname = predicted_output[0].split(";")[1]
         score = predicted_output[1]
@@ -90,18 +84,18 @@ class Features:
             extraction_models = task["extraction_models"]
             print(skillname, cmd, args, exec_engine)
 
+            for model in extraction_models:
+                # evaluate the model to extract text from 'input_prompt'
+                # replace that extracted text with the integer value in args.
+
+                # evaluate model here.
+                pass
+
             if exec_engine == None:
                 pass
 
             elif exec_engine == "func":
                 if skillname in self.func_dict.keys():
-                    for model in extraction_models:
-                        # evaluate the model to extract text from 'input_prompt'
-                        # replace that extracted text with the integer value in args.
-
-                        # evaluate model here.
-                        pass
-
                     # self.func_dict[skillname]()
                     pass
 
@@ -115,3 +109,11 @@ class Features:
                         break
 
                 self.__exec_tasks__(input_prompt, tasks, skillname)
+
+            elif exec_engine == "external":
+                # Look into the 'bin\powertoys' folder
+                # 'cmd' will be the app/script name that 'bin\powertoys' folder,
+                # 'args' will the arguments that will be passed in that app/script,
+                # extraction models will work the same as well.
+                #TODO: Work on external execution engine before working on AOs execution engine.
+                pass
