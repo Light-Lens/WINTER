@@ -12,7 +12,7 @@ def get_cache_path():
         parent_dir = os.path.dirname(parent_dir)
 
     # Append "cache" directory to the parent directory
-    return os.path.join(parent_dir, "cache")
+    return os.path.join(parent_dir, "bin\\cache")
 
 # Speak out loud the text
 def Speak(text, voice="en-US-GuyNeural"):

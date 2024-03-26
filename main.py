@@ -4,13 +4,13 @@ from src.WINTER.features.features import Features
 model = Sample("bin\\skills.pth")
 model.load()
 
-feature = Features("data\\skills.json", "data\\extraction_models")
+feature = Features("data\\skills.json")
 feature.load()
 
 # def main():
 #     while True:
 #         prompt = input("> ")
-#         feature.execute(model.predict(prompt))
+#         feature.execute(prompt, model.predict(prompt), False)
 
 test = [
     "please make the volume one hundred percent.",

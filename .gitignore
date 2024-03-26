@@ -1,5 +1,4 @@
 __pycache__/
 .venv/
-cache/
 data/
-bin/
+bin2/
