@@ -1,37 +1,17 @@
-from src.vendor.GATw.src.write.train import Train
+from src.vendor.GATw import alphabet
 
-t = Train(
-    n_layer = 4,
-    n_embd = 16,
-    n_head = 8,
+t = alphabet.classification.Train(
+    n_layer = 1,
+    n_hidden = 8,
     lr = 4e-3,
-    block_size = 50,
-    batch_size = 32
+    batch_size = 64,
+    model = "RNN"
 )
-
-t.preprocess("data\\LLM data.txt")
+t.preprocess("data\\skills.json", metadata=("skills", "skill", "patterns"), data_division=None)
 t.train(
-    n_steps = 10000,
-    eval_interval = 200,
-    eval_iters = 4000,
+    n_steps = 4000,
+    eval_interval = 1000,
+    eval_iters = 800,
     n_loss_digits = 7
 )
-t.save("bin\\GATw.pth")
-
-# from src.vendor.GATw.src.alphabet.classification.train import Train
-
-# t = Train(
-#     n_layer = 1,
-#     n_hidden = 8,
-#     lr = 4e-3,
-#     batch_size = 64,
-#     model = "RNN"
-# )
-# t.preprocess("data\\skills.json", metadata=("skills", "skill", "patterns"), data_division=None)
-# t.train(
-#     n_steps = 1000,
-#     eval_interval = 200,
-#     eval_iters = 400,
-#     n_loss_digits = 7
-# )
-# t.save("bin\\skills.pth")
+t.save("bin\\skills.pth")
