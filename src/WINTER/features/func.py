@@ -1,16 +1,16 @@
 import webbrowser, wikipedia, requests
-# from googletrans import Translator
+from googletrans import Translator
 
 # init modules
-# translator = Translator()
+translator = Translator()
 
-def play_video():
+def play_video(title):
     pass
 
-def play_music():
+def play_music(title):
     pass
 
-def playgames():
+def playgames(name):
     pass
 
 # https://github.com/Ankit404butfound/PyWhatKit/blob/master/pywhatkit/misc.py
@@ -36,8 +36,6 @@ def youtube(topic):
 def search_on_wikipedia(topic):
     return wikipedia.summary(topic, sentences=3)
 
-def translate():
-    pass
-#     # Make it better.
-#     out = translator.translate(sentence, dest="en")
-#     return out.text
+def translate(sentence, dest="en"):
+    out = translator.translate(sentence, dest=dest)
+    return out.text

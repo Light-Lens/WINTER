@@ -1,6 +1,6 @@
-from ..shared.utils import dprint
+from ..shared.utils import get_bin_path, dprint
 from . import func
-import random, json
+import random, json, os
 
 class Features:
     def __init__(self, filepath):
@@ -83,6 +83,8 @@ class Features:
             exec_engine = task["execution_engine"]
             extraction_models = task["extraction_models"]
             print(skillname, cmd, args, exec_engine)
+            if exec_engine == None:
+                break
 
             for model in extraction_models:
                 # evaluate the model to extract text from 'input_prompt'
@@ -91,13 +93,8 @@ class Features:
                 # evaluate model here.
                 pass
 
-            if exec_engine == None:
-                pass
-
-            elif exec_engine == "func":
-                if skillname in self.func_dict.keys():
-                    # self.func_dict[skillname]()
-                    pass
+            if exec_engine == "func" and skillname in self.func_dict.keys():
+                self.func_dict[skillname](*args)
 
             elif exec_engine == "AOs":
                 pass
@@ -113,7 +110,7 @@ class Features:
             elif exec_engine == "external":
                 # Look into the 'bin\powertoys' folder
                 # 'cmd' will be the app/script name that 'bin\powertoys' folder,
-                # 'args' will the arguments that will be passed in that app/script,
-                # extraction models will work the same as well.
-                #TODO: Work on external execution engine before working on AOs execution engine.
-                pass
+                # 'args' will the arguments that will be passed in that app/script.
+                powertoys_path = os.path.join(get_bin_path(), "powertoys")
+                for file in os.listdir(powertoys_path):
+                    os.system(f"{os.path.join(powertoys_path, file)} {' '.join(args)}")

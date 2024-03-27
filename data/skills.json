@@ -14,7 +14,7 @@
             "tasks": [
                 {
                     "cmd": null,
-                    "args": null,
+                    "args": [],
                     "execution_engine": null,
                     "extraction_models": []
                 }
@@ -566,7 +566,7 @@
             "tasks": [
                 {
                     "cmd": "sleep",
-                    "args": null,
+                    "args": [],
                     "execution_engine": "AOs",
                     "extraction_models": []
                 }
@@ -658,7 +658,7 @@
             "tasks": [
                 {
                     "cmd": "sleep,PC",
-                    "args": null,
+                    "args": [],
                     "execution_engine": "skills",
                     "extraction_models": []
                 }
@@ -2691,7 +2691,7 @@
             "tasks": [
                 {
                     "cmd":  null,
-                    "args": null,
+                    "args": [],
                     "execution_engine": null,
                     "extraction_models": []
                 }
@@ -2782,7 +2782,7 @@
             "tasks": [
                 {
                     "cmd":  null,
-                    "args": null,
+                    "args": [],
                     "execution_engine": null,
                     "extraction_models": []
                 }
@@ -2873,7 +2873,7 @@
             "tasks": [
                 {
                     "cmd":  null,
-                    "args": null,
+                    "args": [],
                     "execution_engine": null,
                     "extraction_models": []
                 }
@@ -2964,7 +2964,7 @@
             "tasks": [
                 {
                     "cmd":  null,
-                    "args": null,
+                    "args": [],
                     "execution_engine": null,
                     "extraction_models": []
                 }
